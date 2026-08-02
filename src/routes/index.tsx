@@ -124,7 +124,7 @@ function HomePage() {
 
           <Reveal delay={200}>
             <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-muted-foreground md:text-xl">
-              EarthIntelytics provides defense-grade spatial intelligence, fusing multi-spectral satellite constellations, autonomous drone networks, and IoT telemetry into a centralized operations dashboard.
+              EarthIntelytics provides enterprise-grade spatial intelligence, fusing satellite constellations, autonomous drone networks, and IoT telemetry to power sustainable agriculture, responsible mining, ESG reporting, and global infrastructure development.
             </p>
           </Reveal>
 
@@ -166,7 +166,7 @@ function HomePage() {
           <Reveal>
             <SectionHeading
               title="Two Platforms. One Command Center."
-              description="Deploy verified intelligence across vast global estates and critical infrastructure sites. We handle orbital collection, multi-spectral processing, and real-time telemetry integration."
+              description="Deploy actionable intelligence across vast agricultural estates, critical infrastructure, and mining sites. We unify multi-spectral orbital data and real-time telemetry to drive sustainability, ESG compliance, and operational excellence."
             />
           </Reveal>
 
