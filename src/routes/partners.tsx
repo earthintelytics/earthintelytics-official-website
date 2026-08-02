@@ -23,25 +23,25 @@ const DATA_PROVIDERS = [
     name: "Copernicus Sentinel (ESA)",
     type: "Optical & Radar Satellites",
     desc: "Provides our baseline multi-spectral optical data and C-band Synthetic Aperture Radar (SAR) imagery for continuous global monitoring.",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Copernicus_logo.svg",
+    logoUrl: "/partners/copernicus.svg",
   },
   {
     name: "Landsat (USGS/NASA)",
     type: "Multi-Spectral Optical",
     desc: "Decades of historical archive and continuous medium-resolution thermal and multi-spectral imagery for baseline climate models.",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1c/USGS_logo.svg",
+    logoUrl: "/partners/usgs.svg",
   },
   {
     name: "FAO GAEZ",
     type: "Suitability Indices",
     desc: "Global Agro-Ecological Zones framework providing the baseline models for our crop suitability and climate adaptation algorithms.",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/0/00/FAO_logo.svg",
+    logoUrl: "/partners/fao.svg",
   },
   {
     name: "OpenStreetMap",
     type: "Vector Infrastructure",
     desc: "Open source community-driven mapping data providing the foundational road, building, and hydrology vectors for our dashboards.",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg",
+    logoUrl: "/partners/osm.svg",
   },
 ];
 
@@ -95,7 +95,7 @@ function PartnersPage() {
                 <Reveal
                   key={partner.name}
                   delay={i * 100}
-                  className="flex flex-col sm:flex-row gap-6 rounded-2xl bg-white p-8 shadow-2xl transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,150,136,0.3)]"
+                  className="flex flex-col sm:flex-row gap-6 rounded-2xl bg-white p-8 border border-border transition-all hover:-translate-y-1 "
                 >
                   <div className="flex h-20 w-24 shrink-0 items-center justify-center overflow-hidden">
                     <img src={partner.logoUrl} alt={partner.name} className="h-full w-full object-contain mix-blend-multiply drop-shadow-sm" />
