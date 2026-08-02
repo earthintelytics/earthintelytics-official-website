@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/hero-modules.jpeg";
 import { createFileRoute, Link, useSearch, useNavigate } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -349,15 +350,15 @@ function ModulesPage() {
   return (
     <PageShell>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-hero border-b border-border">
+      <section className="relative overflow-hidden bg-cover bg-center border-b border-border text-white" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-12 md:grid-cols-5 md:items-center md:py-16">
           <div className="md:col-span-3">
             <Reveal>
-              <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground md:text-6xl">
+              <h1 className="font-display text-4xl sm:text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
                 FarmIntelytics
               </h1>
-              <p className="mt-6 max-w-xl text-lg font-medium leading-normal text-muted-foreground">
+              <p className="mt-6 max-w-xl text-lg font-medium leading-normal text-white/80">
                 Our complete agricultural intelligence platform. Fusing satellite metrics, crops analysis, live monitoring layers, developer APIs, and ESG reporting into one source of truth.
               </p>
             </Reveal>
@@ -555,7 +556,57 @@ function ModulesPage() {
               </div>
             </div>
           </section>
-</div>
-</PageShell>
+
+          {/* TESTIMONIALS */}
+          <section className="py-16 bg-surface/30 border-t border-border">
+            <div className="mx-auto max-w-7xl px-6 text-center">
+              <SectionHeading
+                title="What our partners say"
+                description="See how FarmIntelytics is transforming operations on the ground."
+                align="center"
+              />
+              <div className="mt-12 relative flex overflow-x-hidden">
+                <div className="animate-marquee whitespace-nowrap flex items-stretch gap-6 sm:gap-8 pl-6 sm:pl-8 py-4">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-card p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
+                      <span className="absolute top-4 left-4 text-5xl text-[#009688]/20 font-serif leading-none">"</span>
+                      <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
+                        EarthIntelytics gave us an unprecedented view into our agricultural footprint. We were able to optimize our harvest schedules by 30% and detect disease vectors weeks before they became visible on the ground.
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <div className="h-10 w-10 rounded-full bg-[#009688]/20 flex shrink-0 items-center justify-center text-[#009688] font-bold text-sm">
+                          SM
+                        </div>
+                        <div className="text-left">
+                          <div className="font-bold text-foreground text-sm">Sarah Miller {i + 1}</div>
+                          <div className="text-xs text-muted-foreground">Chief Agronomist, Global AgriCorp</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {/* Duplicate set for seamless loop */}
+                  {[...Array(5)].map((_, i) => (
+                    <div key={`dup-${i}`} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-card p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
+                      <span className="absolute top-4 left-4 text-5xl text-[#009688]/20 font-serif leading-none">"</span>
+                      <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
+                        EarthIntelytics gave us an unprecedented view into our agricultural footprint. We were able to optimize our harvest schedules by 30% and detect disease vectors weeks before they became visible on the ground.
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <div className="h-10 w-10 rounded-full bg-[#009688]/20 flex shrink-0 items-center justify-center text-[#009688] font-bold text-sm">
+                          SM
+                        </div>
+                        <div className="text-left">
+                          <div className="font-bold text-foreground text-sm">Sarah Miller {i + 1}</div>
+                          <div className="text-xs text-muted-foreground">Chief Agronomist, Global AgriCorp</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </PageShell>
   );
 }

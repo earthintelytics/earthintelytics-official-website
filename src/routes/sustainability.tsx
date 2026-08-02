@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/sus-carbon.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
@@ -84,7 +85,7 @@ function SustainabilityPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-5 max-w-5xl font-display text-5xl font-extrabold leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-[5.5rem]">
+            <h1 className="mt-5 max-w-5xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-[5.5rem]">
               You think about your farm.<br />
               <span className="text-primary-glow">We scale it without costing the planet.</span>
             </h1>

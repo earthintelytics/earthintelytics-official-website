@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/adv-program.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -63,7 +64,7 @@ const TECH_PARTNERS = [
 function PartnersPage() {
   return (
     <PageShell>
-      <section className="relative overflow-hidden bg-background border-b border-border">
+      <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
@@ -71,12 +72,12 @@ function PartnersPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="max-w-4xl font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-foreground md:text-7xl">
+            <h1 className="max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-tight text-white md:text-7xl">
               Powered by the world's <span className="text-primary">best data.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-white/80">
               Our platform ingests feeds from the world’s leading satellite constellations, open data frameworks, and hardware manufacturers. We do the heavy lifting of fusing this data so you don't have to.
             </p>
           </Reveal>

@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/hero-mining.jpeg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -80,7 +81,7 @@ function MiningPage() {
   return (
     <PageShell>
       {/* Hero section, white background */}
-      <section className="relative overflow-hidden bg-background border-b border-border">
+      <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
@@ -88,13 +89,13 @@ function MiningPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="max-w-4xl font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-foreground md:text-7xl lg:text-[5.5rem]">
+            <h1 className="max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
               Precision intelligence{" "}
               <span className="text-primary">for mining operations.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-white/80">
               MineIntelytics unifies radar displacement tracking, multispectral geology mapping, and biometric security into a single source of truth for mining operations worldwide.
             </p>
           </Reveal>
@@ -108,7 +109,7 @@ function MiningPage() {
               </Link>
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-7 py-4 text-sm font-bold text-foreground transition-smooth hover:bg-surface"
+                className="inline-flex items-center gap-2 rounded-md border border-transparent bg-white px-7 py-4 text-sm font-bold text-black transition-smooth hover:bg-white/90"
               >
                 View All Products
               </Link>
@@ -217,6 +218,56 @@ function MiningPage() {
                 </p>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-16 bg-surface/30 border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <SectionHeading
+            title="What our partners say"
+            description="See how MineIntelytics is transforming operations on the ground."
+            align="center"
+          />
+          <div className="mt-12 relative flex overflow-x-hidden">
+            <div className="animate-marquee whitespace-nowrap flex items-stretch gap-6 sm:gap-8 pl-6 sm:pl-8 py-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-card p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
+                  <span className="absolute top-4 left-4 text-5xl text-primary/20 font-serif leading-none">"</span>
+                  <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
+                    EarthIntelytics gave us an unprecedented view into our operational footprint. We were able to reduce surveying costs by 30% while identifying critical structural anomalies.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex shrink-0 items-center justify-center text-primary font-bold text-sm">
+                      JD
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-foreground text-sm">John Doe {i + 1}</div>
+                      <div className="text-xs text-muted-foreground">Operations Director, Global Mining</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {[...Array(5)].map((_, i) => (
+                <div key={`dup-${i}`} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-card p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
+                  <span className="absolute top-4 left-4 text-5xl text-primary/20 font-serif leading-none">"</span>
+                  <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
+                    EarthIntelytics gave us an unprecedented view into our operational footprint. We were able to reduce surveying costs by 30% while identifying critical structural anomalies.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex shrink-0 items-center justify-center text-primary font-bold text-sm">
+                      JD
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-foreground text-sm">John Doe {i + 1}</div>
+                      <div className="text-xs text-muted-foreground">Operations Director, Global Mining</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/suitability-map.png";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -77,7 +78,7 @@ function SuitabilityPage() {
   return (
     <PageShell>
       {/* Hero section, white background */}
-      <section className="relative overflow-hidden bg-background border-b border-border">
+      <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
@@ -85,12 +86,12 @@ function SuitabilityPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="max-w-4xl font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-foreground md:text-7xl lg:text-[5.5rem]">
+            <h1 className="max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
               Location intelligence <span className="text-primary">and suitability analysis.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-white/80">
               A comprehensive location intelligence platform with vector overlay uploads and analysis-ready data for restaurant suitability, resettlement mapping, flood planning, crop planning, and infrastructure development.
             </p>
           </Reveal>
@@ -104,7 +105,7 @@ function SuitabilityPage() {
               </Link>
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-7 py-4 text-sm font-bold text-foreground transition-smooth hover:bg-surface"
+                className="inline-flex items-center gap-2 rounded-md border border-transparent bg-white px-7 py-4 text-sm font-bold text-black transition-smooth hover:bg-white/90"
               >
                 View All Products
               </Link>

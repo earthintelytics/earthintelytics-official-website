@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/deploy-cloud.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
@@ -84,7 +85,7 @@ function DeveloperPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-5 max-w-5xl font-display text-5xl font-extrabold leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-8xl">
+            <h1 className="mt-5 max-w-5xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-8xl">
               Build on verified<br />
               <span className="text-primary-glow">agricultural data.</span>
             </h1>
@@ -98,7 +99,7 @@ function DeveloperPage() {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-primary-glow px-6 py-3 font-display text-sm font-bold text-foreground transition-smooth hover:bg-background hover:text-foreground"
+                className="inline-flex items-center gap-2 rounded-md bg-primary-glow px-6 py-3 font-display text-sm font-bold text-white transition-smooth hover:bg-background hover:text-white"
               >
                 Request API access <ArrowRight className="h-4 w-4" />
               </Link>

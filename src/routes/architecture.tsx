@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/arch-core.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
@@ -87,7 +88,7 @@ function ArchitecturePage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+            <h1 className="mt-5 max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] md:text-7xl">
               A four-layer system,<br />
               <span className="text-primary-glow">built for scale.</span>
             </h1>

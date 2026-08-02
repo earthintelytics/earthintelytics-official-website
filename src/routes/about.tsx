@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/hero-farm.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -51,7 +52,7 @@ function AboutPage() {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background border-b border-border">
+      <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
@@ -59,13 +60,13 @@ function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="max-w-4xl font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-foreground md:text-7xl">
+            <h1 className="max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-tight text-white md:text-7xl">
               The intelligence layer{" "}
               <span className="text-primary">for planet Earth.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-white/80">
               EarthIntelytics was built with a single conviction: that the world's most critical decisions, in agriculture, mining, climate, and security, deserve the best possible intelligence. We are building the platform to make that a reality.
             </p>
           </Reveal>

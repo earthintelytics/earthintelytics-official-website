@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/mon-field-tablet.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
@@ -132,7 +133,7 @@ function MonitoringPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-8xl">
+            <h1 className="mt-5 max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-8xl">
               If it happens on the farm,<br />
               <span className="text-primary-glow">you see it.</span>
             </h1>

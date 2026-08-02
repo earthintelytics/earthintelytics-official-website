@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/drone-field.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -108,7 +109,7 @@ function UseCasesPage() {
   return (
     <PageShell>
       {/* Hero section */}
-      <section className="relative overflow-hidden bg-slate-950 text-white">
+      <section className="relative overflow-hidden bg-cover bg-center text-white" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#009688]/20 via-transparent to-transparent opacity-50" />
         </div>
@@ -119,7 +120,7 @@ function UseCasesPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="max-w-4xl font-display text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
+            <h1 className="max-w-4xl font-display text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
               Solve complex spatial <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#009688] to-emerald-400">challenges.</span>
             </h1>

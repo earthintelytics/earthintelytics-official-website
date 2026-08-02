@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/hero-home.jpeg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -12,6 +13,7 @@ import {
   Shield,
   Activity,
   Leaf,
+  Plane,
 } from "lucide-react";
 import ndviOverlayImg from "@/assets/real/ndvi-overlay.jpg";
 import mineSatelliteImg from "@/assets/real/mine-satellite.png";
@@ -67,21 +69,27 @@ function HomePage() {
     <PageShell>
 
       {/* ─── HERO ─── */}
-      <section className="relative isolate overflow-hidden min-h-[90vh] flex items-center bg-background">
-        {/* Video background of Earth rolling with drones/satellites */}
-        <div className="absolute inset-0 z-0">
-          <video
-            src={heroVideo.url}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="h-full w-full object-cover"
-          />
-          {/* Light blend overlay of white and green to transition into the page */}
-          <div className="absolute inset-0 bg-white/75" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#009688]/15 via-white/50 to-white/90" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+      <section className="relative isolate overflow-hidden min-h-[90vh] flex items-center">
+        {/* Animated Background Image */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center animate-ken-burns" 
+          style={{ backgroundImage: `url(${heroBg})` }} 
+        />
+        {/* Gradient Overlays */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60 pointer-events-none" />
+
+        {/* Animated Satellite */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <div className="animate-orbit absolute top-0 left-0 text-white/40 drop-shadow-lg">
+            <Satellite className="w-24 h-24" strokeWidth={1} />
+          </div>
+        </div>
+
+        {/* Animated Drone */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <div className="animate-drone absolute top-0 left-0 text-white/50 drop-shadow-lg">
+            <Plane className="w-16 h-16 -scale-x-100" strokeWidth={1.5} />
+          </div>
         </div>
 
         {/* Subtle geometric wireframe globe watermark in background */}
@@ -104,11 +112,8 @@ function HomePage() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-44 w-full">
-          <Reveal>
-          </Reveal>
-
           <Reveal delay={100}>
-            <h1 className="max-w-5xl font-sans text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            <h1 className="max-w-5xl font-sans text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]">
               See Earth.{" "}
               <span className="text-[#009688]">Understand Change.</span>
               <br />
@@ -117,7 +122,7 @@ function HomePage() {
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="mt-8 max-w-xl text-lg font-medium leading-normal text-muted-foreground md:text-xl">
+            <p className="mt-8 max-w-xl text-lg font-medium leading-normal text-white/80 md:text-xl">
               EarthIntelytics provides enterprise-grade spatial intelligence, fusing satellite constellations, autonomous drone networks, and IoT telemetry to power sustainable agriculture, responsible mining, ESG reporting, and global infrastructure development.
             </p>
           </Reveal>
@@ -132,7 +137,7 @@ function HomePage() {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-7 py-4 text-sm font-bold text-foreground transition-all hover:bg-surface"
+                className="inline-flex items-center gap-2 rounded-md border border-transparent bg-white px-7 py-4 text-sm font-bold text-black transition-all hover:bg-white/90"
               >
                 Book a Demo
               </Link>
@@ -144,8 +149,8 @@ function HomePage() {
             <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 max-w-2xl">
               {STATS.map((s) => (
                 <div key={s.label} className="border-l-2 border-[#009688]/20 pl-4">
-                  <div className="font-sans text-3xl font-extrabold text-foreground">{s.value}</div>
-                  <div className="mt-1 font-sans text-xs text-muted-foreground uppercase tracking-wider font-semibold">{s.label}</div>
+                  <div className="font-sans text-3xl font-extrabold text-white">{s.value}</div>
+                  <div className="mt-1 font-sans text-xs text-white/80 uppercase tracking-wider font-semibold">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -287,6 +292,81 @@ function HomePage() {
                 <p className="text-sm leading-normal text-muted-foreground">{desc}</p>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIALS ─── */}
+      <section className="py-16 bg-background">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <Reveal>
+            <SectionHeading
+              title="What our partners say"
+              description="See how EarthIntelytics is transforming operations on the ground."
+              align="center"
+            />
+          </Reveal>
+          
+          <div className="mt-12 relative flex overflow-x-hidden">
+            <div className="animate-marquee whitespace-nowrap flex items-stretch gap-6 sm:gap-8 pl-6 sm:pl-8 py-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-surface p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
+                  <span className="absolute top-4 left-4 text-5xl text-primary/20 font-serif leading-none">"</span>
+                  <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
+                    EarthIntelytics gave us an unprecedented view into our operational footprint. We were able to reduce surveying costs by 30% while identifying critical anomalies.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex shrink-0 items-center justify-center text-primary font-bold text-sm">
+                      JD
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-foreground text-sm">John Doe {i + 1}</div>
+                      <div className="text-xs text-muted-foreground">Operations Director, Global Mining</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {[...Array(5)].map((_, i) => (
+                <div key={`dup-${i}`} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-surface p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
+                  <span className="absolute top-4 left-4 text-5xl text-primary/20 font-serif leading-none">"</span>
+                  <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
+                    EarthIntelytics gave us an unprecedented view into our operational footprint. We were able to reduce surveying costs by 30% while identifying critical anomalies.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex shrink-0 items-center justify-center text-primary font-bold text-sm">
+                      JD
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-foreground text-sm">John Doe {i + 1}</div>
+                      <div className="text-xs text-muted-foreground">Operations Director, Global Mining</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CLIENTS LOGO MARQUEE ─── */}
+      <section className="py-12 bg-surface/50 border-t border-border overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="text-center font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground mb-10">
+            Trusted by organizations worldwide
+          </p>
+          
+          <div className="relative flex overflow-x-hidden">
+            <div className="animate-marquee whitespace-nowrap flex items-center gap-12 sm:gap-24 pl-12 sm:pl-24">
+              {[...Array(6)].map((_, i) => (
+                <img key={`okomu-${i}`} src="/clients/okomu.png" alt="Okomu Oil Plantation" className="h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-smooth" />
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {[...Array(6)].map((_, i) => (
+                <img key={`okomu-dup-${i}`} src="/clients/okomu.png" alt="Okomu Oil Plantation" className="h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-smooth" />
+              ))}
+            </div>
           </div>
         </div>
       </section>

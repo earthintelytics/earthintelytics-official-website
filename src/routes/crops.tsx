@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/maize.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";

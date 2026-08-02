@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/api.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
@@ -26,22 +27,22 @@ const ENDPOINTS = [
 function ApiDocsPage() {
   return (
     <PageShell>
-      <section className="relative overflow-hidden bg-background min-h-[80vh] flex flex-col justify-center border-b border-border">
+      <section className="relative overflow-hidden bg-cover bg-center min-h-[80vh] flex flex-col justify-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
             <Reveal>
-              <h1 className="font-display text-5xl font-extrabold leading-[1] tracking-tight text-foreground md:text-6xl">
+              <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-[1] tracking-tight text-white md:text-6xl">
                 Intelligence API <br/>
                 <span className="text-primary">Coming Soon.</span>
               </h1>
-              <p className="mt-8 text-lg font-medium leading-normal text-muted-foreground">
+              <p className="mt-8 text-lg font-medium leading-normal text-white/80">
                 We are preparing to open our platform. Soon, you will be able to pipe satellite imagery, radar displacement data, and AI analytics directly into your own enterprise software, ERPs, and dashboards.
               </p>
               
               <div className="mt-10 p-6 border border-border bg-surface rounded-xl">
                 <h3 className="font-display font-bold mb-2">Request Early Access</h3>
-                <p className="text-sm text-muted-foreground mb-4">Are you building something that requires Earth intelligence? Let us know.</p>
+                <p className="text-sm text-white/80 mb-4">Are you building something that requires Earth intelligence? Let us know.</p>
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-smooth hover:bg-primary/95"

@@ -1,3 +1,4 @@
+import heroBg from "@/assets/real/farmer-phone.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -45,7 +46,7 @@ function ContactPage() {
           <p className="font-sans text-sm font-bold uppercase tracking-[0.25em] text-primary-glow">
             Get in touch
           </p>
-          <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+          <h1 className="mt-5 max-w-4xl font-display text-4xl sm:text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] md:text-7xl">
             Let's digitize<br />
             <span className="text-primary-glow">your operations.</span>
           </h1>
