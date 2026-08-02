@@ -43,7 +43,7 @@ function DropdownMenu({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className={`flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold transition-smooth ${isActive
+        className={`flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold transition-smooth ${isActive
             ? "text-primary"
             : "text-muted-foreground hover:text-foreground"
           }`}
@@ -76,6 +76,44 @@ function DropdownMenu({
   );
 }
 
+function MobileDropdown({
+  label,
+  items,
+  setOpen,
+}: {
+  label: string;
+  items: { to: string; label: string; desc?: string }[];
+  setOpen: (v: boolean) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="flex flex-col">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground hover:bg-surface hover:text-foreground"
+      >
+        <span>{label}</span>
+        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      {isOpen && (
+        <div className="flex flex-col gap-1 pl-4 pt-1">
+          {items.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 font-sans text-[14px] font-medium text-muted-foreground hover:bg-surface hover:text-foreground"
+              activeProps={{ className: "rounded-md px-3 py-2 font-sans text-[14px] font-medium text-primary bg-surface" }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -88,8 +126,8 @@ export function Header() {
         <nav className="hidden flex-nowrap items-center gap-1 lg:flex">
           <Link
             to="/"
-            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
-            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary" }}
+            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
+            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-primary" }}
             activeOptions={{ exact: true }}
           >
             Home
@@ -98,15 +136,15 @@ export function Header() {
           <DropdownMenu label="Products" to="/products" items={PRODUCTS_ITEMS} />
           <Link
             to="/use-cases"
-            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
-            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary" }}
+            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
+            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-primary" }}
           >
             Use Cases
           </Link>
           <Link
             to="/careers"
-            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
-            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary" }}
+            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
+            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-primary" }}
           >
             Careers
           </Link>
@@ -133,36 +171,46 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden h-[calc(100vh-4rem)] overflow-y-auto pb-6">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
-            {[
-              { to: "/", label: "Home", exact: true },
+            <Link
+              to="/"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground hover:bg-surface hover:text-foreground"
+              activeProps={{ className: "rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-primary bg-surface" }}
+              activeOptions={{ exact: true }}
+            >
+              Home
+            </Link>
+            
+            <MobileDropdown label="Company" items={COMPANY_ITEMS} setOpen={setOpen} />
+            <MobileDropdown label="Products" items={PRODUCTS_ITEMS} setOpen={setOpen} />
 
-              { to: "/products", label: "Products", exact: false },
-              { to: "/modules", label: "↳ FarmIntelytics", exact: false },
-              { to: "/mining", label: "↳ MineIntelytics", exact: false },
-              { to: "/suitability", label: "↳ SuitabilityIntelytics", exact: false },
-              { to: "/api-docs", label: "↳ API Documentation", exact: false },
-
-              { to: "/about", label: "Company", exact: false },
-              { to: "/partners", label: "↳ Partners", exact: false },
-
-              { to: "/use-cases", label: "Use Cases", exact: false },
-              { to: "/careers", label: "Careers", exact: false },
-
-              { to: "/contact", label: "Book a Demo", exact: false },
-            ].map((item) => (
+            <Link
+              to="/use-cases"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground hover:bg-surface hover:text-foreground"
+              activeProps={{ className: "rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-primary bg-surface" }}
+            >
+              Use Cases
+            </Link>
+            <Link
+              to="/careers"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-muted-foreground hover:bg-surface hover:text-foreground"
+              activeProps={{ className: "rounded-md px-3 py-2 font-sans text-[13px] font-semibold text-primary bg-surface" }}
+            >
+              Careers
+            </Link>
+            <div className="mt-4 pt-4 border-t border-border">
               <Link
-                key={item.to}
-                to={item.to}
+                to="/contact"
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground hover:bg-surface hover:text-foreground"
-                activeProps={{ className: "rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary bg-surface" }}
-                activeOptions={{ exact: item.exact }}
+                className="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-[14px] font-semibold text-primary-foreground transition-smooth hover:bg-primary/90"
               >
-                {item.label}
+                Book a Demo
               </Link>
-            ))}
+            </div>
           </nav>
         </div>
       )}
