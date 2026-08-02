@@ -83,7 +83,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-tr from-[#009688]/15 via-white/50 to-white/90" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
-        
+
         {/* Subtle geometric wireframe globe watermark in background */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 opacity-[0.05] text-[#009688] select-none pointer-events-none hidden md:block z-0">
           <svg
@@ -195,7 +195,7 @@ function HomePage() {
                 </div>
                 <div className="p-8 flex-1 flex flex-col justify-between">
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    {name === "FarmIntelytics" 
+                    {name === "FarmIntelytics"
                       ? "Execute biomass intelligence operations over vast vegetative zones, calculate carbon sequestration, and forecast global food security using advanced spatial models."
                       : "Monitor topographical displacement, identify high-grade surface geology anomalies, track asset structural integrity, and enforce secure geofenced perimeters."}
                   </p>

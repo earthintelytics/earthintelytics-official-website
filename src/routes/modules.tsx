@@ -105,46 +105,7 @@ export const Route = createFileRoute("/modules")({
   component: ModulesPage,
 });
 
-const TABS = [
-  { id: "overview", label: "Core Modules" },
-  { id: "crops", label: "Crops Covered" },
-  { id: "monitoring", label: "Monitoring Layers" },
-  { id: "api", label: "Developer API" },
-  { id: "architecture", label: "Architecture" },
-  { id: "use-cases", label: "Use Cases & ESG" },
-];
-
 const MODULES = [
-  {
-    icon: Fingerprint,
-    title: "Biometric Identity System",
-    points: [
-      "Fingerprint registration",
-      "Facial recognition (dual verification)",
-      "Eliminates ghost workers and duplicates",
-      "Secure farmer & worker database",
-    ],
-  },
-  {
-    icon: Users,
-    title: "AI Workforce Management",
-    points: [
-      "Task assignment and tracking",
-      "Attendance and productivity analytics",
-      "Anomaly & ghost worker detection",
-      "Performance leaderboards",
-    ],
-  },
-  {
-    icon: ClipboardList,
-    title: "Farm Activity & Operations",
-    points: [
-      "Daily logs: harvesting, planting, spraying",
-      "Time-stamped, geo-referenced records",
-      "Input usage tracking",
-      "Operations history per block",
-    ],
-  },
   {
     icon: Brain,
     title: "Crop & Disease Intelligence",
@@ -183,36 +144,6 @@ const MODULES = [
       "GPS-based location tracking",
       "Geofence breach alerts",
       "Spatial analytics & encroachment detection",
-    ],
-  },
-  {
-    icon: Wallet,
-    title: "Payments & Financial System",
-    points: [
-      "Digital payments to workers, farmers, vendors",
-      "Wallets + bank & mobile money integration",
-      "Payroll automated from verified work logs",
-      "Input financing tracking",
-    ],
-  },
-  {
-    icon: Truck,
-    title: "Logistics & Supply Chain",
-    points: [
-      "Track produce & input movement",
-      "Live route monitoring",
-      "Delivery verification",
-      "Reduces diversion and losses",
-    ],
-  },
-  {
-    icon: ShieldAlert,
-    title: "Risk, Fraud & Compliance",
-    points: [
-      "Real-time fraud alerts",
-      "Data inconsistency flags",
-      "Regulatory compliance tracking",
-      "Immutable audit trails",
     ],
   },
   {
@@ -394,78 +325,6 @@ const PRINCIPLES = [
   { k: "Modular", v: "Adopt one module or all twelve, pricing follows usage." },
 ];
 
-const CASES = [
-  {
-    icon: Building2,
-    title: "Agribusiness & Plantations",
-    desc: "Monitor large-scale palm oil and cocoa estates. Verify every shift, geofence every block, automate payroll, track every truck out.",
-    metrics: [
-      ["~30%", "labor cost recovered"],
-      ["100%", "geo-verified work"],
-    ],
-  },
-  {
-    icon: Landmark,
-    title: "Government Programs",
-    desc: "Track subsidies, fertilizer distribution and beneficiary verification. End ghost beneficiaries with biometric enrollment.",
-    metrics: [
-      ["1:1", "biometric to beneficiary"],
-      ["Audit", "ready by default"],
-    ],
-  },
-  {
-    icon: HeartHandshake,
-    title: "NGOs & Development",
-    desc: "Verify program impact with geo-tagged evidence. Generate funder-ready reports automatically from field activity.",
-    metrics: [
-      ["Real-time", "impact reporting"],
-      ["GPS", "evidence trail"],
-    ],
-  },
-  {
-    icon: Users2,
-    title: "Farmer Cooperatives",
-    desc: "Manage farmer registries, aggregate produce, settle payments digitally. Build credit history from verified activity.",
-    metrics: [
-      ["Wallets", "for every member"],
-      ["Credit", "score from activity"],
-    ],
-  },
-];
-
-const SUSTAIN = [
-  {
-    img: susCarbon,
-    eyebrow: "Carbon",
-    title: "GHG & Carbon Monitoring",
-    desc: "Quantify CO₂e from inputs, machinery and land use. Audit-grade reports ready for credit markets and ESG disclosure.",
-  },
-  {
-    img: susWater,
-    eyebrow: "Water",
-    title: "FAO Water Efficiency Model",
-    desc: "Integrated FAO crop-water and evapotranspiration models compute water productivity per hectare in real time.",
-  },
-  {
-    img: susClimate,
-    eyebrow: "Climate",
-    title: "Climate Modelling",
-    desc: "Localised forecasts, rainfall variability and drought-risk indices help farms adapt seasons before they begin.",
-  },
-  {
-    img: susSoil,
-    eyebrow: "Land",
-    title: "Global Sustainability Models",
-    desc: "Track land-use change, biodiversity proxies and regenerative-practice adoption against global frameworks.",
-  },
-];
-
-const DEPLOY = [
-  { img: deployCloud, title: "FarmIntelytics Cloud", desc: "Hosted, managed and updated by us. Spin up a tenant in days." },
-  { img: deployOnprem, title: "On-Premise / Local Server", desc: "Sovereign deployment for governments and large agribusinesses. Your data, your hardware." },
-  { img: deployMobile, title: "Mobile Application Suite", desc: "Field officer, supervisor and farmer apps - offline-first, low-bandwidth ready." },
-];
-
 const CODE_EXAMPLES = {
   curl: `curl -X GET "https://api.earthintelytics.com/v1/ndvi/health?block_id=blk_4901" \\
   -H "Authorization: Bearer sec_live_8Fh3..."`,
@@ -487,26 +346,6 @@ print(response.json())`,
 };
 
 function ModulesPage() {
-  const search = useSearch({ from: "/modules" });
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(search.tab || "overview");
-  const [apiLang, setApiLang] = useState<"curl" | "python" | "js">("curl");
-
-  // Keep state in sync with URL queries
-  useEffect(() => {
-    if (search.tab && search.tab !== activeTab) {
-      setActiveTab(search.tab);
-    }
-  }, [search.tab]);
-
-  const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
-    navigate({
-      to: "/modules",
-      search: { tab: tabId },
-    });
-  };
-
   return (
     <PageShell>
       {/* Hero Section */}
@@ -536,32 +375,11 @@ function ModulesPage() {
         </div>
       </section>
 
-      {/* Tabs Navigation */}
-      <div className="sticky top-20 z-20 border-b border-border bg-background/95 backdrop-blur py-2">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-wrap gap-2 overflow-x-auto no-scrollbar py-1">
-            {TABS.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabChange(tab.id)}
-                className={`whitespace-nowrap rounded-md px-4 py-2 text-sm font-semibold transition-smooth ${
-                  activeTab === tab.id
-                    ? "bg-[#009688] text-white shadow-sm"
-                    : "text-muted-foreground hover:bg-surface hover:text-foreground"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      
 
       {/* Tab Contents */}
       <div className="py-16 min-h-[50vh]">
-        {/* ─── TAB 1: CORE MODULES ─── */}
-        {activeTab === "overview" && (
-          <section className="mx-auto max-w-7xl px-6">
+        <section className="mx-auto max-w-7xl px-6">
             <Reveal>
               <SectionHeading
                 title="Twelve modules. One unified system."
@@ -597,50 +415,14 @@ function ModulesPage() {
                 </Reveal>
               ))}
             </div>
-
-            <div className="mt-20 grid gap-12 border-t border-border pt-20 md:grid-cols-2 md:items-center">
-              <div className="relative overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={biometricImg}
-                  alt="Biometric verification"
-                  className="h-full w-full object-cover aspect-[4/3]"
-                />
-              </div>
-              <div>
+            <div className="mt-24 border-t border-border pt-20">
+              <Reveal>
                 <SectionHeading
-                  title="Every record begins with a verified human."
-                  description="Biometric identity is the foundation. Workers, farmers and field officers are enrolled once, then linked to every activity, payment, and parcel they touch to eliminate ghost records entirely."
+                  title="From rice paddies to rubber estates."
+                  description="FarmIntelytics is crop-aware. Each commodity gets its own growth model, AI detector, and remote-sensing pipeline, so the same platform serves a smallholder cassava farm and a 10,000-hectare palm estate."
                 />
-              </div>
+              </Reveal>
             </div>
-
-            <div className="mt-20 grid gap-12 border-t border-border pt-20 md:grid-cols-2 md:items-center">
-              <div>
-                <SectionHeading
-                  title="A pocket-sized window into the whole farm."
-                  description="Each registered farmer gets a personal app: their plot boundaries, NDVI snapshots, tasks, wallet balance and weather alerts, fully functional on any phone."
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={portalImg}
-                  alt="Farmer mobile portal"
-                  className="h-full w-full object-cover aspect-[4/3]"
-                />
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ─── TAB 2: CROPS COVERED ─── */}
-        {activeTab === "crops" && (
-          <section className="mx-auto max-w-7xl px-6">
-            <Reveal>
-              <SectionHeading
-                title="From rice paddies to rubber estates."
-                description="FarmIntelytics is crop-aware. Each commodity gets its own growth model, AI detector, and remote-sensing pipeline, so the same platform serves a smallholder cassava farm and a 10,000-hectare palm estate."
-              />
-            </Reveal>
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {CROPS.map(({ icon: Icon, name, desc, img }, i) => (
@@ -724,132 +506,8 @@ function ModulesPage() {
               </div>
             </div>
           </section>
-        )}
-
-        {/* ─── TAB 3: MONITORING LAYERS ─── */}
-        {activeTab === "monitoring" && (
-          <section className="mx-auto max-w-7xl px-6">
-            <Reveal>
-              <SectionHeading
-                title="Eight live layers of agricultural monitoring."
-                description="Our platform connects identity, locations, activities, assets, and finance into one verifiable source of truth."
-              />
-            </Reveal>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              {LAYERS.map(({ icon: Icon, title, items, img }, i) => (
-                <Reveal
-                  key={title}
-                  delay={i * 80}
-                  className="flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-smooth hover:border-[#009688]/40 sm:flex-row"
-                >
-                  <div className="relative aspect-[4/3] w-full shrink-0 sm:w-48">
-                    <img src={img} alt={title} className="h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-[#004d40]/10" />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3 text-[#009688]">
-                      <Icon className="h-5 w-5" />
-                      <h4 className="font-sans text-[16px] font-bold text-foreground">{title}</h4>
-                    </div>
-                    <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-semibold text-muted-foreground">
-                      {items.map((it) => (
-                        <li key={it} className="flex items-center gap-1">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#009688]/40" />
-                          {it}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="mt-20 border-t border-border pt-20">
-              <SectionHeading
-                title="In-Season Advisor Channels"
-                description="How we communicate warnings, anomalies, and weather reports directly to the field teams."
-              />
-              <div className="mt-12 grid gap-8 md:grid-cols-3">
-                <div className="rounded-xl border border-border bg-card p-8">
-                  <span className="font-mono text-xs font-bold text-[#009688] uppercase tracking-wider">01 · Real-time SMS</span>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    Auto-triggered messages sent to field crews regarding geofence violations, weather warnings, or harvest scheduling updates.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-8">
-                  <span className="font-mono text-xs font-bold text-[#009688] uppercase tracking-wider">02 · Weather Updates</span>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    Location-tuned daily rainfall index alerts and spraying suitability windows synced directly from orbital parameters.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-8">
-                  <span className="font-mono text-xs font-bold text-[#009688] uppercase tracking-wider">03 · Advisor Bulletins</span>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    Personalized regional advisory updates tailored to local crops and development progress for enrolled smallholders.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ─── TAB 4: DEVELOPER API ─── */}
-        {activeTab === "api" && (
-          <section className="mx-auto max-w-7xl px-6">
-            <Reveal>
-              <SectionHeading
-                title="Build on verified agricultural data."
-                description="Banks underwrite loans on real yields. Insurers price risk on NDVI history. Buyers prove origin cryptographically. The FarmIntelytics API makes any of it integration-ready."
-              />
-            </Reveal>
-
-            <div className="mt-12 grid gap-12 lg:grid-cols-2 items-start">
-              <div className="grid gap-6 sm:grid-cols-2">
-                {API_FEATURES.map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="rounded-xl border border-border bg-card p-6">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#009688]/10 text-[#009688] mb-4">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h4 className="font-sans text-[16px] font-bold text-foreground">{title}</h4>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Interactive Code Console */}
-              <div className="overflow-hidden rounded-xl border border-border bg-foreground text-background">
-                <div className="flex items-center justify-between border-b border-background/10 bg-background/5 px-6 py-4">
-                  <span className="font-mono text-xs text-background/80">API Code Example</span>
-                  <div className="flex gap-2">
-                    {(["curl", "python", "js"] as const).map((lang) => (
-                      <button
-                        key={lang}
-                        onClick={() => setApiLang(lang)}
-                        className={`rounded px-2.5 py-1 font-mono text-xs font-semibold ${
-                          apiLang === lang
-                            ? "bg-primary text-primary-foreground"
-                            : "text-background/60 hover:text-background"
-                        }`}
-                      >
-                        {lang}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <pre className="overflow-x-auto font-mono text-xs text-background/90 leading-relaxed no-scrollbar">
-                    <code>{CODE_EXAMPLES[apiLang]}</code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ─── TAB 5: ARCHITECTURE ─── */}
-        {activeTab === "architecture" && (
-          <section className="mx-auto max-w-7xl px-6">
+        <div className="mt-24 border-t border-border pt-20" />
+        <section className="mx-auto max-w-7xl px-6">
             <Reveal>
               <SectionHeading
                 title="A four-layer system built for scale."
@@ -897,81 +555,7 @@ function ModulesPage() {
               </div>
             </div>
           </section>
-        )}
-
-        {/* ─── TAB 6: USE CASES & ESG ─── */}
-        {activeTab === "use-cases" && (
-          <section className="mx-auto max-w-7xl px-6">
-            <Reveal>
-              <SectionHeading
-                title="Who it's for & how it impacts our planet."
-                description="Agribusinesses, governments, NGOs, and cooperatives deploy FarmIntelytics to scale productivity and verify ESG metrics."
-              />
-            </Reveal>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              {CASES.map(({ icon: Icon, title, desc, metrics }) => (
-                <div key={title} className="rounded-xl border border-border bg-card p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 mb-3 text-[#009688]">
-                      <Icon className="h-5 w-5" />
-                      <h4 className="font-sans text-[16px] font-bold text-foreground">{title}</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-border grid grid-cols-2 gap-4">
-                    {metrics.map(([val, lbl]) => (
-                      <div key={lbl} className="border-l-2 border-[#009688]/20 pl-3">
-                        <div className="text-2xl font-black text-foreground">{val}</div>
-                        <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{lbl}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-20 border-t border-border pt-20">
-              <SectionHeading
-                title="Sustainability & ESG Modeling"
-                description="Fusing AI, climate science, and global compliance standards to measure outcomes accurately."
-              />
-              <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                {SUSTAIN.map(({ img, eyebrow, title, desc }) => (
-                  <div key={title} className="group overflow-hidden rounded-xl border border-border bg-card transition-smooth hover:border-[#009688]/40">
-                    <div className="relative aspect-[16/10] overflow-hidden">
-                      <img src={img} alt={title} className="h-full w-full object-cover" />
-                    </div>
-                    <div className="p-6">
-                      <span className="font-mono text-[9px] font-black uppercase tracking-wider text-[#009688]">{eyebrow}</span>
-                      <h4 className="mt-1 font-sans text-[15px] font-bold text-foreground">{title}</h4>
-                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-20 border-t border-border pt-20">
-              <SectionHeading
-                title="Global Deployments"
-                description="Deployed exactly where and how your organization requires security."
-              />
-              <div className="mt-12 grid gap-8 md:grid-cols-3">
-                {DEPLOY.map(({ img, title, desc }) => (
-                  <div key={title} className="rounded-xl border border-border bg-card p-6">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
-                      <img src={img} alt={title} className="h-full w-full object-cover" />
-                    </div>
-                    <h4 className="font-sans text-[16px] font-bold text-foreground">{title}</h4>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-      </div>
-    </PageShell>
+</div>
+</PageShell>
   );
 }

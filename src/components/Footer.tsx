@@ -15,8 +15,9 @@ export function Footer() {
         <div>
           <h4 className="font-sans text-lg font-bold text-foreground">Platform</h4>
           <ul className="mt-4 space-y-3 text-base">
-            <li><Link to="/modules" search={{ tab: 'overview' }} className="text-muted-foreground hover:text-primary transition-colors">FarmIntelytics (Agriculture)</Link></li>
-            <li><Link to="/mining" className="text-muted-foreground hover:text-primary transition-colors">MineIntelytics (Mining)</Link></li>
+            <li><Link to="/modules" className="text-muted-foreground hover:text-primary transition-colors">FarmIntelytics</Link></li>
+            <li><Link to="/mining" className="text-muted-foreground hover:text-primary transition-colors">MineIntelytics</Link></li>
+            <li><Link to="/suitability" className="text-muted-foreground hover:text-primary transition-colors">SuitabilityIntelytics</Link></li>
           </ul>
         </div>
 

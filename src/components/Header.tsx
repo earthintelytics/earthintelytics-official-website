@@ -43,11 +43,10 @@ function DropdownMenu({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className={`flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold transition-smooth ${
-          isActive
+        className={`flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold transition-smooth ${isActive
             ? "text-primary"
             : "text-muted-foreground hover:text-foreground"
-        }`}
+          }`}
       >
         {label}
         <ChevronDown
@@ -98,6 +97,13 @@ export function Header() {
           <DropdownMenu label="Company" to="/about" items={COMPANY_ITEMS} />
           <DropdownMenu label="Products" to="/products" items={PRODUCTS_ITEMS} />
           <Link
+            to="/use-cases"
+            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
+            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary" }}
+          >
+            Use Cases
+          </Link>
+          <Link
             to="/careers"
             className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
             activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary" }}
@@ -131,7 +137,7 @@ export function Header() {
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
             {[
               { to: "/", label: "Home", exact: true },
-              
+
               { to: "/products", label: "Products", exact: false },
               { to: "/modules", label: "↳ FarmIntelytics", exact: false },
               { to: "/mining", label: "↳ MineIntelytics", exact: false },
@@ -140,7 +146,8 @@ export function Header() {
 
               { to: "/about", label: "Company", exact: false },
               { to: "/partners", label: "↳ Partners", exact: false },
-              
+
+              { to: "/use-cases", label: "Use Cases", exact: false },
               { to: "/careers", label: "Careers", exact: false },
 
               { to: "/contact", label: "Book a Demo", exact: false },

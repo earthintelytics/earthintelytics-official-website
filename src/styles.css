@@ -125,10 +125,10 @@
   --gradient-card: linear-gradient(180deg, oklch(1 0 0), oklch(0.985 0.004 175));
   --gradient-glow: radial-gradient(circle at center, oklch(0.60 0.12 175 / 0.03), transparent 70%);
 
-  /* Shadows removed per request */
-  --shadow-glow: none;
-  --shadow-elevated: none;
-  --shadow-card: none;
+  /* Sharp, modern shadows for crisp UI */
+  --shadow-glow: 0 0 40px -10px oklch(0.60 0.12 175 / 0.4);
+  --shadow-elevated: 0 10px 40px -10px oklch(0.20 0.05 250 / 0.15), 0 0 0 1px oklch(0.92 0.006 250);
+  --shadow-card: 0 4px 20px -5px oklch(0.20 0.05 250 / 0.08), 0 0 0 1px oklch(0.92 0.006 250);
 
   --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }

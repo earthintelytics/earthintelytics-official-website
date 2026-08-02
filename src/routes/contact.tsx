@@ -42,7 +42,7 @@ function ContactPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/40" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
+          <p className="font-sans text-sm font-bold uppercase tracking-[0.25em] text-primary-glow">
             Get in touch
           </p>
           <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] md:text-7xl">
@@ -62,11 +62,11 @@ function ContactPage() {
           {/* Left rail */}
           <div className="space-y-4 md:col-span-2">
             <div className="rounded-xl border border-border bg-card p-7">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-primary">
+              <p className="font-sans text-sm font-bold uppercase tracking-[0.2em] text-primary">
                 Direct lines
               </p>
               <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-                Talk to a real human.
+                Talk to Us
               </h2>
               <p className="mt-3 text-sm font-medium text-foreground/70">
                 For partnerships, pilots or government deployments , pick the channel that
@@ -83,7 +83,7 @@ function ContactPage() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/50">
+                  <div className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-foreground/50">
                     {label}
                   </div>
                   <div className="mt-1 font-display text-base font-bold text-foreground">
@@ -123,7 +123,7 @@ function ContactPage() {
                   <Field label="Phone" name="phone" />
                 </div>
                 <div>
-                  <label className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/70">
+                  <label className="mb-2 block font-sans text-sm font-bold uppercase tracking-[0.15em] text-foreground/70">
                     Type of organisation
                   </label>
                   <select
@@ -139,7 +139,7 @@ function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/70">
+                  <label className="mb-2 block font-sans text-sm font-bold uppercase tracking-[0.15em] text-foreground/70">
                     Which platform are you interested in?
                   </label>
                   <select
@@ -151,7 +151,7 @@ function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/70">
+                  <label className="mb-2 block font-sans text-sm font-bold uppercase tracking-[0.15em] text-foreground/70">
                     Tell us about your needs
                   </label>
                   <textarea
@@ -169,9 +169,6 @@ function ContactPage() {
                   Send message
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
-                <p className="text-center text-xs font-medium text-foreground/60">
-                  We respond within 24 hours · No spam, ever.
-                </p>
               </form>
             )}
           </div>
@@ -194,7 +191,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/70">
+      <label className="mb-2 block font-sans text-sm font-bold uppercase tracking-[0.15em] text-foreground/70">
         {label}
       </label>
       <input
