@@ -43,8 +43,8 @@ export const Route = createRootRoute({
       { name: "description", content: "EarthIntelytics digitizes agriculture and mining operations with satellite, drone, and AI intelligence systems." },
       { property: "og:description", content: "EarthIntelytics digitizes agriculture and mining operations with satellite, drone, and AI intelligence systems." },
       { name: "twitter:description", content: "EarthIntelytics digitizes agriculture and mining operations with satellite, drone, and AI intelligence systems." },
-      { property: "og:image", content: "https://earthintelytics.netlify.app/og-image.jpeg" },
-      { name: "twitter:image", content: "https://earthintelytics.netlify.app/og-image.jpeg" },
+      { property: "og:image", content: "https://earthintelytics.netlify.app/og-logo.png" },
+      { name: "twitter:image", content: "https://earthintelytics.netlify.app/og-logo.png" },
     ],
     links: [
       {
