@@ -38,17 +38,17 @@ export const Route = createFileRoute("/")({
 
 const PRODUCTS = [
   {
-    label: "Agriculture & Crop Analytics",
+    label: "Vegetative Intelligence",
     name: "FarmIntelytics",
-    desc: "Satellite crop monitoring, vegetation index tracking, AI disease detection, and climate intelligence for farming operations.",
+    desc: "Global food security, biomass analysis, and multi-spectral vegetative intelligence suite, AI disease detection, and climate intelligence for farming operations.",
     to: "/modules",
     img: ndviOverlayImg,
     color: "from-emerald-950/80",
   },
   {
-    label: "Mining",
+    label: "Subsurface Intelligence",
     name: "MineIntelytics",
-    desc: "Pit change detection, mineral mapping, tailings dam monitoring, and worker safety from space.",
+    desc: "Topographical displacement mapping, anomaly detection, and secure geofenced perimeter monitoring.",
     to: "/mining",
     img: mineSatelliteImg,
     color: "from-emerald-950/80",
@@ -124,7 +124,7 @@ function HomePage() {
 
           <Reveal delay={200}>
             <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-muted-foreground md:text-xl">
-              EarthIntelytics fuses satellites, drones, AI and IoT sensors into one trusted intelligence platform, for agriculture, mining, climate, and beyond.
+              EarthIntelytics provides defense-grade spatial intelligence, fusing multi-spectral satellite constellations, autonomous drone networks, and IoT telemetry into a centralized operations dashboard.
             </p>
           </Reveal>
 
@@ -165,8 +165,8 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <SectionHeading
-              title="Two Platforms. One Partner to handle the complex layers."
-              description="Deploy verified intelligence across agricultural estates and heavy mining sites. We handle orbital collection, multi-spectral processing, and real-time sensor integration."
+              title="Two Platforms. One Command Center."
+              description="Deploy verified intelligence across vast global estates and critical infrastructure sites. We handle orbital collection, multi-spectral processing, and real-time telemetry integration."
             />
           </Reveal>
 
@@ -196,8 +196,8 @@ function HomePage() {
                 <div className="p-8 flex-1 flex flex-col justify-between">
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {name === "FarmIntelytics" 
-                      ? "Track crops, monitor vegetation health with multi-spectral imagery, calculate carbon offsets, and forecast yield using AI models."
-                      : "Monitor pit excavation volumes, identify high-grade surface geology anomalies, track tailings dam displacement, and enforce geofenced perimeters."}
+                      ? "Execute biomass intelligence operations over vast vegetative zones, calculate carbon sequestration, and forecast global food security using advanced spatial models."
+                      : "Monitor topographical displacement, identify high-grade surface geology anomalies, track asset structural integrity, and enforce secure geofenced perimeters."}
                   </p>
                   <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
                     <Link
@@ -220,17 +220,17 @@ function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <Reveal className="space-y-6">
               <h2 className="font-sans text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-                If you really want to optimize your operations, you have to verify the ground truth.
+                Mission success depends on verified ground truth.
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                EarthIntelytics provides a complete, 360-degree view of your field's biological, spatial, and environmental status. Results are streamed instantly to your command center dashboard, flag alerts for environmental changes, and compile automated compliance reports.
+                EarthIntelytics delivers a comprehensive, 360-degree operational picture of your asset's spatial, topographical, and environmental status. Telemetry is streamed instantly to your command center, autonomously flagging anomalies and generating intelligence reports.
               </p>
               <div className="pt-4">
                 <Link
                   to="/modules"
                   className="inline-flex items-center gap-2 rounded-md bg-[#009688] px-6 py-3.5 text-sm font-bold text-white transition-smooth hover:bg-[#00796B]"
                 >
-                  Learn about Soil & Crop Analytics <ArrowRight className="h-4 w-4" />
+                  Explore Global Intelligence Modules <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </Reveal>
@@ -239,24 +239,24 @@ function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-30" />
               <div className="relative z-10 grid gap-6 sm:grid-cols-2">
                 <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">FarmIntelytics</span>
-                  <div className="mt-3 text-4xl font-black text-foreground">$30/acre</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Average monitoring cost savings</div>
+                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Global Intelligence</span>
+                  <div className="mt-3 text-4xl font-black text-foreground">30%</div>
+                  <div className="mt-1 text-xs text-muted-foreground">Reduction in operational overhead</div>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">FarmIntelytics</span>
+                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Asset Monitoring</span>
                   <div className="mt-3 text-4xl font-black text-foreground">+20%</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Average yield increase from scouting</div>
+                  <div className="mt-1 text-xs text-muted-foreground">Increase in anomaly detection accuracy</div>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">MineIntelytics</span>
+                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Subsurface Intel</span>
                   <div className="mt-3 text-4xl font-black text-foreground">98.5%</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Volumetric excavation accuracy</div>
+                  <div className="mt-1 text-xs text-muted-foreground">Topographical displacement precision</div>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">MineIntelytics</span>
+                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Perimeter Security</span>
                   <div className="mt-3 text-4xl font-black text-foreground">Zero</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Undetected perimeter breaches</div>
+                  <div className="mt-1 text-xs text-muted-foreground">Undetected geofence breaches</div>
                 </div>
               </div>
             </Reveal>

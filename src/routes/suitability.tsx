@@ -51,7 +51,7 @@ const CAPABILITIES = [
   {
     icon: Map,
     title: "Suitability Heatmaps",
-    desc: "Generate multi-criteria spatial heatmaps for infrastructure investment, agricultural planting, or urban development decisions, scoring locations from 0-100.",
+    desc: "Generate multi-criteria spatial heatmaps for restaurant suitability, flood planning, resettlement mapping, crop planning, and infrastructure investment, scoring locations from 0-100.",
   },
 ];
 
@@ -91,7 +91,7 @@ function SuitabilityPage() {
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
-              A comprehensive location intelligence platform with vector overlay uploads and analysis-ready data for infrastructure, agriculture, and urban planning.
+              A comprehensive location intelligence platform with vector overlay uploads and analysis-ready data for restaurant suitability, resettlement mapping, flood planning, crop planning, and infrastructure development.
             </p>
           </Reveal>
           <Reveal delay={360}>
@@ -174,16 +174,13 @@ function SuitabilityPage() {
               </div>
             </Reveal>
             <Reveal delay={120} className="md:col-span-3">
-              <div className="overflow-hidden rounded-xl border border-border shadow-elevated bg-muted">
+              <div className="relative overflow-hidden rounded-xl border border-border">
                 <img
                   src={suitabilityMapImg}
                   alt="Suitability analysis heatmap and layer controls"
                   loading="lazy"
-                  className="w-full object-cover aspect-video mix-blend-screen"
+                  className="w-full object-cover aspect-video"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="bg-background/80 px-4 py-2 rounded-md font-mono text-sm font-bold border border-border backdrop-blur">Map Visualization UI</span>
-                </div>
               </div>
             </Reveal>
           </div>

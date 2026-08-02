@@ -12,7 +12,6 @@ const PRODUCTS_ITEMS = [
 
 const COMPANY_ITEMS = [
   { to: "/about", label: "Who We Are", desc: "Our mission and team" },
-  { to: "/careers", label: "Careers", desc: "Join EarthIntelytics" },
   { to: "/partners", label: "Partners", desc: "Our data and tech ecosystem" },
 ];
 
@@ -98,6 +97,13 @@ export function Header() {
           </Link>
           <DropdownMenu label="Company" to="/about" items={COMPANY_ITEMS} />
           <DropdownMenu label="Products" to="/products" items={PRODUCTS_ITEMS} />
+          <Link
+            to="/careers"
+            className="whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-muted-foreground transition-smooth hover:text-foreground"
+            activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-sans text-[15px] font-semibold text-primary" }}
+          >
+            Careers
+          </Link>
         </nav>
 
         <div className="hidden lg:block">
@@ -133,9 +139,10 @@ export function Header() {
               { to: "/api-docs", label: "↳ API Documentation", exact: false },
 
               { to: "/about", label: "Company", exact: false },
-              { to: "/careers", label: "↳ Careers", exact: false },
               { to: "/partners", label: "↳ Partners", exact: false },
               
+              { to: "/careers", label: "Careers", exact: false },
+
               { to: "/contact", label: "Book a Demo", exact: false },
             ].map((item) => (
               <Link
