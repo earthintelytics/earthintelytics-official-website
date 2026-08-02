@@ -111,7 +111,7 @@ function HomePage() {
           </svg>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-44 w-full">
+        <div className="relative mx-auto max-w-7xl px-6 py-8 md:py-10 md:py-44 w-full">
           <Reveal delay={100}>
             <h1 className="max-w-5xl font-sans text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]">
               See Earth.{" "}
@@ -160,7 +160,7 @@ function HomePage() {
 
 
       {/* ─── TWO PLATFORMS. ONE PARTNER. ─── */}
-      <section className="py-16 bg-surface/30 border-t border-b border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-surface/30 border-t border-b border-border">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <SectionHeading
@@ -214,7 +214,7 @@ function HomePage() {
       </section>
 
       {/* ─── METRICS & INTERACTIVE DISPLAY ─── */}
-      <section className="py-16 bg-background">
+      <section className="py-10 md:py-8 md:py-10 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-6 lg:grid-cols-2 items-center">
             <Reveal className="space-y-6">
@@ -264,7 +264,7 @@ function HomePage() {
       </section>
 
       {/* ─── WHY EARTHINTELYTICS ─── */}
-      <section className="border-t border-border py-16 bg-surface/20">
+      <section className="border-t border-border py-10 md:py-8 md:py-10 bg-surface/20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <SectionHeading
@@ -297,7 +297,7 @@ function HomePage() {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="py-16 bg-background">
+      <section className="py-10 md:py-8 md:py-10 bg-background">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <Reveal>
             <SectionHeading
@@ -350,7 +350,7 @@ function HomePage() {
       </section>
 
       {/* ─── CLIENTS LOGO MARQUEE ─── */}
-      <section className="py-12 bg-surface/50 border-t border-border overflow-hidden">
+      <section className="py-8 md:py-10 bg-surface/50 border-t border-border overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-center font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground mb-10">
             Trusted by organizations worldwide
@@ -372,7 +372,7 @@ function HomePage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="bg-[#0D1B2A] py-16">
+      <section className="bg-[#0D1B2A] py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <Reveal>
             <h2 className="font-sans text-4xl font-extrabold text-white md:text-5xl">

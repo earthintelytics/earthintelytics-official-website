@@ -78,7 +78,7 @@ function SustainabilityPage() {
           <img src={susCarbon} alt="" className="h-full w-full object-cover opacity-45" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/80 to-foreground/30" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-40">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-40">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               The bigger picture
@@ -99,7 +99,7 @@ function SustainabilityPage() {
       </section>
 
       {/* Blockchain , bold split */}
-      <section className="py-16">
+      <section className="py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-6 md:grid-cols-12">
             <div className="md:col-span-5">
@@ -132,7 +132,7 @@ function SustainabilityPage() {
       </section>
 
       {/* Sustainability cards , image-led */}
-      <section className="border-t border-border bg-surface/40 py-16">
+      <section className="border-t border-border bg-surface/40 py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">Climate & sustainability</p>
@@ -169,7 +169,7 @@ function SustainabilityPage() {
       </section>
 
       {/* AI Suite , bold cards with images */}
-      <section className="py-16">
+      <section className="py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">AI on the ground</p>
@@ -205,7 +205,7 @@ function SustainabilityPage() {
       </section>
 
       {/* Deployment , large image cards */}
-      <section className="border-t border-border bg-foreground py-16 text-background">
+      <section className="border-t border-border bg-foreground py-10 md:py-8 md:py-10 text-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">Deploy your way</p>

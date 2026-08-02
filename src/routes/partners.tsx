@@ -65,7 +65,7 @@ function PartnersPage() {
   return (
     <PageShell>
       <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               The Ecosystem
@@ -84,7 +84,7 @@ function PartnersPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-background">
+      <section className="py-10 md:py-8 md:py-10 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Data Providers"
@@ -119,7 +119,7 @@ function PartnersPage() {
         </div>
       </section>
 
-      <section className="py-16 border-t border-border bg-surface/40">
+      <section className="py-10 md:py-8 md:py-10 border-t border-border bg-surface/40">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Hardware & Compute"

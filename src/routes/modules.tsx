@@ -352,7 +352,7 @@ function ModulesPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-cover bg-center border-b border-border text-white" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
         <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-12 md:grid-cols-5 md:items-center md:py-16">
+        <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-8 md:py-10 md:grid-cols-5 md:items-center md:py-10 md:py-8 md:py-10">
           <div className="md:col-span-3">
             <Reveal>
               <h1 className="font-display text-4xl sm:text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
@@ -379,7 +379,7 @@ function ModulesPage() {
       
 
       {/* Tab Contents */}
-      <div className="py-16 min-h-[50vh]">
+      <div className="py-10 md:py-8 md:py-10 min-h-[50vh]">
         <section className="mx-auto max-w-7xl px-6">
             <Reveal>
               <SectionHeading
@@ -558,7 +558,7 @@ function ModulesPage() {
           </section>
 
           {/* TESTIMONIALS */}
-          <section className="py-16 bg-surface/30 border-t border-border">
+          <section className="py-10 md:py-8 md:py-10 bg-surface/30 border-t border-border">
             <div className="mx-auto max-w-7xl px-6 text-center">
               <SectionHeading
                 title="What our partners say"

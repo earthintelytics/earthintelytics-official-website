@@ -42,7 +42,7 @@ function ContactPage() {
           <img src={contactImg} alt="" className="h-full w-full object-cover object-top" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/40" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10">
           <p className="font-sans text-sm font-bold uppercase tracking-[0.25em] text-primary-glow">
             Get in touch
           </p>
@@ -58,7 +58,7 @@ function ContactPage() {
       </section>
 
       {/* Form + contact rail */}
-      <section className="border-t border-border py-16">
+      <section className="border-t border-border py-10 md:py-8 md:py-10">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-5">
           {/* Left rail */}
           <div className="space-y-4 md:col-span-2">

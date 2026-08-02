@@ -113,7 +113,7 @@ function UseCasesPage() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#009688]/20 via-transparent to-transparent opacity-50" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12 z-10">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10 z-10">
           <Reveal>
             <p className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#009688] mb-4">
               Intelligence Applications
@@ -134,7 +134,7 @@ function UseCasesPage() {
       </section>
 
       {/* Grid section */}
-      <section className="py-16 bg-background border-t border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Global Capabilities"
@@ -167,7 +167,7 @@ function UseCasesPage() {
       </section>
 
       {/* ESG Section */}
-      <section className="py-16 bg-surface/40 border-t border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-surface/40 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="ESG & Verification"
@@ -197,7 +197,7 @@ function UseCasesPage() {
       </section>
 
       {/* Deployments Section */}
-      <section className="py-16 bg-background border-t border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Architecture"

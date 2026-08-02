@@ -82,7 +82,7 @@ function MiningPage() {
     <PageShell>
       {/* Hero section, white background */}
       <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               MineIntelytics
@@ -119,7 +119,7 @@ function MiningPage() {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-16 bg-background">
+      <section className="py-10 md:py-8 md:py-10 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Core Features"
@@ -152,7 +152,7 @@ function MiningPage() {
       </section>
 
       {/* Visual showcase */}
-      <section className="py-16 border-t border-border bg-surface/40">
+      <section className="py-10 md:py-8 md:py-10 border-t border-border bg-surface/40">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-6 md:grid-cols-5 md:items-center">
             <Reveal className="md:col-span-2">
@@ -193,7 +193,7 @@ function MiningPage() {
       </section>
 
       {/* Workflow */}
-      <section className="py-16 bg-background border-t border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="The Workflow"
@@ -223,7 +223,7 @@ function MiningPage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-16 bg-surface/30 border-t border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-surface/30 border-t border-border">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <SectionHeading
             title="What our partners say"
@@ -273,7 +273,7 @@ function MiningPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-primary py-16 text-center">
+      <section className="border-t border-border bg-primary py-10 md:py-8 md:py-10 text-center">
         <div className="mx-auto max-w-4xl px-6">
           <h3 className="font-display text-3xl font-extrabold text-primary-foreground md:text-5xl">
             Integrate MineIntelytics today

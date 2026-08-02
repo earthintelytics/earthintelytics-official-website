@@ -53,7 +53,7 @@ function AboutPage() {
     <PageShell>
       {/* Hero */}
       <section className="relative overflow-hidden bg-cover bg-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               Who We Are
@@ -74,7 +74,7 @@ function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16 border-b border-border">
+      <section className="py-10 md:py-8 md:py-10 border-b border-border">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 md:grid-cols-2 md:items-start">
             <Reveal>
@@ -102,7 +102,7 @@ function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 bg-background">
+      <section className="py-10 md:py-8 md:py-10 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Our Values"
@@ -135,7 +135,7 @@ function AboutPage() {
       </section>
 
       {/* Platform scope */}
-      <section className="py-16 bg-surface/40 border-t border-border">
+      <section className="py-10 md:py-8 md:py-10 bg-surface/40 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="What We Cover"
@@ -172,7 +172,7 @@ function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-primary py-16 text-center">
+      <section className="border-t border-border bg-primary py-10 md:py-8 md:py-10 text-center">
         <div className="mx-auto max-w-3xl px-6">
           <h3 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl">
             Ready to see what EarthIntelytics can do?

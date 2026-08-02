@@ -83,7 +83,7 @@ function CropsPage() {
     <PageShell>
       <section className="relative overflow-hidden bg-hero">
         <div className="absolute inset-0 grid-pattern opacity-50" />
-        <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-16 md:grid-cols-5 md:items-center md:py-12">
+        <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-10 md:py-8 md:py-10 md:grid-cols-5 md:items-center md:py-8 md:py-10">
           <div className="md:col-span-2">
             <SectionHeading
               eyebrow="Crops we cover"
@@ -107,7 +107,7 @@ function CropsPage() {
       </section>
 
       {/* Image-led crop grid */}
-      <section className="py-16">
+      <section className="py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {CROPS.map(({ icon: Icon, name, desc, img }, i) => (
@@ -139,7 +139,7 @@ function CropsPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface/40 py-16">
+      <section className="border-t border-border bg-surface/40 py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Remote sensing & GeoAI"
@@ -183,7 +183,7 @@ function CropsPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-xl border border-border bg-card p-10 shadow-card md:p-14">
             <div className="flex flex-col gap-6 md:flex-row md:items-center">

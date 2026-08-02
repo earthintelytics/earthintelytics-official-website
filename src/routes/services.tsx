@@ -78,7 +78,7 @@ function DeveloperPage() {
           <img src={apiImg} alt="" className="h-full w-full object-cover opacity-35" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/85 to-foreground/40" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               Developer platform
@@ -115,7 +115,7 @@ function DeveloperPage() {
       </section>
 
       {/* Endpoints showcase */}
-      <section id="endpoints" className="py-16">
+      <section id="endpoints" className="py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-6 md:grid-cols-12">
             <div className="md:col-span-5">
@@ -178,7 +178,7 @@ function DeveloperPage() {
       </section>
 
       {/* API features grid */}
-      <section className="border-t border-border bg-surface/40 py-16">
+      <section className="border-t border-border bg-surface/40 py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
@@ -211,7 +211,7 @@ function DeveloperPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-foreground py-16 text-background">
+      <section className="border-t border-border bg-foreground py-10 md:py-8 md:py-10 text-background">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <Boxes className="mx-auto h-10 w-10 text-primary-glow" />
           <h3 className="mt-6 font-display text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">

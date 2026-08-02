@@ -28,7 +28,7 @@ function ApiDocsPage() {
   return (
     <PageShell>
       <section className="relative overflow-hidden bg-cover bg-center min-h-[80vh] flex flex-col justify-center border-b border-border" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${heroBg})` }}>
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
             <Reveal>

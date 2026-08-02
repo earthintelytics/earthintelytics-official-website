@@ -81,7 +81,7 @@ function ArchitecturePage() {
           <img src={archIntelligence} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/85 to-foreground" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-8 md:py-10 md:py-8 md:py-10">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               Under the hood
@@ -103,7 +103,7 @@ function ArchitecturePage() {
       </section>
 
       {/* Layers , bold image-led with massive numbers */}
-      <section className="py-16">
+      <section className="py-10 md:py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="space-y-20 md:space-y-32">
             {LAYERS.map(({ n, icon: Icon, label, tagline, items, img }, i) => (
@@ -163,7 +163,7 @@ function ArchitecturePage() {
       </section>
 
       {/* Principles , bold dark band */}
-      <section className="border-t border-border bg-foreground py-16 text-background">
+      <section className="border-t border-border bg-foreground py-10 md:py-8 md:py-10 text-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
