@@ -1,0 +1,158 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageShell } from "@/components/PageShell";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
+import { Cpu, ShieldCheck } from "lucide-react";
+
+export const Route = createFileRoute("/partners")({
+  head: () => ({
+    meta: [
+      { title: "Partners & Data Providers | EarthIntelytics" },
+      {
+        name: "description",
+        content:
+          "EarthIntelytics is powered by industry-leading open source satellite constellations and global data providers.",
+      },
+    ],
+  }),
+  component: PartnersPage,
+});
+
+const DATA_PROVIDERS = [
+  {
+    name: "Copernicus Sentinel (ESA)",
+    type: "Optical & Radar Satellites",
+    desc: "Provides our baseline multi-spectral optical data and C-band Synthetic Aperture Radar (SAR) imagery for continuous global monitoring.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Copernicus_logo.svg",
+  },
+  {
+    name: "Landsat (USGS/NASA)",
+    type: "Multi-Spectral Optical",
+    desc: "Decades of historical archive and continuous medium-resolution thermal and multi-spectral imagery for baseline climate models.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1c/USGS_logo.svg",
+  },
+  {
+    name: "FAO GAEZ",
+    type: "Suitability Indices",
+    desc: "Global Agro-Ecological Zones framework providing the baseline models for our crop suitability and climate adaptation algorithms.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/0/00/FAO_logo.svg",
+  },
+  {
+    name: "OpenStreetMap",
+    type: "Vector Infrastructure",
+    desc: "Open source community-driven mapping data providing the foundational road, building, and hydrology vectors for our dashboards.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg",
+  },
+];
+
+const TECH_PARTNERS = [
+  {
+    name: "IoT Sensor Grids",
+    type: "Ground Truth Hardware",
+    desc: "Integrated weather stations and soil moisture probes that stream live environmental data to calibrate our orbital models.",
+    icon: Cpu,
+  },
+  {
+    name: "Cloud Infrastructure Partners",
+    type: "Secure Processing",
+    desc: "High-performance edge and cloud computing that processes terabytes of multi-spectral data securely.",
+    icon: ShieldCheck,
+  },
+];
+
+function PartnersPage() {
+  return (
+    <PageShell>
+      <section className="relative overflow-hidden bg-background border-b border-border">
+        <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+          <Reveal>
+            <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
+              The Ecosystem
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <h1 className="max-w-4xl font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-foreground md:text-7xl">
+              Powered by the world's <span className="text-primary">best data.</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={240}>
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+              Our platform ingests feeds from the world’s leading satellite constellations, open data frameworks, and hardware manufacturers. We do the heavy lifting of fusing this data so you don't have to.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHeading
+            eyebrow="Data Providers"
+            title="Satellite & Open Data Partners"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+            {DATA_PROVIDERS.map((partner, i) => {
+              return (
+                <Reveal
+                  key={partner.name}
+                  delay={i * 100}
+                  className="flex flex-col sm:flex-row gap-8 rounded-2xl bg-white p-8 shadow-2xl transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,150,136,0.3)]"
+                >
+                  <div className="flex h-20 w-24 shrink-0 items-center justify-center overflow-hidden">
+                    <img src={partner.logoUrl} alt={partner.name} className="h-full w-full object-contain mix-blend-multiply drop-shadow-sm" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-extrabold text-slate-900">
+                      {partner.name}
+                    </h3>
+                    <p className="mt-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#009688]">
+                      {partner.type}
+                    </p>
+                    <p className="mt-4 text-[15px] leading-relaxed text-slate-600 font-medium">
+                      {partner.desc}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 border-t border-border bg-surface/40">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHeading
+            eyebrow="Hardware & Compute"
+            title="Technology Integrations"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {TECH_PARTNERS.map((partner, i) => {
+              const Icon = partner.icon;
+              return (
+                <Reveal
+                  key={partner.name}
+                  delay={i * 100}
+                  className="flex gap-6 rounded-2xl border border-border bg-background p-8 transition-smooth hover:border-primary/40 shadow-sm"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-bold text-foreground">
+                      {partner.name}
+                    </h3>
+                    <p className="mt-1 font-mono text-xs font-bold uppercase text-primary">
+                      {partner.type}
+                    </p>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                      {partner.desc}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </PageShell>
+  );
+}

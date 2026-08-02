@@ -7,16 +7,16 @@ import contactImg from "@/assets/real/farmer-portrait.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact · FarmIntelytics" },
+      { title: "Contact · EarthIntelytics" },
       {
         name: "description",
         content:
-          "Talk to the FarmIntelytics team about deploying the platform for your organisation, program or cooperative.",
+          "Talk to the EarthIntelytics team about deploying the platform for your organisation, program or cooperative.",
       },
-      { property: "og:title", content: "Contact FarmIntelytics" },
+      { property: "og:title", content: "Contact EarthIntelytics" },
       {
         property: "og:description",
-        content: "Request a demo or discuss a deployment with the FarmIntelytics team.",
+        content: "Request a demo or discuss a deployment with the EarthIntelytics team.",
       },
       { property: "og:image", content: contactImg },
     ],
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const CONTACT_INFO = [
-  { icon: Mail, label: "Email", value: "hello@farmintelytics.com" },
+  { icon: Mail, label: "Email", value: "hello@earthintelytics.com" },
   { icon: Phone, label: "Phone", value: "+234 (0) 800 INTELY" },
   { icon: MapPin, label: "Office", value: "Lagos · Accra · Nairobi" },
 ];
@@ -136,6 +136,18 @@ function ContactPage() {
                     <option>Farmer cooperative</option>
                     <option>Bank / Insurer</option>
                     <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/70">
+                    Which platform are you interested in?
+                  </label>
+                  <select
+                    name="platform"
+                    className="w-full rounded-md border-2 border-border bg-background px-3 py-3 font-display text-sm font-semibold text-foreground outline-none transition-smooth focus:border-primary"
+                  >
+                    <option>FarmIntelytics (Agriculture)</option>
+                    <option>MineIntelytics (Mining)</option>
                   </select>
                 </div>
                 <div>
