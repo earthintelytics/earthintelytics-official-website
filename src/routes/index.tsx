@@ -213,56 +213,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ─── METRICS & INTERACTIVE DISPLAY ─── */}
-      <section className="py-10 md:py-8 md:py-10 bg-background">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-6 lg:grid-cols-2 items-center">
-            <Reveal className="space-y-6">
-              <h2 className="font-sans text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-                Mission success depends on verified ground truth.
-              </h2>
-              <p className="text-base text-muted-foreground leading-normal">
-                EarthIntelytics delivers a comprehensive, 360-degree operational picture of your asset's spatial, topographical, and environmental status. Telemetry is streamed instantly to your command center, autonomously flagging anomalies and generating intelligence reports.
-              </p>
-              <div className="pt-4">
-                <Link
-                  to="/modules"
-                  className="inline-flex items-center gap-2 rounded-md bg-[#009688] px-6 py-3.5 text-sm font-bold text-white transition-smooth hover:bg-[#00796B]"
-                >
-                  Explore Global Intelligence Modules <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </Reveal>
-
-            <Reveal delay={120} className="relative rounded-2xl border border-border bg-surface p-8 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-30" />
-              <div className="relative z-10 grid gap-6 sm:grid-cols-2">
-                <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Global Intelligence</span>
-                  <div className="mt-3 text-4xl font-black text-foreground">30%</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Reduction in operational overhead</div>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Asset Monitoring</span>
-                  <div className="mt-3 text-4xl font-black text-foreground">+20%</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Increase in anomaly detection accuracy</div>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Subsurface Intel</span>
-                  <div className="mt-3 text-4xl font-black text-foreground">98.5%</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Topographical displacement precision</div>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                  <span className="font-mono text-xs font-bold text-primary uppercase tracking-wider">Perimeter Security</span>
-                  <div className="mt-3 text-4xl font-black text-foreground">Zero</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Undetected geofence breaches</div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* ─── WHY EARTHINTELYTICS ─── */}
       <section className="border-t border-border py-10 md:py-8 md:py-10 bg-surface/20">
         <div className="mx-auto max-w-7xl px-6">
