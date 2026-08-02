@@ -64,7 +64,7 @@ function PartnersPage() {
   return (
     <PageShell>
       <section className="relative overflow-hidden bg-background border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               The Ecosystem
@@ -76,26 +76,26 @@ function PartnersPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
               Our platform ingests feeds from the world’s leading satellite constellations, open data frameworks, and hardware manufacturers. We do the heavy lifting of fusing this data so you don't have to.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="py-24 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Data Providers"
             title="Satellite & Open Data Partners"
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
             {DATA_PROVIDERS.map((partner, i) => {
               return (
                 <Reveal
                   key={partner.name}
                   delay={i * 100}
-                  className="flex flex-col sm:flex-row gap-8 rounded-2xl bg-white p-8 shadow-2xl transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,150,136,0.3)]"
+                  className="flex flex-col sm:flex-row gap-6 rounded-2xl bg-white p-8 shadow-2xl transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,150,136,0.3)]"
                 >
                   <div className="flex h-20 w-24 shrink-0 items-center justify-center overflow-hidden">
                     <img src={partner.logoUrl} alt={partner.name} className="h-full w-full object-contain mix-blend-multiply drop-shadow-sm" />
@@ -107,7 +107,7 @@ function PartnersPage() {
                     <p className="mt-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#009688]">
                       {partner.type}
                     </p>
-                    <p className="mt-4 text-[15px] leading-relaxed text-slate-600 font-medium">
+                    <p className="mt-4 text-[15px] leading-normal text-slate-600 font-medium">
                       {partner.desc}
                     </p>
                   </div>
@@ -118,13 +118,13 @@ function PartnersPage() {
         </div>
       </section>
 
-      <section className="py-24 border-t border-border bg-surface/40">
+      <section className="py-16 border-t border-border bg-surface/40">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Hardware & Compute"
             title="Technology Integrations"
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {TECH_PARTNERS.map((partner, i) => {
               const Icon = partner.icon;
               return (
@@ -143,7 +143,7 @@ function PartnersPage() {
                     <p className="mt-1 font-mono text-xs font-bold uppercase text-primary">
                       {partner.type}
                     </p>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-4 text-sm leading-normal text-muted-foreground">
                       {partner.desc}
                     </p>
                   </div>

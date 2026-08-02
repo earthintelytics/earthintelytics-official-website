@@ -77,7 +77,7 @@ function DeveloperPage() {
           <img src={apiImg} alt="" className="h-full w-full object-cover opacity-35" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/85 to-foreground/40" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               Developer platform
@@ -90,7 +90,7 @@ function DeveloperPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-background/85 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg font-medium leading-normal text-background/85 md:text-xl">
               Banks underwrite loans on real yields. Insurers price risk on NDVI history. Buyers prove origin cryptographically. The FarmIntelytics API makes any of it shippable in days.
             </p>
           </Reveal>
@@ -114,9 +114,9 @@ function DeveloperPage() {
       </section>
 
       {/* Endpoints showcase */}
-      <section id="endpoints" className="py-24">
+      <section id="endpoints" className="py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 md:grid-cols-12">
+          <div className="grid items-center gap-6 md:grid-cols-12">
             <div className="md:col-span-5">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
                 The agriculture data layer
@@ -143,7 +143,7 @@ function DeveloperPage() {
             </div>
 
             <div className="md:col-span-7">
-              <div className="overflow-hidden rounded-2xl border border-foreground/10 bg-foreground p-6 font-mono text-xs leading-relaxed text-background/90 shadow-elevated md:text-sm">
+              <div className="overflow-hidden rounded-2xl border border-foreground/10 bg-foreground p-6 font-mono text-xs leading-normal text-background/90 shadow-elevated md:text-sm">
                 <div className="mb-3 flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
                   <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
@@ -177,7 +177,7 @@ function DeveloperPage() {
       </section>
 
       {/* API features grid */}
-      <section className="border-t border-border bg-surface/40 py-24">
+      <section className="border-t border-border bg-surface/40 py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
@@ -187,7 +187,7 @@ function DeveloperPage() {
               Everything a serious integration needs.
             </h2>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {API_FEATURES.map(({ icon: Icon, title, desc }, i) => (
               <Reveal
                 key={title}
@@ -200,7 +200,7 @@ function DeveloperPage() {
                 <h3 className="font-display text-xl font-extrabold tracking-[-0.02em] text-foreground">
                   {title}
                 </h3>
-                <p className="mt-2 text-sm font-medium leading-relaxed text-foreground/70">
+                <p className="mt-2 text-sm font-medium leading-normal text-foreground/70">
                   {desc}
                 </p>
               </Reveal>
@@ -210,7 +210,7 @@ function DeveloperPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-foreground py-24 text-background">
+      <section className="border-t border-border bg-foreground py-16 text-background">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <Boxes className="mx-auto h-10 w-10 text-primary-glow" />
           <h3 className="mt-6 font-display text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">

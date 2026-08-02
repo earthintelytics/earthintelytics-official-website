@@ -125,7 +125,7 @@ function MonitoringPage() {
           <img src={controlroom} alt="" className="h-full w-full object-cover opacity-40" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/85 to-foreground/40" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               Multi-layer intelligence
@@ -138,7 +138,7 @@ function MonitoringPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-background/85 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg font-medium leading-normal text-background/85 md:text-xl">
               People, plants, weather, equipment, money and movement , unified through one identity and one map, in real time.
             </p>
           </Reveal>
@@ -146,7 +146,7 @@ function MonitoringPage() {
       </section>
 
       {/* Layer cards , image first, bold typography */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-6 md:grid-cols-2">
             {LAYERS.map(({ icon: Icon, title, items, img }, i) => (
@@ -191,7 +191,7 @@ function MonitoringPage() {
       </section>
 
       {/* Closed loop strip */}
-      <section className="border-t border-border bg-foreground py-20 text-background">
+      <section className="border-t border-border bg-foreground py-12 text-background">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">The closed loop</p>
           <h2 className="mt-5 font-display text-4xl font-extrabold tracking-[-0.04em] text-background md:text-6xl">
@@ -204,9 +204,9 @@ function MonitoringPage() {
       </section>
 
       {/* Farm Advisor, part of monitoring */}
-      <section className="border-t border-border py-24">
+      <section className="border-t border-border py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 md:grid-cols-12">
+          <div className="grid items-center gap-6 md:grid-cols-12">
             <div className="md:col-span-5">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
                 Farm Advisor
@@ -245,7 +245,7 @@ function MonitoringPage() {
             </div>
           </div>
 
-          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ADVISOR.map(({ icon: Icon, title, desc, img }, i) => (
               <Reveal
                 key={title}
@@ -269,12 +269,12 @@ function MonitoringPage() {
                     {title}
                   </h3>
                 </div>
-                <p className="p-5 text-sm font-medium leading-relaxed text-foreground/75">{desc}</p>
+                <p className="p-5 text-sm font-medium leading-normal text-foreground/75">{desc}</p>
               </Reveal>
             ))}
           </div>
 
-          <div className="mt-14 grid gap-10 md:grid-cols-12 md:items-center">
+          <div className="mt-14 grid gap-6 md:grid-cols-12 md:items-center">
             <div className="md:col-span-5">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">What a farmer receives</p>
               <h3 className="mt-4 font-display text-3xl font-extrabold tracking-[-0.04em] text-foreground md:text-4xl">
@@ -299,7 +299,7 @@ function MonitoringPage() {
       </section>
 
       {/* Dashboard preview */}
-      <section className="border-t border-border py-24">
+      <section className="border-t border-border py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">Operator portal</p>

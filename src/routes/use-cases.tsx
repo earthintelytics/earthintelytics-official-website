@@ -112,7 +112,7 @@ function UseCasesPage() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#009688]/20 via-transparent to-transparent opacity-50" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-36 z-10">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12 z-10">
           <Reveal>
             <p className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#009688] mb-4">
               Intelligence Applications
@@ -125,7 +125,7 @@ function UseCasesPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-slate-300 md:text-xl">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-slate-300 md:text-xl">
               From commercial site selection to disaster mitigation, EarthIntelytics provides the verified ground truth required for mission-critical operations and global ESG compliance.
             </p>
           </Reveal>
@@ -133,14 +133,14 @@ function UseCasesPage() {
       </section>
 
       {/* Grid section */}
-      <section className="py-28 bg-background border-t border-border">
+      <section className="py-16 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Global Capabilities"
             title="Operational Use Cases"
             description="Our multi-spectral satellite constellations and autonomous telemetry systems power intelligence across diverse sectors."
           />
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {USE_CASES.map((uc, i) => {
               const Icon = uc.icon;
               return (
@@ -155,7 +155,7 @@ function UseCasesPage() {
                   <h3 className="font-display text-xl font-bold text-foreground group-hover:text-[#009688] transition-colors">
                     {uc.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 text-sm leading-normal text-muted-foreground">
                     {uc.desc}
                   </p>
                 </Reveal>
@@ -166,14 +166,14 @@ function UseCasesPage() {
       </section>
 
       {/* ESG Section */}
-      <section className="py-28 bg-surface/40 border-t border-border">
+      <section className="py-16 bg-surface/40 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="ESG & Verification"
             title="Sustainability Modeling"
             description="Fusing AI, climate science, and global compliance standards to measure outcomes accurately."
           />
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {SUSTAIN.map((s, i) => (
               <Reveal
                 key={s.title}
@@ -187,7 +187,7 @@ function UseCasesPage() {
                 <div className="p-6 relative">
                   <span className="font-mono text-[9px] font-black uppercase tracking-wider text-[#009688]">{s.eyebrow}</span>
                   <h4 className="mt-2 font-sans text-[16px] font-bold text-foreground">{s.title}</h4>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <p className="mt-2 text-xs text-muted-foreground leading-normal">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -196,14 +196,14 @@ function UseCasesPage() {
       </section>
 
       {/* Deployments Section */}
-      <section className="py-28 bg-background border-t border-border">
+      <section className="py-16 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Architecture"
             title="Global Deployments"
             description="Deployed exactly where and how your organization requires security."
           />
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {DEPLOY.map((d, i) => (
               <Reveal
                 key={d.title}
@@ -214,7 +214,7 @@ function UseCasesPage() {
                   <img src={d.img} alt={d.title} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
                 </div>
                 <h4 className="font-sans text-[18px] font-bold text-foreground">{d.title}</h4>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+                <p className="mt-3 text-sm text-muted-foreground leading-normal">{d.desc}</p>
               </Reveal>
             ))}
           </div>

@@ -78,7 +78,7 @@ function SuitabilityPage() {
     <PageShell>
       {/* Hero section, white background */}
       <section className="relative overflow-hidden bg-background border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               SuitabilityIntelytics
@@ -90,7 +90,7 @@ function SuitabilityPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
               A comprehensive location intelligence platform with vector overlay uploads and analysis-ready data for restaurant suitability, resettlement mapping, flood planning, crop planning, and infrastructure development.
             </p>
           </Reveal>
@@ -114,14 +114,14 @@ function SuitabilityPage() {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-28 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Core Features"
             title="Smarter land planning. Better yields."
             description="SuitabilityIntelytics connects analysis-ready data with powerful visualization tools, allowing you to evaluate land suitability across multiple criteria effortlessly."
           />
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {CAPABILITIES.map((cap, i) => {
               const Icon = cap.icon;
               return (
@@ -136,7 +136,7 @@ function SuitabilityPage() {
                   <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {cap.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 text-sm leading-normal text-muted-foreground">
                     {cap.desc}
                   </p>
                 </Reveal>
@@ -147,9 +147,9 @@ function SuitabilityPage() {
       </section>
 
       {/* Visual showcase */}
-      <section className="py-28 border-t border-border bg-surface/40">
+      <section className="py-16 border-t border-border bg-surface/40">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-5 md:items-center">
+          <div className="grid gap-6 md:grid-cols-5 md:items-center">
             <Reveal className="md:col-span-2">
               <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-primary">
                 Multi-Criteria Analysis
@@ -157,7 +157,7 @@ function SuitabilityPage() {
               <h2 className="mt-4 font-display text-4xl font-extrabold text-foreground leading-tight">
                 Evaluate suitability with unparalleled precision.
               </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed">
+              <p className="mt-6 text-muted-foreground leading-normal">
                 Overlay your custom boundaries on top of analysis-ready datasets. We integrate OGC-compliant WMS/WCS endpoints directly from global authorities to power your decisions.
               </p>
               <div className="mt-8 space-y-4">
@@ -188,14 +188,14 @@ function SuitabilityPage() {
       </section>
 
       {/* Workflow */}
-      <section className="py-28 bg-background border-t border-border">
+      <section className="py-16 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="The Workflow"
             title="From data to decision"
             description="Our analysis pipeline ensures you receive actionable insights without dealing with raw geospatial complexity."
           />
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {WORKFLOW.map((flow, i) => (
               <Reveal
                 key={flow.step}
@@ -208,7 +208,7 @@ function SuitabilityPage() {
                 <h3 className="font-display text-lg font-bold text-foreground pr-10">
                   {flow.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm leading-normal text-muted-foreground">
                   {flow.desc}
                 </p>
               </Reveal>
@@ -218,7 +218,7 @@ function SuitabilityPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-primary py-24 text-center">
+      <section className="border-t border-border bg-primary py-16 text-center">
         <div className="mx-auto max-w-4xl px-6">
           <h3 className="font-display text-3xl font-extrabold text-primary-foreground md:text-5xl">
             Start planning with SuitabilityIntelytics

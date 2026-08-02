@@ -52,7 +52,7 @@ function AboutPage() {
     <PageShell>
       {/* Hero */}
       <section className="relative overflow-hidden bg-background border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               Who We Are
@@ -65,7 +65,7 @@ function AboutPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
               EarthIntelytics was built with a single conviction: that the world's most critical decisions, in agriculture, mining, climate, and security, deserve the best possible intelligence. We are building the platform to make that a reality.
             </p>
           </Reveal>
@@ -73,7 +73,7 @@ function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-28 border-b border-border">
+      <section className="py-16 border-b border-border">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 md:grid-cols-2 md:items-start">
             <Reveal>
@@ -81,10 +81,10 @@ function AboutPage() {
                 eyebrow="Our Mission"
                 title="Transforming Earth data into intelligence."
               />
-              <p className="mt-6 text-muted-foreground leading-relaxed">
+              <p className="mt-6 text-muted-foreground leading-normal">
                 We fuse satellite imagery, drone data, IoT sensors, AI models, and biometric verification into one unified platform. Our mission is to give operators, governments, and enterprises a verified, real-time picture of the physical world, so they can make better decisions, faster.
               </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
+              <p className="mt-4 text-muted-foreground leading-normal">
                 We are inspired by the ambition of Palantir and Planet Labs, but built for the Earth observation challenges unique to emerging and frontier markets across Africa, Asia, and beyond.
               </p>
             </Reveal>
@@ -101,14 +101,14 @@ function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-28 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Our Values"
             title="What drives every decision we make."
             align="center"
           />
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((v, i) => {
               const Icon = v.icon;
               return (
@@ -123,7 +123,7 @@ function AboutPage() {
                   <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {v.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 text-sm leading-normal text-muted-foreground">
                     {v.desc}
                   </p>
                 </Reveal>
@@ -134,7 +134,7 @@ function AboutPage() {
       </section>
 
       {/* Platform scope */}
-      <section className="py-28 bg-surface/40 border-t border-border">
+      <section className="py-16 bg-surface/40 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="What We Cover"
@@ -171,7 +171,7 @@ function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-primary py-24 text-center">
+      <section className="border-t border-border bg-primary py-16 text-center">
         <div className="mx-auto max-w-3xl px-6">
           <h3 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl">
             Ready to see what EarthIntelytics can do?

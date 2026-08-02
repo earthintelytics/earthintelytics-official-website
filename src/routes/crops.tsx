@@ -82,7 +82,7 @@ function CropsPage() {
     <PageShell>
       <section className="relative overflow-hidden bg-hero">
         <div className="absolute inset-0 grid-pattern opacity-50" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-5 md:items-center md:py-32">
+        <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-16 md:grid-cols-5 md:items-center md:py-12">
           <div className="md:col-span-2">
             <SectionHeading
               eyebrow="Crops we cover"
@@ -106,7 +106,7 @@ function CropsPage() {
       </section>
 
       {/* Image-led crop grid */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {CROPS.map(({ icon: Icon, name, desc, img }, i) => (
@@ -129,7 +129,7 @@ function CropsPage() {
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-5">
                     <h3 className="font-display text-2xl font-bold tracking-tight text-background">{name}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-background/80">{desc}</p>
+                    <p className="mt-1.5 text-xs leading-normal text-background/80">{desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -138,7 +138,7 @@ function CropsPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface/40 py-24">
+      <section className="border-t border-border bg-surface/40 py-16">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Remote sensing & GeoAI"
@@ -161,7 +161,7 @@ function CropsPage() {
             ))}
           </div>
 
-          <Reveal delay={200} className="mt-12 overflow-hidden rounded-xl border border-border bg-white shadow-elevated">
+          <Reveal delay={200} className="mt-8 overflow-hidden rounded-xl border border-border bg-white shadow-elevated">
             <img
               src={satImg}
               alt="NDVI vegetation health satellite map showing color-coded crop blocks"
@@ -182,7 +182,7 @@ function CropsPage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-xl border border-border bg-card p-10 shadow-card md:p-14">
             <div className="flex flex-col gap-6 md:flex-row md:items-center">

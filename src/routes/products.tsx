@@ -25,7 +25,7 @@ function ProductsPage() {
   return (
     <PageShell>
       <section className="relative overflow-hidden bg-background border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               Our Products
@@ -37,16 +37,16 @@ function ProductsPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
               We focus our Earth intelligence platform into three robust products: FarmIntelytics, MineIntelytics, and SuitabilityIntelytics.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="py-24 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3">
             
             {/* FarmIntelytics */}
             <Reveal className="flex flex-col rounded-2xl border border-border overflow-hidden bg-surface hover:shadow-glow transition-smooth">
@@ -66,7 +66,7 @@ function ProductsPage() {
               </div>
               <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-normal">
                     A comprehensive agriculture intelligence suite. Includes satellite crop monitoring, vegetation index tracking, AI advisory, and sensor integration for farming operations.
                   </p>
                   
@@ -115,7 +115,7 @@ function ProductsPage() {
               </div>
               <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-normal">
                     Bringing precision and safety to mining operations. Track excavation, tailings dams, and logistics networks in real time from space.
                   </p>
                   
@@ -164,7 +164,7 @@ function ProductsPage() {
               </div>
               <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-normal">
                     A suitability analysis platform with vector overlay uploads, analysis-ready data, and integrated FAO suitability maps for global land planning.
                   </p>
                   

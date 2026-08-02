@@ -53,7 +53,7 @@ function CareersPage() {
     <PageShell>
       {/* Hero */}
       <section className="relative overflow-hidden bg-background border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
               Join Our Team
@@ -65,7 +65,7 @@ function CareersPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-normal text-muted-foreground">
               We are a remote-first team of engineers, remote sensing scientists, and field operation specialists building systems that bring clarity, safety, and efficiency to global operations.
             </p>
           </Reveal>
@@ -73,24 +73,24 @@ function CareersPage() {
       </section>
 
       {/* Why Join */}
-      <section className="py-24 bg-surface/30 border-b border-border">
+      <section className="py-16 bg-surface/30 border-b border-border">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3">
             <Reveal className="flex flex-col gap-4">
               <h3 className="font-sans text-xl font-bold text-foreground">Meaningful Impact</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-normal">
                 Our platform directly eliminates payroll fraud, monitors carbon stocks, and maps crop diseases to support food security and secure livelihoods.
               </p>
             </Reveal>
             <Reveal delay={100} className="flex flex-col gap-4">
               <h3 className="font-sans text-xl font-bold text-foreground">Cutting-Edge Tech</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-normal">
                 Fuse satellite imagery, drone maps, and IoT sensor streams with state-of-the-art AI pipelines running at high scale.
               </p>
             </Reveal>
             <Reveal delay={200} className="flex flex-col gap-4">
               <h3 className="font-sans text-xl font-bold text-foreground">Remote-First Culture</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-normal">
                 Work from anywhere in the world. We offer flexible hours, home office stipends, and gather annually for team summits.
               </p>
             </Reveal>
@@ -99,14 +99,14 @@ function CareersPage() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-24 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             title="Open Positions"
             description="Explore our current opportunities and help us build the next generation of geospatial monitoring."
           />
 
-          <div className="mt-16 space-y-6">
+          <div className="mt-8 space-y-6">
             {/* 
             {JOBS.map((job, i) => (
               <Reveal
@@ -129,7 +129,7 @@ function CareersPage() {
                   <h3 className="font-sans text-xl font-bold text-foreground group-hover:text-primary transition-smooth">
                     {job.title}
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-3 text-sm text-muted-foreground leading-normal">
                     {job.desc}
                   </p>
                 </div>
@@ -155,7 +155,7 @@ function CareersPage() {
             </Reveal>
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-8 text-center">
             <p className="text-sm text-muted-foreground">
               Don't see a role that fits? Email us anyway at{" "}
               <a href="mailto:careers@earthintelytics.com" className="text-primary font-bold hover:underline">

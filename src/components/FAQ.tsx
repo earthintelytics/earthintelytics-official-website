@@ -30,14 +30,14 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-surface/30 border-t border-border">
+    <section className="py-16 bg-surface/30 border-t border-border">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
           eyebrow="Common Questions"
           title="Frequently Asked Questions"
           align="center"
         />
-        <div className="mt-12 space-y-4">
+        <div className="mt-8 space-y-4">
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -65,7 +65,7 @@ export function FAQSection() {
                       isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
+                    <div className="px-6 pb-6 text-muted-foreground leading-normal">
                       {faq.a}
                     </div>
                   </div>

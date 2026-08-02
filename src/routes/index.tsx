@@ -103,7 +103,7 @@ function HomePage() {
           </svg>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-32 md:py-44 w-full">
+        <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-44 w-full">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#009688]/20 bg-[#009688]/5 px-4 py-1.5 backdrop-blur mb-8">
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
@@ -123,7 +123,7 @@ function HomePage() {
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-muted-foreground md:text-xl">
+            <p className="mt-8 max-w-xl text-lg font-medium leading-normal text-muted-foreground md:text-xl">
               EarthIntelytics provides enterprise-grade spatial intelligence, fusing satellite constellations, autonomous drone networks, and IoT telemetry to power sustainable agriculture, responsible mining, ESG reporting, and global infrastructure development.
             </p>
           </Reveal>
@@ -147,7 +147,7 @@ function HomePage() {
 
           {/* Stats row */}
           <Reveal delay={400}>
-            <div className="mt-20 grid grid-cols-2 gap-6 sm:grid-cols-4 max-w-2xl">
+            <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 max-w-2xl">
               {STATS.map((s) => (
                 <div key={s.label} className="border-l-2 border-[#009688]/20 pl-4">
                   <div className="font-sans text-3xl font-extrabold text-foreground">{s.value}</div>
@@ -161,7 +161,7 @@ function HomePage() {
 
 
       {/* ─── TWO PLATFORMS. ONE PARTNER. ─── */}
-      <section className="py-28 bg-surface/30 border-t border-b border-border">
+      <section className="py-16 bg-surface/30 border-t border-b border-border">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <SectionHeading
@@ -170,7 +170,7 @@ function HomePage() {
             />
           </Reveal>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {PRODUCTS.map(({ label, name, desc, to, img, color }, i) => (
               <Reveal
                 key={name}
@@ -190,11 +190,11 @@ function HomePage() {
                       {label}
                     </span>
                     <h3 className="font-sans text-3xl font-extrabold text-white">{name}</h3>
-                    <p className="mt-3 text-sm text-white/90 max-w-sm leading-relaxed">{desc}</p>
+                    <p className="mt-3 text-sm text-white/90 max-w-sm leading-normal">{desc}</p>
                   </div>
                 </div>
                 <div className="p-8 flex-1 flex flex-col justify-between">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-normal">
                     {name === "FarmIntelytics"
                       ? "Execute biomass intelligence operations over vast vegetative zones, calculate carbon sequestration, and forecast global food security using advanced spatial models."
                       : "Monitor topographical displacement, identify high-grade surface geology anomalies, track asset structural integrity, and enforce secure geofenced perimeters."}
@@ -215,14 +215,14 @@ function HomePage() {
       </section>
 
       {/* ─── METRICS & INTERACTIVE DISPLAY ─── */}
-      <section className="py-28 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <div className="grid gap-6 lg:grid-cols-2 items-center">
             <Reveal className="space-y-6">
               <h2 className="font-sans text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
                 Mission success depends on verified ground truth.
               </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-normal">
                 EarthIntelytics delivers a comprehensive, 360-degree operational picture of your asset's spatial, topographical, and environmental status. Telemetry is streamed instantly to your command center, autonomously flagging anomalies and generating intelligence reports.
               </p>
               <div className="pt-4">
@@ -265,7 +265,7 @@ function HomePage() {
       </section>
 
       {/* ─── WHY EARTHINTELYTICS ─── */}
-      <section className="border-t border-border py-28 bg-surface/20">
+      <section className="border-t border-border py-16 bg-surface/20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <SectionHeading
@@ -275,7 +275,7 @@ function HomePage() {
             />
           </Reveal>
 
-          <div className="mt-16 grid gap-px border border-border rounded-2xl overflow-hidden md:grid-cols-3 bg-border">
+          <div className="mt-8 grid gap-px border border-border rounded-2xl overflow-hidden md:grid-cols-3 bg-border">
             {[
               { icon: Satellite, title: "Sensor Fusion", desc: "Satellite data, SAR active-radar, drone orthomosaics, and IoT sensor streams combined into one verified monitoring platform." },
               { icon: Activity, title: "In-Season Insights", desc: "Get real-time automated notifications regarding crop disease vectors, volume change, or geofence violations." },
@@ -290,7 +290,7 @@ function HomePage() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-sans text-xl font-bold text-foreground">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{desc}</p>
+                <p className="text-sm leading-normal text-muted-foreground">{desc}</p>
               </Reveal>
             ))}
           </div>
@@ -298,7 +298,7 @@ function HomePage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="bg-[#0D1B2A] py-28">
+      <section className="bg-[#0D1B2A] py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <Reveal>
             <h2 className="font-sans text-4xl font-extrabold text-white md:text-5xl">

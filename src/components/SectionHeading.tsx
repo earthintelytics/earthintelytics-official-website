@@ -12,7 +12,7 @@ export function SectionHeading({ title, description, align = "left" }: Props) {
         {title}
       </h2>
       {description && (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+        <p className="mt-5 text-base leading-normal text-muted-foreground md:text-lg">
           {description}
         </p>
       )}

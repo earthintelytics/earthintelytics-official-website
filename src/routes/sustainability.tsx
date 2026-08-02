@@ -77,7 +77,7 @@ function SustainabilityPage() {
           <img src={susCarbon} alt="" className="h-full w-full object-cover opacity-45" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/80 to-foreground/30" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-40">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               The bigger picture
@@ -90,7 +90,7 @@ function SustainabilityPage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-background/85 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg font-medium leading-normal text-background/85 md:text-xl">
               FarmIntelytics fuses AI, blockchain, climate science and global sustainability models , so growth is measured, not assumed.
             </p>
           </Reveal>
@@ -98,9 +98,9 @@ function SustainabilityPage() {
       </section>
 
       {/* Blockchain , bold split */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-10 md:grid-cols-12">
+          <div className="grid items-center gap-6 md:grid-cols-12">
             <div className="md:col-span-5">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">Trust layer</p>
               <h2 className="mt-4 font-display text-4xl font-extrabold tracking-[-0.04em] text-foreground md:text-6xl">
@@ -131,7 +131,7 @@ function SustainabilityPage() {
       </section>
 
       {/* Sustainability cards , image-led */}
-      <section className="border-t border-border bg-surface/40 py-24">
+      <section className="border-t border-border bg-surface/40 py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">Climate & sustainability</p>
@@ -142,7 +142,7 @@ function SustainabilityPage() {
               Productivity that ignores the environment isn't productivity. We bake global standards into daily operations.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {SUSTAIN.map(({ img, eyebrow, title, desc }, i) => (
               <Reveal
                 key={title}
@@ -160,7 +160,7 @@ function SustainabilityPage() {
                     {title}
                   </h3>
                 </div>
-                <p className="p-6 text-base font-medium leading-relaxed text-foreground/75">{desc}</p>
+                <p className="p-6 text-base font-medium leading-normal text-foreground/75">{desc}</p>
               </Reveal>
             ))}
           </div>
@@ -168,7 +168,7 @@ function SustainabilityPage() {
       </section>
 
       {/* AI Suite , bold cards with images */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">AI on the ground</p>
@@ -179,7 +179,7 @@ function SustainabilityPage() {
               Mobile-first AI models that work offline, recognise crops at a glance and shut the door on fraud.
             </p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {AI.map(({ icon: Icon, title, desc, img }, i) => (
               <Reveal
                 key={title}
@@ -204,7 +204,7 @@ function SustainabilityPage() {
       </section>
 
       {/* Deployment , large image cards */}
-      <section className="border-t border-border bg-foreground py-24 text-background">
+      <section className="border-t border-border bg-foreground py-16 text-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">Deploy your way</p>
@@ -215,7 +215,7 @@ function SustainabilityPage() {
               Customised per organisation. Branded apps. Configurable workflows. You choose where your data lives.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {DEPLOY.map(({ img, title, desc }, i) => (
               <Reveal
                 key={title}
@@ -237,7 +237,7 @@ function SustainabilityPage() {
               </Reveal>
             ))}
           </div>
-          <div className="mt-12 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             {["White-labelled per client", "Custom workflows", "Region-specific analytics", "API-first"].map((t) => (
               <span key={t} className="rounded-full border border-background/15 bg-background/5 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-background/80">
                 {t}

@@ -27,7 +27,7 @@ function ApiDocsPage() {
   return (
     <PageShell>
       <section className="relative overflow-hidden bg-background min-h-[80vh] flex flex-col justify-center border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
             <Reveal>
@@ -41,7 +41,7 @@ function ApiDocsPage() {
                 Intelligence API <br/>
                 <span className="text-primary">Coming Soon.</span>
               </h1>
-              <p className="mt-8 text-lg font-medium leading-relaxed text-muted-foreground">
+              <p className="mt-8 text-lg font-medium leading-normal text-muted-foreground">
                 We are preparing to open our platform. Soon, you will be able to pipe satellite imagery, radar displacement data, and AI analytics directly into your own enterprise software, ERPs, and dashboards.
               </p>
               

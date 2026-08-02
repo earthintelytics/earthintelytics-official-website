@@ -80,7 +80,7 @@ function ArchitecturePage() {
           <img src={archIntelligence} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/85 to-foreground" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
           <Reveal>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
               Under the hood
@@ -93,7 +93,7 @@ function ArchitecturePage() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-background/80 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg font-medium leading-normal text-background/80 md:text-xl">
               From sensor to dashboard, every layer is designed to run reliably across rural
               connectivity, multiple organisations and millions of records.
             </p>
@@ -102,12 +102,12 @@ function ArchitecturePage() {
       </section>
 
       {/* Layers , bold image-led with massive numbers */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="space-y-20 md:space-y-32">
             {LAYERS.map(({ n, icon: Icon, label, tagline, items, img }, i) => (
               <Reveal key={label} delay={i * 100}>
-                <div className="grid items-center gap-10 md:grid-cols-12 md:gap-14">
+                <div className="grid items-center gap-6 md:grid-cols-12 md:gap-14">
                   {/* Image */}
                   <div className={`md:col-span-7 ${i % 2 === 1 ? "md:order-2" : ""}`}>
                     <div className="group relative overflow-hidden rounded-2xl border border-border shadow-elevated">
@@ -162,7 +162,7 @@ function ArchitecturePage() {
       </section>
 
       {/* Principles , bold dark band */}
-      <section className="border-t border-border bg-foreground py-24 text-background">
+      <section className="border-t border-border bg-foreground py-16 text-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary-glow">
@@ -172,7 +172,7 @@ function ArchitecturePage() {
               Designed for the realities of the field.
             </h2>
           </div>
-          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-background/10 bg-background/10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-background/10 bg-background/10 md:grid-cols-2 lg:grid-cols-3">
             {PRINCIPLES.map((p, i) => (
               <Reveal
                 key={p.k}
@@ -185,7 +185,7 @@ function ArchitecturePage() {
                     {p.k}
                   </h3>
                 </div>
-                <p className="mt-4 text-sm font-medium leading-relaxed text-background/70">
+                <p className="mt-4 text-sm font-medium leading-normal text-background/70">
                   {p.v}
                 </p>
               </Reveal>

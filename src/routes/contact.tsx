@@ -41,7 +41,7 @@ function ContactPage() {
           <img src={contactImg} alt="" className="h-full w-full object-cover object-top" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/40" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-12">
           <p className="font-sans text-sm font-bold uppercase tracking-[0.25em] text-primary-glow">
             Get in touch
           </p>
@@ -49,7 +49,7 @@ function ContactPage() {
             Let's digitize<br />
             <span className="text-primary-glow">your operations.</span>
           </h1>
-          <p className="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-background/85 md:text-xl">
+          <p className="mt-7 max-w-2xl text-lg font-medium leading-normal text-background/85 md:text-xl">
             Tell us about your organisation. We'll come back with a tailored demo and
             deployment plan within one business day.
           </p>
@@ -57,8 +57,8 @@ function ContactPage() {
       </section>
 
       {/* Form + contact rail */}
-      <section className="border-t border-border py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-5">
+      <section className="border-t border-border py-16">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-5">
           {/* Left rail */}
           <div className="space-y-4 md:col-span-2">
             <div className="rounded-xl border border-border bg-card p-7">

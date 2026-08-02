@@ -351,13 +351,13 @@ function ModulesPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-hero border-b border-border">
         <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-5 md:items-center md:py-28">
+        <div className="relative mx-auto grid max-w-7xl gap-6 px-6 py-12 md:grid-cols-5 md:items-center md:py-16">
           <div className="md:col-span-3">
             <Reveal>
               <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground md:text-6xl">
                 FarmIntelytics
               </h1>
-              <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-muted-foreground">
+              <p className="mt-6 max-w-xl text-lg font-medium leading-normal text-muted-foreground">
                 Our complete agricultural intelligence platform. Fusing satellite metrics, crops analysis, live monitoring layers, developer APIs, and ESG reporting into one source of truth.
               </p>
             </Reveal>
@@ -387,7 +387,7 @@ function ModulesPage() {
               />
             </Reveal>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {MODULES.map(({ icon: Icon, title, points }, i) => (
                 <Reveal
                   key={title}
@@ -415,7 +415,7 @@ function ModulesPage() {
                 </Reveal>
               ))}
             </div>
-            <div className="mt-24 border-t border-border pt-20">
+            <div className="mt-8 border-t border-border pt-12">
               <Reveal>
                 <SectionHeading
                   title="From rice paddies to rubber estates."
@@ -424,7 +424,7 @@ function ModulesPage() {
               </Reveal>
             </div>
 
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {CROPS.map(({ icon: Icon, name, desc, img }, i) => (
                 <Reveal
                   key={name}
@@ -445,19 +445,19 @@ function ModulesPage() {
                     </div>
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <h3 className="font-display text-2xl font-bold tracking-tight text-white">{name}</h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-white/90">{desc}</p>
+                      <p className="mt-1.5 text-xs leading-normal text-white/90">{desc}</p>
                     </div>
                   </div>
                 </Reveal>
               ))}
             </div>
 
-            <div className="mt-20 border-t border-border pt-20">
+            <div className="mt-10 border-t border-border pt-12">
               <SectionHeading
                 title="Plant smarter. Predict earlier."
                 description="We don't just monitor what's there. GeoAI helps you decide where to plant, when to act, and how much you'll harvest."
               />
-              <div className="mt-12 grid gap-6 md:grid-cols-3">
+              <div className="mt-8 grid gap-6 md:grid-cols-3">
                 {STEPS.map(({ icon: Icon, title, desc }, i) => (
                   <Reveal
                     key={title}
@@ -473,7 +473,7 @@ function ModulesPage() {
                 ))}
               </div>
 
-              <Reveal delay={200} className="mt-12 overflow-hidden rounded-xl border border-border bg-white shadow-elevated">
+              <Reveal delay={200} className="mt-8 overflow-hidden rounded-xl border border-border bg-white shadow-elevated">
                 <img
                   src={satImg}
                   alt="NDVI map"
@@ -490,7 +490,7 @@ function ModulesPage() {
               </Reveal>
             </div>
 
-            <div className="mt-20 border-t border-border pt-20">
+            <div className="mt-10 border-t border-border pt-12">
               <div className="rounded-xl border border-border bg-card p-8 shadow-card md:p-12">
                 <div className="flex flex-col gap-6 md:flex-row md:items-center">
                   <div className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-md bg-[#009688]/10 text-[#009688]">
@@ -498,7 +498,7 @@ function ModulesPage() {
                   </div>
                   <div>
                     <h3 className="font-display text-3xl font-bold tracking-tight">Bluetooth weight scale integration</h3>
-                    <p className="mt-3 text-muted-foreground leading-relaxed">
+                    <p className="mt-3 text-muted-foreground leading-normal">
                       Pair any Bluetooth-enabled scale to log harvest weights directly into the platform. No paperwork, no shrinkage, no disputes. Each weighing is biometrically signed, geo-stamped, and linked to the producing block.
                     </p>
                   </div>
@@ -506,7 +506,7 @@ function ModulesPage() {
               </div>
             </div>
           </section>
-        <div className="mt-24 border-t border-border pt-20" />
+        <div className="mt-8 border-t border-border pt-12" />
         <section className="mx-auto max-w-7xl px-6">
             <Reveal>
               <SectionHeading
@@ -515,7 +515,7 @@ function ModulesPage() {
               />
             </Reveal>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
               {ARCH_LAYERS.map(({ n, icon: Icon, label, tagline, items, img }) => (
                 <div key={label} className="rounded-xl border border-border bg-card p-8 flex flex-col md:flex-row gap-6">
                   <div className="relative aspect-[4/3] w-full md:w-36 shrink-0 overflow-hidden rounded-lg">
@@ -540,16 +540,16 @@ function ModulesPage() {
               ))}
             </div>
 
-            <div className="mt-20 border-t border-border pt-20">
+            <div className="mt-10 border-t border-border pt-12">
               <SectionHeading
                 title="Architectural Principles"
                 description="The core tenets that guide the technical design and deployment of the platform."
               />
-              <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {PRINCIPLES.map(({ k, v }) => (
                   <div key={k} className="rounded-xl border border-border bg-card p-6">
                     <h4 className="font-sans text-[16px] font-bold text-[#009688]">{k}</h4>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{v}</p>
+                    <p className="mt-2 text-xs text-muted-foreground leading-normal">{v}</p>
                   </div>
                 ))}
               </div>
