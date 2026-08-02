@@ -105,12 +105,6 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-44 w-full">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#009688]/20 bg-[#009688]/5 px-4 py-1.5 backdrop-blur mb-8">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="font-sans text-xs font-semibold uppercase tracking-widest text-[#009688]">
-                Earth Intelligence Platform
-              </span>
-            </div>
           </Reveal>
 
           <Reveal delay={100}>

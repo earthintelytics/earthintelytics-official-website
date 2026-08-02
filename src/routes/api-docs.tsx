@@ -31,12 +31,6 @@ function ApiDocsPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 backdrop-blur mb-8">
-                <Terminal className="h-4 w-4 text-primary" />
-                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
-                  Developer Portal
-                </span>
-              </div>
               <h1 className="font-display text-5xl font-extrabold leading-[1] tracking-tight text-foreground md:text-6xl">
                 Intelligence API <br/>
                 <span className="text-primary">Coming Soon.</span>
