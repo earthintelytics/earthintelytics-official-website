@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
 
 const PRODUCTS_ITEMS = [
-  { to: "/modules", label: "FarmIntelytics", desc: "Agriculture intelligence suite" },
+  { to: "http://173.249.21.126:8180/", label: "FarmIntelytics", desc: "Agriculture intelligence suite" },
   { to: "/mining", label: "MineIntelytics", desc: "Mining operations intelligence" },
   { to: "/suitability", label: "SuitabilityIntelytics", desc: "Land suitability analysis" },
   { to: "/api-docs", label: "API Documentation", desc: "Developer integration guides" },
@@ -57,7 +57,17 @@ function DropdownMenu({
       {open && (
         <div className="absolute left-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-xl border border-border bg-background shadow-elevated">
           <div className="p-2">
-            {items.map((item) => (
+            {items.map((item) => item.to.startsWith("http") ? (
+              <a
+                key={item.to}
+                href={item.to}
+                onClick={() => setOpen(false)}
+                className="flex flex-col rounded-lg px-4 py-3 transition-smooth hover:bg-surface"
+              >
+                <span className="font-sans text-[14px] font-semibold text-foreground">{item.label}</span>
+                <span className="mt-0.5 text-xs text-muted-foreground">{item.desc}</span>
+              </a>
+            ) : (
               <Link
                 key={item.to}
                 to={item.to}
@@ -97,7 +107,16 @@ function MobileDropdown({
       </button>
       {isOpen && (
         <div className="flex flex-col gap-1 pl-4 pt-1">
-          {items.map((item) => (
+          {items.map((item) => item.to.startsWith("http") ? (
+            <a
+              key={item.to}
+              href={item.to}
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 font-sans text-[14px] font-medium text-muted-foreground hover:bg-surface hover:text-foreground"
+            >
+              {item.label}
+            </a>
+          ) : (
             <Link
               key={item.to}
               to={item.to}

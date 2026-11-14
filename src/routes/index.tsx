@@ -43,7 +43,7 @@ const PRODUCTS = [
     label: "Vegetative Intelligence",
     name: "FarmIntelytics",
     desc: "Global food security, biomass analysis, and multi-spectral vegetative intelligence suite, AI disease detection, and climate intelligence for farming operations.",
-    to: "/modules",
+    to: "http://173.249.21.126:8180/",
     img: ndviOverlayImg,
     color: "from-emerald-950/80",
   },
@@ -199,12 +199,21 @@ function HomePage() {
                       : "Monitor topographical displacement, identify high-grade surface geology anomalies, track asset structural integrity, and enforce secure geofenced perimeters."}
                   </p>
                   <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
-                    <Link
-                      to={to}
-                      className="inline-flex items-center gap-2 font-sans text-[15px] font-semibold text-primary transition-all hover:gap-3"
-                    >
-                      Explore {name} <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    {to.startsWith("http") ? (
+                      <a
+                        href={to}
+                        className="inline-flex items-center gap-2 font-sans text-[15px] font-semibold text-primary transition-all hover:gap-3"
+                      >
+                        Explore {name} <ArrowRight className="h-4 w-4" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={to}
+                        className="inline-flex items-center gap-2 font-sans text-[15px] font-semibold text-primary transition-all hover:gap-3"
+                      >
+                        Explore {name} <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </Reveal>

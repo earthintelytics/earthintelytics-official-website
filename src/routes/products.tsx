@@ -88,12 +88,12 @@ function ProductsPage() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border">
-                  <Link
-                    to="/modules"
+                  <a
+                    href="http://173.249.21.126:8180/"
                     className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-smooth hover:bg-primary/95"
                   >
                     Open FarmIntelytics <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </Reveal>
