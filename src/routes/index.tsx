@@ -13,7 +13,6 @@ import {
   Shield,
   Activity,
   Leaf,
-  Plane,
 } from "lucide-react";
 import ndviOverlayImg from "@/assets/real/ndvi-overlay.jpg";
 import mineSatelliteImg from "@/assets/real/mine-satellite.png";
@@ -78,19 +77,7 @@ function HomePage() {
         {/* Gradient Overlays */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60 pointer-events-none" />
 
-        {/* Animated Satellite */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="animate-orbit absolute top-0 left-0 text-white/40 drop-shadow-lg">
-            <Satellite className="w-24 h-24" strokeWidth={1} />
-          </div>
-        </div>
 
-        {/* Animated Drone */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="animate-drone absolute top-0 left-0 text-white/50 drop-shadow-lg">
-            <Plane className="w-16 h-16 -scale-x-100" strokeWidth={1.5} />
-          </div>
-        </div>
 
         {/* Subtle geometric wireframe globe watermark in background */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 opacity-[0.05] text-[#009688] select-none pointer-events-none hidden md:block z-0">
