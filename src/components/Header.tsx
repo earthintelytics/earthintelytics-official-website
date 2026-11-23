@@ -4,8 +4,8 @@ import { Logo } from "./Logo";
 
 /** The site header: the logo, the page's sections, and "Talk to us". A menu button on a phone. */
 const LINKS = [
-  { href: "/#products", label: "Products" },
-  { href: "/#services", label: "Services" },
+  { href: "/#products", label: "FarmIntelytics" },
+  { href: "/#services", label: "Consultancy" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
 ];

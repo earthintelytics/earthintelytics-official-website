@@ -9,20 +9,19 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-3">
         <div>
           <Logo />
-          <p className="mt-4 max-w-xs text-sm text-muted-foreground">Earth-observation products, and geospatial services and consultancy, for agriculture, mining and the environment.</p>
+          <p className="mt-4 max-w-xs text-sm text-muted-foreground">FarmIntelytics, and consultancy, research and Earth-observation assessments for agriculture and other sectors.</p>
         </div>
         <div>
-          <p className="text-sm font-semibold text-foreground">Products</p>
+          <p className="text-sm font-semibold text-foreground">Product</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={PRODUCT_LINKS.farmintelytics} {...ext(PRODUCT_LINKS.farmintelytics)} className="text-muted-foreground hover:text-foreground">FarmIntelytics</a></li>
-            <li><a href={PRODUCT_LINKS.mineintelytics} {...ext(PRODUCT_LINKS.mineintelytics)} className="text-muted-foreground hover:text-foreground">MineIntelytics</a></li>
           </ul>
         </div>
         <div>
           <p className="text-sm font-semibold text-foreground">Contact</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={`mailto:${CONTACT_EMAIL}`} className="text-muted-foreground hover:text-foreground">{CONTACT_EMAIL}</a></li>
-            <li><a href="/#services" className="text-muted-foreground hover:text-foreground">Services and consultancy</a></li>
+            <li><a href="/#services" className="text-muted-foreground hover:text-foreground">Consultancy and research</a></li>
           </ul>
         </div>
       </div>
