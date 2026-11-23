@@ -1,353 +1,193 @@
-import heroBg from "@/assets/real/hero-home.jpeg";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
+import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import { SectionHeading } from "@/components/SectionHeading";
-import { Reveal } from "@/components/Reveal";
-import {
-  ArrowRight,
-  Satellite,
-  Brain,
-  Radar,
-  Globe,
-  Layers,
-  Shield,
-  Activity,
-  Leaf,
-  Plane,
-} from "lucide-react";
-import ndviOverlayImg from "@/assets/real/ndvi-overlay.jpg";
-import mineSatelliteImg from "@/assets/real/mine-satellite.png";
-import heroVideo from "@/assets/real/hero-video.mp4.asset.json";
+import heroImg from "@/assets/real/hero-home.jpeg";
+import farmImg from "@/assets/real/palm-plantation.jpg";
+import mineImg from "@/assets/real/mine-satellite.png";
+import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
+
+/**
+ * The Earthintelytics landing page: who we are, our products (each with its own site), our services and
+ * consultancy, and how to reach us. One page, plain words, white surfaces, no effects.
+ */
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "EarthIntelytics | Earth Intelligence Platform" },
+      { title: "Earthintelytics | Earth intelligence for agriculture and mining" },
       {
         name: "description",
         content:
-          "EarthIntelytics unifies remote sensing, GIS, AI, and IoT sensors into verified monitoring solutions for agriculture and mining.",
-      },
-      { property: "og:title", content: "EarthIntelytics | Earth Intelligence Platform" },
-      {
-        property: "og:description",
-        content:
-          "From Earth observation to actionable intelligence. EarthIntelytics serves agriculture, mining, climate, and security sectors.",
+          "Earthintelytics builds Earth-observation products (FarmIntelytics, MineIntelytics) and provides geospatial services and consultancy for agriculture, mining and the environment.",
       },
     ],
   }),
   component: HomePage,
 });
 
+// ── Content ───────────────────────────────────────────────────────────────────────────────────────
 const PRODUCTS = [
   {
-    label: "Vegetative Intelligence",
     name: "FarmIntelytics",
-    desc: "Global food security, biomass analysis, and multi-spectral vegetative intelligence suite, AI disease detection, and climate intelligence for farming operations.",
-    to: "/modules",
-    img: ndviOverlayImg,
-    color: "from-emerald-950/80",
+    tag: "Agriculture",
+    text: "Crop health and growth from satellite, water and weather advice, land suitability, smallholder and co-operative management, and EUDR deforestation checks, including an API for your own systems.",
+    href: PRODUCT_LINKS.farmintelytics,
+    img: farmImg,
   },
   {
-    label: "Subsurface Intelligence",
     name: "MineIntelytics",
-    desc: "Topographical displacement mapping, anomaly detection, and secure geofenced perimeter monitoring.",
-    to: "/mining",
-    img: mineSatelliteImg,
-    color: "from-emerald-950/80",
+    tag: "Mining",
+    text: "Site monitoring for mining operations: land change, surface disturbance and rehabilitation, read from satellite and drone imagery.",
+    href: PRODUCT_LINKS.mineintelytics,
+    img: mineImg,
   },
 ];
 
-const STATS = [
-  { value: "10+", label: "Intelligence Products" },
-  { value: "4+", label: "Sectors Served" },
-  { value: "3", label: "Data Layers Fused" },
-  { value: "1", label: "Unified Platform" },
+const SERVICES = [
+  { title: "Remote sensing and GIS studies", text: "Satellite and drone mapping, land cover and change over time, for a site, a region or a supply chain." },
+  { title: "Land suitability and site selection", text: "Where a crop or project fits best, from terrain, soil, rainfall and water, by the FAO land-evaluation method." },
+  { title: "EUDR and deforestation due diligence", text: "Mapping production plots, checking them against the 2020 cut-off, and preparing the geolocation files buyers ask for." },
+  { title: "Farm and estate monitoring set-up", text: "Boundaries, blocks and alerts set up for your estates, with your team trained to use them." },
+  { title: "Mining and environmental monitoring", text: "Tracking disturbance, rehabilitation and the land around a site, with reports for regulators and investors." },
+  { title: "Custom geospatial platforms", text: "Dashboards, data pipelines and integrations built around your own data and processes." },
 ];
 
+const SECTORS = ["Agriculture", "Land suitability and planning", "Forest and carbon", "Water and hydrology", "Mining", "Climate and environment"];
+
+// ── Page ──────────────────────────────────────────────────────────────────────────────────────────
 function HomePage() {
   return (
     <PageShell>
-
-      {/* ─── HERO ─── */}
-      <section className="relative isolate overflow-hidden min-h-[90vh] flex items-center">
-        {/* Animated Background Image */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center animate-ken-burns" 
-          style={{ backgroundImage: `url(${heroBg})` }} 
-        />
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60 pointer-events-none" />
-
-        {/* Animated Satellite */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="animate-orbit absolute top-0 left-0 text-white/40 drop-shadow-lg">
-            <Satellite className="w-24 h-24" strokeWidth={1} />
-          </div>
-        </div>
-
-        {/* Animated Drone */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="animate-drone absolute top-0 left-0 text-white/50 drop-shadow-lg">
-            <Plane className="w-16 h-16 -scale-x-100" strokeWidth={1.5} />
-          </div>
-        </div>
-
-        {/* Subtle geometric wireframe globe watermark in background */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 opacity-[0.05] text-[#009688] select-none pointer-events-none hidden md:block z-0">
-          <svg
-            width="600"
-            height="600"
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="50" cy="50" r="42" stroke="currentColor" strokeWidth="1" />
-            <path d="M15 35 H85" stroke="currentColor" strokeWidth="0.8" />
-            <path d="M8 50 H92" stroke="currentColor" strokeWidth="0.8" />
-            <path d="M15 65 H85" stroke="currentColor" strokeWidth="0.8" />
-            <path d="M50 8 V92" stroke="currentColor" strokeWidth="0.8" />
-            <path d="M50 8 C25 25, 25 75, 50 92" stroke="currentColor" strokeWidth="0.8" />
-            <path d="M50 8 C75 25, 75 75, 50 92" stroke="currentColor" strokeWidth="0.8" />
-          </svg>
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 py-8 md:py-10 md:py-44 w-full">
-          <Reveal delay={100}>
-            <h1 className="max-w-5xl font-sans text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-              See Earth.{" "}
-              <span className="text-[#009688]">Understand Change.</span>
-              <br />
-              Make Better Decisions.
+      {/* Hero: words on the left, a view of the Earth on the right */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:py-24">
+          <div>
+            <p className="text-sm font-semibold text-primary">Earthintelytics</p>
+            <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl">
+              Earth intelligence for agriculture and mining.
             </h1>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <p className="mt-8 max-w-xl text-lg font-medium leading-normal text-white/80 md:text-xl">
-              EarthIntelytics provides enterprise-grade spatial intelligence, fusing satellite constellations, autonomous drone networks, and IoT telemetry to power sustainable agriculture, responsible mining, ESG reporting, and global infrastructure development.
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              We build products that turn satellite and drone imagery into clear answers, and we work with organisations
+              as geospatial consultants on their land, crops, sites and supply chains.
             </p>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 rounded-md bg-[#009688] px-7 py-4 text-sm font-bold text-white transition-all hover:bg-[#00796B]"
-              >
-                Explore Products <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-md border border-transparent bg-white px-7 py-4 text-sm font-bold text-black transition-all hover:bg-white/90"
-              >
-                Book a Demo
-              </Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#products" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+                Our products <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface">
+                Talk to us
+              </a>
             </div>
-          </Reveal>
-
-          {/* Stats row */}
-          <Reveal delay={400}>
-            <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 max-w-2xl">
-              {STATS.map((s) => (
-                <div key={s.label} className="border-l-2 border-[#009688]/20 pl-4">
-                  <div className="font-sans text-3xl font-extrabold text-white">{s.value}</div>
-                  <div className="mt-1 font-sans text-xs text-white/80 uppercase tracking-wider font-semibold">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          </div>
+          <img src={heroImg} alt="A coastline seen from space" className="aspect-[4/3] w-full rounded-xl object-cover" />
         </div>
       </section>
 
-
-      {/* ─── TWO PLATFORMS. ONE PARTNER. ─── */}
-      <section className="py-10 md:py-8 md:py-10 bg-surface/30 border-t border-b border-border">
-        <div className="mx-auto max-w-7xl px-6">
-          <Reveal>
-            <SectionHeading
-              title="Two Platforms. One Command Center."
-              description="Deploy actionable intelligence across vast agricultural estates, critical infrastructure, and mining sites. We unify multi-spectral orbital data and real-time telemetry to drive sustainability, ESG compliance, and operational excellence."
-            />
-          </Reveal>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {PRODUCTS.map(({ label, name, desc, to, img, color }, i) => (
-              <Reveal
-                key={name}
-                delay={i * 80}
-                className="group flex flex-col rounded-2xl border border-border overflow-hidden bg-card hover:shadow-glow transition-smooth"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={img}
-                    alt={name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${color} via-transparent to-transparent`} />
-                  <div className="absolute inset-x-0 bottom-0 p-8">
-                    <span className="inline-block rounded-full bg-background px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-foreground mb-3 shadow-sm">
-                      {label}
-                    </span>
-                    <h3 className="font-sans text-3xl font-extrabold text-white">{name}</h3>
-                    <p className="mt-3 text-sm text-white/90 max-w-sm leading-normal">{desc}</p>
-                  </div>
+      {/* Products */}
+      <section id="products" className="scroll-mt-20 border-b border-border">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Products</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">Each product has its own site, where you can sign in, read how it works and contact its team.</p>
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            {PRODUCTS.map((p) => (
+              <article key={p.name} className="overflow-hidden rounded-xl border border-border bg-background">
+                <img src={p.img} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover" />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{p.tag}</p>
+                  <h3 className="mt-1 font-display text-2xl font-semibold text-foreground">{p.name}</h3>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{p.text}</p>
+                  <a href={p.href} {...(p.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
+                     className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+                    {p.href.startsWith("http") ? `Visit ${p.name}` : `Ask about ${p.name}`} <ArrowUpRight className="h-4 w-4" />
+                  </a>
                 </div>
-                <div className="p-8 flex-1 flex flex-col justify-between">
-                  <p className="text-sm text-muted-foreground leading-normal">
-                    {name === "FarmIntelytics"
-                      ? "Execute biomass intelligence operations over vast vegetative zones, calculate carbon sequestration, and forecast global food security using advanced spatial models."
-                      : "Monitor topographical displacement, identify high-grade surface geology anomalies, track asset structural integrity, and enforce secure geofenced perimeters."}
-                  </p>
-                  <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
-                    <Link
-                      to={to}
-                      className="inline-flex items-center gap-2 font-sans text-[15px] font-semibold text-primary transition-all hover:gap-3"
-                    >
-                      Explore {name} <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
-              </Reveal>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── WHY EARTHINTELYTICS ─── */}
-      <section className="border-t border-border py-10 md:py-8 md:py-10 bg-surface/20">
-        <div className="mx-auto max-w-7xl px-6">
-          <Reveal>
-            <SectionHeading
-              title="The intelligence layer for operations."
-              description="Conventional tools solve single points. EarthIntelytics integrates space-level insight with ground-level verification so nothing happens in the dark."
-              align="center"
-            />
-          </Reveal>
-
-          <div className="mt-8 grid gap-px border border-border rounded-2xl overflow-hidden md:grid-cols-3 bg-border">
-            {[
-              { icon: Satellite, title: "Sensor Fusion", desc: "Satellite data, SAR active-radar, drone orthomosaics, and IoT sensor streams combined into one verified monitoring platform." },
-              { icon: Activity, title: "In-Season Insights", desc: "Get real-time automated notifications regarding crop disease vectors, volume change, or geofence violations." },
-              { icon: Leaf, title: "Verifiable & Auditable", desc: "Every metric gathered is timestamped, geo-tagged, and biometrically confirmed to provide complete compliance security." },
-            ].map(({ icon: Icon, title, desc }, i) => (
-              <Reveal
-                key={title}
-                delay={i * 100}
-                className="flex flex-col gap-5 bg-card p-10 transition-smooth hover:bg-surface/85"
-              >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="font-sans text-xl font-bold text-foreground">{title}</h3>
-                <p className="text-sm leading-normal text-muted-foreground">{desc}</p>
-              </Reveal>
+      {/* Services and consultancy */}
+      <section id="services" className="scroll-mt-20 border-b border-border bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Services and consultancy</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">When you need a study, a set-up or a system built around your work, our team does it with you.</p>
+          <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s) => (
+              <div key={s.title}>
+                <h3 className="font-display text-lg font-semibold text-foreground">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
-      <section className="py-10 md:py-8 md:py-10 bg-background">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <Reveal>
-            <SectionHeading
-              title="What our partners say"
-              description="See how EarthIntelytics is transforming operations on the ground."
-              align="center"
-            />
-          </Reveal>
-          
-          <div className="mt-12 relative flex overflow-x-hidden">
-            <div className="animate-marquee whitespace-nowrap flex items-stretch gap-6 sm:gap-8 pl-6 sm:pl-8 py-4">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-surface p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
-                  <span className="absolute top-4 left-4 text-5xl text-primary/20 font-serif leading-none">"</span>
-                  <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
-                    EarthIntelytics gave us an unprecedented view into our operational footprint. We were able to reduce surveying costs by 30% while identifying critical anomalies.
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="h-10 w-10 rounded-full bg-primary/20 flex shrink-0 items-center justify-center text-primary font-bold text-sm">
-                      JD
-                    </div>
-                    <div className="text-left">
-                      <div className="font-bold text-foreground text-sm">John Doe {i + 1}</div>
-                      <div className="text-xs text-muted-foreground">Operations Director, Global Mining</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {[...Array(5)].map((_, i) => (
-                <div key={`dup-${i}`} className="w-[300px] md:w-[400px] shrink-0 rounded-2xl border border-border bg-surface p-6 shadow-sm relative isolate whitespace-normal flex flex-col justify-between">
-                  <span className="absolute top-4 left-4 text-5xl text-primary/20 font-serif leading-none">"</span>
-                  <p className="relative z-10 text-base font-medium text-foreground leading-relaxed italic mb-6 mt-4">
-                    EarthIntelytics gave us an unprecedented view into our operational footprint. We were able to reduce surveying costs by 30% while identifying critical anomalies.
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="h-10 w-10 rounded-full bg-primary/20 flex shrink-0 items-center justify-center text-primary font-bold text-sm">
-                      JD
-                    </div>
-                    <div className="text-left">
-                      <div className="font-bold text-foreground text-sm">John Doe {i + 1}</div>
-                      <div className="text-xs text-muted-foreground">Operations Director, Global Mining</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CLIENTS LOGO MARQUEE ─── */}
-      <section className="py-8 md:py-10 bg-surface/50 border-t border-border overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="text-center font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground mb-10">
-            Trusted by organizations worldwide
-          </p>
-          
-          <div className="relative flex overflow-x-hidden">
-            <div className="animate-marquee whitespace-nowrap flex items-center gap-12 sm:gap-24 pl-12 sm:pl-24">
-              {[...Array(6)].map((_, i) => (
-                <img key={`okomu-${i}`} src="/clients/okomu.png" alt="Okomu Oil Plantation" className="h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-smooth" />
-              ))}
-              
-              {/* Duplicate set for seamless loop */}
-              {[...Array(6)].map((_, i) => (
-                <img key={`okomu-dup-${i}`} src="/clients/okomu.png" alt="Okomu Oil Plantation" className="h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-smooth" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CTA ─── */}
-      <section className="bg-[#0D1B2A] py-10 md:py-8 md:py-10">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <Reveal>
-            <h2 className="font-sans text-4xl font-extrabold text-white md:text-5xl">
-              Ready to see Earth intelligence in action?
-            </h2>
-            <p className="mt-5 text-white/60 md:text-lg">
-              Book a demo and we'll show you exactly what EarthIntelytics can do for your operations.
+      {/* About */}
+      <section id="about" className="scroll-mt-20 border-b border-border">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.2fr_1fr] md:py-20">
+          <div>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">About us</h2>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Earthintelytics was built on one conviction: the most important decisions about land, in agriculture, mining
+              and the environment, deserve the best possible information. We combine satellite imagery, drone data, field
+              records and careful analysis into answers people can act on, built for the realities of Africa and other
+              emerging markets.
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-[#009688] px-8 py-4 font-sans text-sm font-bold text-white transition-all hover:bg-[#00796B]"
-              >
-                Book a Demo <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 rounded-md border border-white/20 px-8 py-4 font-sans text-sm font-bold text-white transition-all hover:bg-white/5"
-              >
-                Who We Are
-              </Link>
-            </div>
-          </Reveal>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-foreground">Where we work</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {SECTORS.map((s) => (
+                <li key={s} className="rounded-full border border-border px-3 py-1.5 text-sm text-muted-foreground">{s}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
+
+      <Contact />
     </PageShell>
+  );
+}
+
+/** Contact: our email, and a short form that opens the visitor's email with their message (nothing is stored). */
+function Contact() {
+  const [form, setForm] = useState({ name: "", organisation: "", message: "" });
+  const send = (e: FormEvent) => {
+    e.preventDefault();
+    const subject = `Enquiry from ${form.name}${form.organisation ? `, ${form.organisation}` : ""}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(form.message)}`;
+  };
+  const input = "w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none";
+  return (
+    <section id="contact" className="scroll-mt-20">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:py-20">
+        <div>
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Talk to us</h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            Tell us about your land, crops, site or supply chain, and what you need to know. We reply by email.
+          </p>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="mt-6 inline-flex items-center gap-2 font-semibold text-primary hover:underline">
+            <Mail className="h-4 w-4" /> {CONTACT_EMAIL}
+          </a>
+        </div>
+        <form onSubmit={send} className="space-y-4">
+          <label className="block text-sm font-medium text-foreground">Your name
+            <input required className={`mt-1.5 ${input}`} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+          </label>
+          <label className="block text-sm font-medium text-foreground">Organisation
+            <input className={`mt-1.5 ${input}`} value={form.organisation} onChange={(e) => setForm({ ...form, organisation: e.target.value })} />
+          </label>
+          <label className="block text-sm font-medium text-foreground">How can we help?
+            <textarea required rows={5} className={`mt-1.5 ${input}`} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+          </label>
+          <button type="submit" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+            Write to us <ArrowRight className="h-4 w-4" />
+          </button>
+          <p className="text-xs text-muted-foreground">This opens your email app with your message, addressed to {CONTACT_EMAIL}.</p>
+        </form>
+      </div>
+    </section>
   );
 }

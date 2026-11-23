@@ -9,98 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as UseCasesRouteImport } from './routes/use-cases'
-import { Route as SustainabilityRouteImport } from './routes/sustainability'
-import { Route as SuitabilityRouteImport } from './routes/suitability'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as PartnersRouteImport } from './routes/partners'
-import { Route as MonitoringRouteImport } from './routes/monitoring'
-import { Route as ModulesRouteImport } from './routes/modules'
-import { Route as MiningRouteImport } from './routes/mining'
-import { Route as CropsRouteImport } from './routes/crops'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CareersRouteImport } from './routes/careers'
-import { Route as ArchitectureRouteImport } from './routes/architecture'
-import { Route as ApiDocsRouteImport } from './routes/api-docs'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const UseCasesRoute = UseCasesRouteImport.update({
-  id: '/use-cases',
-  path: '/use-cases',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SustainabilityRoute = SustainabilityRouteImport.update({
-  id: '/sustainability',
-  path: '/sustainability',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SuitabilityRoute = SuitabilityRouteImport.update({
-  id: '/suitability',
-  path: '/suitability',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnersRoute = PartnersRouteImport.update({
-  id: '/partners',
-  path: '/partners',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MonitoringRoute = MonitoringRouteImport.update({
-  id: '/monitoring',
-  path: '/monitoring',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ModulesRoute = ModulesRouteImport.update({
-  id: '/modules',
-  path: '/modules',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MiningRoute = MiningRouteImport.update({
-  id: '/mining',
-  path: '/mining',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CropsRoute = CropsRouteImport.update({
-  id: '/crops',
-  path: '/crops',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CareersRoute = CareersRouteImport.update({
-  id: '/careers',
-  path: '/careers',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArchitectureRoute = ArchitectureRouteImport.update({
-  id: '/architecture',
-  path: '/architecture',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiDocsRoute = ApiDocsRouteImport.update({
-  id: '/api-docs',
-  path: '/api-docs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -109,242 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/api-docs': typeof ApiDocsRoute
-  '/architecture': typeof ArchitectureRoute
-  '/careers': typeof CareersRoute
-  '/contact': typeof ContactRoute
-  '/crops': typeof CropsRoute
-  '/mining': typeof MiningRoute
-  '/modules': typeof ModulesRoute
-  '/monitoring': typeof MonitoringRoute
-  '/partners': typeof PartnersRoute
-  '/products': typeof ProductsRoute
-  '/services': typeof ServicesRoute
-  '/suitability': typeof SuitabilityRoute
-  '/sustainability': typeof SustainabilityRoute
-  '/use-cases': typeof UseCasesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/api-docs': typeof ApiDocsRoute
-  '/architecture': typeof ArchitectureRoute
-  '/careers': typeof CareersRoute
-  '/contact': typeof ContactRoute
-  '/crops': typeof CropsRoute
-  '/mining': typeof MiningRoute
-  '/modules': typeof ModulesRoute
-  '/monitoring': typeof MonitoringRoute
-  '/partners': typeof PartnersRoute
-  '/products': typeof ProductsRoute
-  '/services': typeof ServicesRoute
-  '/suitability': typeof SuitabilityRoute
-  '/sustainability': typeof SustainabilityRoute
-  '/use-cases': typeof UseCasesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/api-docs': typeof ApiDocsRoute
-  '/architecture': typeof ArchitectureRoute
-  '/careers': typeof CareersRoute
-  '/contact': typeof ContactRoute
-  '/crops': typeof CropsRoute
-  '/mining': typeof MiningRoute
-  '/modules': typeof ModulesRoute
-  '/monitoring': typeof MonitoringRoute
-  '/partners': typeof PartnersRoute
-  '/products': typeof ProductsRoute
-  '/services': typeof ServicesRoute
-  '/suitability': typeof SuitabilityRoute
-  '/sustainability': typeof SustainabilityRoute
-  '/use-cases': typeof UseCasesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/api-docs'
-    | '/architecture'
-    | '/careers'
-    | '/contact'
-    | '/crops'
-    | '/mining'
-    | '/modules'
-    | '/monitoring'
-    | '/partners'
-    | '/products'
-    | '/services'
-    | '/suitability'
-    | '/sustainability'
-    | '/use-cases'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/api-docs'
-    | '/architecture'
-    | '/careers'
-    | '/contact'
-    | '/crops'
-    | '/mining'
-    | '/modules'
-    | '/monitoring'
-    | '/partners'
-    | '/products'
-    | '/services'
-    | '/suitability'
-    | '/sustainability'
-    | '/use-cases'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/api-docs'
-    | '/architecture'
-    | '/careers'
-    | '/contact'
-    | '/crops'
-    | '/mining'
-    | '/modules'
-    | '/monitoring'
-    | '/partners'
-    | '/products'
-    | '/services'
-    | '/suitability'
-    | '/sustainability'
-    | '/use-cases'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ApiDocsRoute: typeof ApiDocsRoute
-  ArchitectureRoute: typeof ArchitectureRoute
-  CareersRoute: typeof CareersRoute
-  ContactRoute: typeof ContactRoute
-  CropsRoute: typeof CropsRoute
-  MiningRoute: typeof MiningRoute
-  ModulesRoute: typeof ModulesRoute
-  MonitoringRoute: typeof MonitoringRoute
-  PartnersRoute: typeof PartnersRoute
-  ProductsRoute: typeof ProductsRoute
-  ServicesRoute: typeof ServicesRoute
-  SuitabilityRoute: typeof SuitabilityRoute
-  SustainabilityRoute: typeof SustainabilityRoute
-  UseCasesRoute: typeof UseCasesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/use-cases': {
-      id: '/use-cases'
-      path: '/use-cases'
-      fullPath: '/use-cases'
-      preLoaderRoute: typeof UseCasesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sustainability': {
-      id: '/sustainability'
-      path: '/sustainability'
-      fullPath: '/sustainability'
-      preLoaderRoute: typeof SustainabilityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/suitability': {
-      id: '/suitability'
-      path: '/suitability'
-      fullPath: '/suitability'
-      preLoaderRoute: typeof SuitabilityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partners': {
-      id: '/partners'
-      path: '/partners'
-      fullPath: '/partners'
-      preLoaderRoute: typeof PartnersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/monitoring': {
-      id: '/monitoring'
-      path: '/monitoring'
-      fullPath: '/monitoring'
-      preLoaderRoute: typeof MonitoringRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/modules': {
-      id: '/modules'
-      path: '/modules'
-      fullPath: '/modules'
-      preLoaderRoute: typeof ModulesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mining': {
-      id: '/mining'
-      path: '/mining'
-      fullPath: '/mining'
-      preLoaderRoute: typeof MiningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/crops': {
-      id: '/crops'
-      path: '/crops'
-      fullPath: '/crops'
-      preLoaderRoute: typeof CropsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/careers': {
-      id: '/careers'
-      path: '/careers'
-      fullPath: '/careers'
-      preLoaderRoute: typeof CareersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/architecture': {
-      id: '/architecture'
-      path: '/architecture'
-      fullPath: '/architecture'
-      preLoaderRoute: typeof ArchitectureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api-docs': {
-      id: '/api-docs'
-      path: '/api-docs'
-      fullPath: '/api-docs'
-      preLoaderRoute: typeof ApiDocsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -357,21 +53,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ApiDocsRoute: ApiDocsRoute,
-  ArchitectureRoute: ArchitectureRoute,
-  CareersRoute: CareersRoute,
-  ContactRoute: ContactRoute,
-  CropsRoute: CropsRoute,
-  MiningRoute: MiningRoute,
-  ModulesRoute: ModulesRoute,
-  MonitoringRoute: MonitoringRoute,
-  PartnersRoute: PartnersRoute,
-  ProductsRoute: ProductsRoute,
-  ServicesRoute: ServicesRoute,
-  SuitabilityRoute: SuitabilityRoute,
-  SustainabilityRoute: SustainabilityRoute,
-  UseCasesRoute: UseCasesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
