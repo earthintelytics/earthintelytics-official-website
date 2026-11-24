@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowRight, ArrowUpRight, Check, Mail } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import heroImg from "@/assets/real/hero-home.jpeg";
-import farmImg from "@/assets/real/palm-plantation.jpg";
+import heroImg from "@/assets/real/hero-home.webp";
+import farmImg from "@/assets/real/palm-plantation.webp";
 import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
 import { AGRICULTURE, OTHER_SECTORS, SECTORS } from "@/lib/services";
 
@@ -17,7 +17,7 @@ const WIDE = "mx-auto w-full max-w-[1400px] px-6 lg:px-12";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Earthintelytics | Agricultural intelligence, consultancy and Earth observation" },
+      { title: "Earthintelytics | Spatial intelligence and Earth observation" },
       {
         name: "description",
         content:
@@ -41,38 +41,52 @@ const FARM_POINTS = [
 function HomePage() {
   return (
     <PageShell>
-      {/* Hero: the full screen; words on the left, the Earth filling the right half */}
+      {/* Hero: one full-width image of the Earth; a white fade on the left carries the words, aligned with the logo */}
       <section className="relative overflow-hidden border-b border-border">
-        <img src={heroImg} alt="A coastline seen from space" className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover md:block" />
-        <div className={`${WIDE} relative grid min-h-[calc(100vh-4rem)] items-center py-16 md:grid-cols-2`}>
-          <div className="md:pr-16">
+        <img src={heroImg} alt="A coastline, forest and farmland seen from space" fetchPriority="high"
+             className="absolute inset-0 h-full w-full object-cover object-[70%_50%]" />
+        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_55%,rgba(255,255,255,0.75)_70%,rgba(255,255,255,0)_92%)] md:bg-[linear-gradient(90deg,#fff_0%,#fff_34%,rgba(255,255,255,0.85)_46%,rgba(255,255,255,0)_66%)]" />
+        <div className={`${WIDE} relative flex min-h-[88vh] flex-col justify-center py-16`}>
+          <div className="max-w-xl">
             <p className="text-sm font-semibold text-primary">Earthintelytics</p>
             <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl">
-              Agricultural intelligence and Earth observation.
+              Spatial intelligence and Earth observation.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              We build FarmIntelytics, our agriculture platform, and we carry out consultancy, research and
-              Earth-observation assessments for organisations in agriculture and other sectors.
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              We turn satellite, drone and field data into answers about land: through FarmIntelytics, our platform for
+              farms, and through consultancy, research and Earth-observation assessments across agriculture, forestry,
+              mining, water and the environment.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#products" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
                 FarmIntelytics <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="/consultancy" className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface">
+              <a href="/consultancy" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface">
                 Consultancy and research
               </a>
             </div>
           </div>
-          <img src={heroImg} alt="" className="mt-10 aspect-[4/3] w-full rounded-xl object-cover md:hidden" />
+          {/* The three things we do, one click away */}
+          <div className="mt-14 grid max-w-4xl gap-3 sm:grid-cols-3">
+            {[
+              { href: "#products", title: "FarmIntelytics", text: "Our agriculture platform" },
+              { href: "/consultancy#agriculture", title: "Consultancy and research", text: "Studies, suitability, EUDR, training" },
+              { href: "/consultancy#sectors", title: "Earth observation", text: "Assessments across sectors" },
+            ].map((c) => (
+              <a key={c.title} href={c.href} className="group rounded-xl border border-border bg-background/95 p-5 hover:border-primary">
+                <p className="flex items-center justify-between font-display text-base font-semibold text-foreground">{c.title}<ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-0.5" /></p>
+                <p className="mt-1 text-sm text-muted-foreground">{c.text}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Our product: FarmIntelytics */}
-      <section id="products" className="relative scroll-mt-20 overflow-hidden border-b border-border">
-        <img src={farmImg} alt="An oil palm plantation from the air" loading="lazy" className="absolute inset-y-0 left-0 hidden h-full w-1/2 object-cover md:block" />
-        <div className={`${WIDE} relative grid min-h-[80vh] items-center gap-10 py-16 md:grid-cols-2 md:py-24`}>
-          <img src={farmImg} alt="" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover md:hidden" />
-          <div className="md:col-start-2 md:pl-16">
+      <section id="products" className="scroll-mt-20 border-b border-border">
+        <div className={`${WIDE} grid items-center gap-10 py-16 md:grid-cols-2 md:gap-16 md:py-24`}>
+          <img src={farmImg} alt="An oil palm plantation from the air" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+          <div>
             <p className="text-sm font-semibold text-primary">Our product</p>
             <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">FarmIntelytics</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">

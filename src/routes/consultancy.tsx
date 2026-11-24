@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import heroImg from "@/assets/real/hero-home.jpeg";
+import heroImg from "@/assets/real/hero-home.webp";
 import { AGRICULTURE, HOW_WE_WORK, OTHER_SECTORS, SECTORS, type Service } from "@/lib/services";
 import { CONTACT_EMAIL } from "@/lib/site";
 
@@ -23,9 +23,10 @@ function ConsultancyPage() {
     <PageShell>
       {/* Hero, the full width of the screen */}
       <section className="relative overflow-hidden border-b border-border">
-        <img src={heroImg} alt="" className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover lg:block" />
-        <div className={`${WIDE} relative grid min-h-[70vh] items-center py-16 lg:grid-cols-2`}>
-          <div className="lg:pr-16">
+        <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover object-[70%_50%]" />
+        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_60%,rgba(255,255,255,0.8)_75%,rgba(255,255,255,0)_95%)] md:bg-[linear-gradient(90deg,#fff_0%,#fff_36%,rgba(255,255,255,0.85)_48%,rgba(255,255,255,0)_68%)]" />
+        <div className={`${WIDE} relative flex min-h-[72vh] items-center py-16`}>
+          <div className="max-w-xl">
             <p className="text-sm font-semibold text-primary">Consultancy and research</p>
             <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-6xl">
               Answers about land, from people who read it every day.

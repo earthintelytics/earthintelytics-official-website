@@ -29,7 +29,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Earthintelytics | Agricultural intelligence, consultancy and Earth observation" },
+      { title: "Earthintelytics | Spatial intelligence and Earth observation" },
       {
         name: "description",
         content:
@@ -38,8 +38,8 @@ export const Route = createRootRoute({
       { name: "author", content: "EarthIntelytics" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Earthintelytics | Agricultural intelligence, consultancy and Earth observation" },
-      { name: "twitter:title", content: "Earthintelytics | Agricultural intelligence, consultancy and Earth observation" },
+      { property: "og:title", content: "Earthintelytics | Spatial intelligence and Earth observation" },
+      { name: "twitter:title", content: "Earthintelytics | Spatial intelligence and Earth observation" },
       { name: "description", content: "Earthintelytics builds FarmIntelytics, its agriculture platform, and carries out consultancy, research and Earth-observation assessments for agriculture and other sectors." },
       { property: "og:description", content: "Earthintelytics builds FarmIntelytics, its agriculture platform, and carries out consultancy, research and Earth-observation assessments for agriculture and other sectors." },
       { name: "twitter:description", content: "Earthintelytics builds FarmIntelytics, its agriculture platform, and carries out consultancy, research and Earth-observation assessments for agriculture and other sectors." },
