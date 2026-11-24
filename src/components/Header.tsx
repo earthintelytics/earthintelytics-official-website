@@ -4,10 +4,12 @@ import { Logo } from "./Logo";
 
 /** The site header: the logo, the page's sections, and "Talk to us". A menu button on a phone. */
 const LINKS = [
+  { href: "/#what-we-do", label: "What we do" },
+  { href: "/#use-cases", label: "Use cases" },
+  { href: "/#research", label: "Research" },
+  { href: "/consultancy", label: "Consultancy" },
   { href: "/#products", label: "FarmIntelytics" },
-  { href: "/consultancy", label: "Consultancy and research" },
   { href: "/#about", label: "About" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 export function Header() {

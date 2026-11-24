@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.webp";
-import { AGRICULTURE, HOW_WE_WORK, OTHER_SECTORS, SECTORS, type Service } from "@/lib/services";
+import { EO_SERVICES, HOW_WE_WORK, SECTOR_NAMES, SECTOR_SERVICES, type Service } from "@/lib/services";
 import { CONTACT_EMAIL } from "@/lib/site";
 
 /** /consultancy: our consultancy and research, in agriculture and across other sectors, and how we work. */
@@ -32,24 +32,24 @@ function ConsultancyPage() {
               Answers about land, from people who read it every day.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Studies, assessments and systems built with you: agriculture first, and Earth-observation work across
-              forestry, mining, water and the environment.
+              Studies, assessments and systems built with you: across agriculture, forestry and carbon, mining, water,
+              climate and planning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#agriculture" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+              <a href="#sectors" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
                 What we do <ArrowRight className="h-4 w-4" />
               </a>
               <a href="/#contact" className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface">
                 Talk to us
               </a>
             </div>
-            <p className="mt-10 text-sm text-muted-foreground"><span className="font-semibold text-foreground">Sectors: </span>{SECTORS.join(" · ")}</p>
+            <p className="mt-10 text-sm text-muted-foreground"><span className="font-semibold text-foreground">Sectors: </span>{SECTOR_NAMES.join(" · ")}</p>
           </div>
         </div>
       </section>
 
-      <ServiceBlock id="agriculture" kicker="In agriculture" title="Research, suitability, monitoring and due diligence" items={AGRICULTURE} />
-      <ServiceBlock id="sectors" kicker="Across other sectors, including mining" title="Earth observation, GIS and geospatial systems" items={OTHER_SECTORS} tinted />
+      <ServiceBlock id="sectors" kicker="Across every sector" title="Earth observation, spatial analysis and geospatial systems" items={EO_SERVICES} />
+      <ServiceBlock id="agriculture" kicker="Studies, suitability and due diligence" title="Research and studies for land, crops and supply chains" items={SECTOR_SERVICES} tinted />
 
       {/* How we work */}
       <section className="border-b border-border">
