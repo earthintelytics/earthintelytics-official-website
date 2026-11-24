@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 /** The site header: the logo, the page's sections, and "Talk to us". A menu button on a phone. */
 const LINKS = [
   { href: "/#products", label: "FarmIntelytics" },
-  { href: "/#services", label: "Consultancy" },
+  { href: "/consultancy", label: "Consultancy and research" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -14,7 +14,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-6 lg:px-12">
         <Logo />
         <nav className="hidden items-center gap-8 md:flex" aria-label="Sections">
           {LINKS.map((l) => (

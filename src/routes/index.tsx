@@ -5,10 +5,14 @@ import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.jpeg";
 import farmImg from "@/assets/real/palm-plantation.jpg";
 import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
+import { AGRICULTURE, OTHER_SECTORS, SECTORS } from "@/lib/services";
+
+const WIDE = "mx-auto w-full max-w-[1400px] px-6 lg:px-12";
 
 /**
  * The Earthintelytics landing page: who we are, our product (FarmIntelytics), our consultancy and research (in
- * agriculture, and Earth-observation work across other sectors), and how to reach us. One page, plain words, white surfaces, no effects.
+ * agriculture, and Earth-observation work across other sectors; in full on /consultancy), and how to reach us. Full-width
+ * sections, plain words, white surfaces, no effects.
  */
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,35 +37,20 @@ const FARM_POINTS = [
   "EUDR deforestation checks, and an API for your own systems",
 ];
 
-// Consultancy and research. Agriculture first; Earth-observation work across other sectors as a service.
-const AGRICULTURE = [
-  { title: "Agricultural research and studies", text: "Crop, land and climate studies for farms, estates, programmes and researchers, from satellite records and field data." },
-  { title: "Land suitability and site selection", text: "Where a crop or project fits best, from terrain, soil, rainfall and water, by the FAO land-evaluation method." },
-  { title: "Monitoring and yield studies", text: "Setting up crop monitoring for estates and programmes, and studies of growth, stress and yield over seasons." },
-  { title: "EUDR and supply-chain due diligence", text: "Mapping production plots, checking them against the 2020 cut-off, and preparing the files buyers ask for." },
-  { title: "Training and capacity building", text: "Teaching teams to read satellite results, collect field data and use the tools in their daily work." },
-];
-const OTHER_SECTORS = [
-  { title: "Earth-observation assessments", text: "Land cover, change over time and site condition for mining, forestry and carbon, water, infrastructure and the environment." },
-  { title: "GIS and mapping", text: "Maps, spatial analysis and data for planning, reporting and decisions, from a single site to a region." },
-  { title: "Custom geospatial systems", text: "Dashboards, data pipelines and integrations built around your own data and processes." },
-];
-
-const SECTORS = ["Agriculture", "Forestry and carbon", "Mining", "Water and hydrology", "Climate and environment", "Land planning"];
-
 // ── Page ──────────────────────────────────────────────────────────────────────────────────────────
 function HomePage() {
   return (
     <PageShell>
-      {/* Hero: words on the left, a view of the Earth on the right */}
-      <section className="border-b border-border">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:py-24">
-          <div>
+      {/* Hero: the full screen; words on the left, the Earth filling the right half */}
+      <section className="relative overflow-hidden border-b border-border">
+        <img src={heroImg} alt="A coastline seen from space" className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover md:block" />
+        <div className={`${WIDE} relative grid min-h-[calc(100vh-4rem)] items-center py-16 md:grid-cols-2`}>
+          <div className="md:pr-16">
             <p className="text-sm font-semibold text-primary">Earthintelytics</p>
-            <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl">
+            <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl">
               Agricultural intelligence and Earth observation.
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               We build FarmIntelytics, our agriculture platform, and we carry out consultancy, research and
               Earth-observation assessments for organisations in agriculture and other sectors.
             </p>
@@ -69,20 +58,21 @@ function HomePage() {
               <a href="#products" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
                 FarmIntelytics <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface">
-                Talk to us
+              <a href="/consultancy" className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface">
+                Consultancy and research
               </a>
             </div>
           </div>
-          <img src={heroImg} alt="A coastline seen from space" className="aspect-[4/3] w-full rounded-xl object-cover" />
+          <img src={heroImg} alt="" className="mt-10 aspect-[4/3] w-full rounded-xl object-cover md:hidden" />
         </div>
       </section>
 
       {/* Our product: FarmIntelytics */}
-      <section id="products" className="scroll-mt-20 border-b border-border">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:py-20">
-          <img src={farmImg} alt="An oil palm plantation from the air" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover md:order-2" />
-          <div>
+      <section id="products" className="relative scroll-mt-20 overflow-hidden border-b border-border">
+        <img src={farmImg} alt="An oil palm plantation from the air" loading="lazy" className="absolute inset-y-0 left-0 hidden h-full w-1/2 object-cover md:block" />
+        <div className={`${WIDE} relative grid min-h-[80vh] items-center gap-10 py-16 md:grid-cols-2 md:py-24`}>
+          <img src={farmImg} alt="" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover md:hidden" />
+          <div className="md:col-start-2 md:pl-16">
             <p className="text-sm font-semibold text-primary">Our product</p>
             <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">FarmIntelytics</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
@@ -101,25 +91,34 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Consultancy and research */}
+      {/* Consultancy and research: a preview; the full list is on /consultancy */}
       <section id="services" className="scroll-mt-20 border-b border-border bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Consultancy and research</h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">When you need a study, an assessment or a system built around your work, our team does it with you.</p>
-          <h3 className="mt-10 text-sm font-semibold uppercase tracking-wider text-muted-foreground">In agriculture</h3>
-          <div className="mt-5 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {AGRICULTURE.map((s) => <Service key={s.title} {...s} />)}
+        <div className={`${WIDE} py-16 md:py-24`}>
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-primary">Consultancy and research</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Studies, assessments and systems, built with you</h2>
+              <p className="mt-3 max-w-2xl text-muted-foreground">Agriculture first, and Earth-observation work across other sectors, including mining.</p>
+            </div>
+            <a href="/consultancy" className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+              All consultancy and research <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
-          <h3 className="mt-12 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Across other sectors, including mining</h3>
-          <div className="mt-5 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {OTHER_SECTORS.map((s) => <Service key={s.title} {...s} />)}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {[...AGRICULTURE.slice(0, 3), OTHER_SECTORS[0]].map((s) => (
+              <a key={s.title} href="/consultancy" className="group rounded-xl border border-border bg-background p-7 hover:border-primary">
+                <h3 className="font-display text-lg font-semibold text-foreground">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">Read more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
       {/* About */}
       <section id="about" className="scroll-mt-20 border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.2fr_1fr] md:py-20">
+        <div className={`${WIDE} grid gap-10 py-16 md:grid-cols-[1.2fr_1fr] md:py-24`}>
           <div>
             <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">About us</h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
@@ -145,15 +144,6 @@ function HomePage() {
   );
 }
 
-function Service({ title, text }: { title: string; text: string }) {
-  return (
-    <div>
-      <h4 className="font-display text-lg font-semibold text-foreground">{title}</h4>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
-    </div>
-  );
-}
-
 /** Contact: our email, and a short form that opens the visitor's email with their message (nothing is stored). */
 function Contact() {
   const [form, setForm] = useState({ name: "", organisation: "", message: "" });
@@ -165,7 +155,7 @@ function Contact() {
   const input = "w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none";
   return (
     <section id="contact" className="scroll-mt-20">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:py-20">
+      <div className={`${WIDE} grid gap-10 py-16 md:grid-cols-2 md:py-24`}>
         <div>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Talk to us</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
