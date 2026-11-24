@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Mail } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.jpeg";
 import farmImg from "@/assets/real/palm-plantation.jpg";
@@ -80,7 +80,7 @@ function HomePage() {
             </p>
             <ul className="mt-5 space-y-2.5">
               {FARM_POINTS.map((x) => (
-                <li key={x} className="flex gap-3 text-foreground"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />{x}</li>
+                <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
               ))}
             </ul>
             <a href={PRODUCT_LINKS.farmintelytics} {...(PRODUCT_LINKS.farmintelytics.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
@@ -132,7 +132,7 @@ function HomePage() {
             <p className="text-sm font-semibold text-foreground">Where we work</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {SECTORS.map((s) => (
-                <li key={s} className="rounded-full border border-border px-3 py-1.5 text-sm text-muted-foreground">{s}</li>
+                <li key={s} className="rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground">{s}</li>
               ))}
             </ul>
           </div>

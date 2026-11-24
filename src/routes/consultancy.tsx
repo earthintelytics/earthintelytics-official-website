@@ -42,9 +42,7 @@ function ConsultancyPage() {
                 Talk to us
               </a>
             </div>
-            <ul className="mt-10 flex flex-wrap gap-2">
-              {SECTORS.map((s) => <li key={s} className="rounded-full border border-border px-3 py-1.5 text-sm text-muted-foreground">{s}</li>)}
-            </ul>
+            <p className="mt-10 text-sm text-muted-foreground"><span className="font-semibold text-foreground">Sectors: </span>{SECTORS.join(" · ")}</p>
           </div>
         </div>
       </section>
