@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, CloudRain, Drop
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.webp";
 import farmImg from "@/assets/real/palm-plantation.webp";
+import gwonImg from "@/assets/real/gwon-map.webp";
 import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
 import { HOW_WE_WORK, METHODS, PILLARS, PUBLICATIONS, SECTORS } from "@/lib/services";
 
@@ -32,6 +33,13 @@ const SECTOR_ICON: Record<string, typeof Leaf> = {
   agriculture: Wheat, forestry: TreePine, mining: Mountain, water: Droplets, climate: CloudRain, planning: MapIcon,
 };
 const PILLAR_ICON = [Satellite, BookOpen, Layers];
+
+const PLATFORM_POINTS = [
+  "Your own platform, with your name, your logo and your colours",
+  "Built on our engine: satellite and climate data, maps, analysis, advice, reports and APIs",
+  "Your data and your users, with sign-in, roles and alerts",
+  "Hosted, kept up to date and supported by our team",
+];
 
 const FARM_POINTS = [
   "Crop health and growth from satellite, block by block",
@@ -213,6 +221,32 @@ function HomePage() {
             <a href={PRODUCT_LINKS.farmintelytics} {...(PRODUCT_LINKS.farmintelytics.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
               Visit FarmIntelytics <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Platforms we build and run */}
+      <section id="platforms" className="scroll-mt-20 border-b border-border">
+        <div className={`${WIDE} grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-28`}>
+          <div className="md:order-2">
+            <img src={gwonImg} alt="The GreenWall Observatory Nigeria map: vegetation across the eleven Great Green Wall frontline states" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+            <p className="mt-3 text-sm text-muted-foreground">GreenWall Observatory Nigeria: a platform prototype we built for the National Agency for the Great Green Wall.</p>
+          </div>
+          <div className="md:order-1">
+            <Kicker>Platforms we build and run</Kicker>
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">Your own platform, managed by us</h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              For agencies, programmes and companies that need a platform of their own, we design, build, host and
+              manage it for you, on the same engine that powers FarmIntelytics.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {PLATFORM_POINTS.map((x) => (
+                <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
+              ))}
+            </ul>
+            <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+              Talk to us about your platform <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
