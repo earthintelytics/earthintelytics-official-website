@@ -3,7 +3,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, CloudSun, Droplets, Factory, Layers, Leaf, Mail, Map as MapIcon, Mountain, Satellite, Sprout, TreePine, Wheat } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.webp";
-import farmImg from "@/assets/real/palm-plantation.webp";
+import farmImg from "@/assets/photos/oilpalm.webp";
 import gwonImg from "@/assets/real/gwon-map.webp";
 
 // Real photographs (credited in the footer); the AI-made picture is used only in the hero above.
@@ -228,7 +228,7 @@ function HomePage() {
       {/* Our platform: FarmIntelytics */}
       <section id="products" className="scroll-mt-20 border-b border-border">
         <div className={`${WIDE} grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-28`}>
-          <img src={farmImg} alt="An oil palm plantation from the air" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+          <img src={farmImg} alt="An oil palm plantation" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
           <div>
             <Kicker>Our platform for agriculture</Kicker>
             <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">FarmIntelytics</h2>
