@@ -4,7 +4,7 @@
  * clients, partners, projects or figures (owner, 24 Nov 2026: projects and partners stay off until a list is sent).
  */
 export type Service = { title: string; text: string; points?: string[] };
-export type Sector = { id: string; name: string; text: string; uses: string[] };
+export type Sector = { id: string; name: string; text: string; uses: string[]; photo: string; tone: string };
 
 /** The three things we do, side by side. */
 export const PILLARS: Service[] = [
@@ -18,23 +18,25 @@ export const PILLARS: Service[] = [
 
 /** Use cases, sector by sector: work we do, described plainly. */
 export const SECTORS: Sector[] = [
-  { id: "agriculture", name: "Agriculture and food", text: "Farms, estates, co-operatives and supply chains.",
+  { id: "agriculture", name: "Agriculture and food", text: "Farms, estates, co-operatives and supply chains.", photo: "agriculture", tone: "#4F8A2B",
     uses: ["Crop health and yield monitoring", "Land suitability before planting", "EUDR deforestation due diligence"] },
-  { id: "forestry", name: "Forestry and carbon", text: "Forests, restoration and carbon projects.",
+  { id: "forestry", name: "Forestry and carbon", text: "Forests, restoration and carbon projects.", photo: "forestry", tone: "#1F7A4D",
     uses: ["Forest cover, loss and degradation", "Restoration progress over time", "Carbon project baselines"] },
-  { id: "mining", name: "Mining and extractives", text: "Mine sites, concessions and their surroundings.",
-    uses: ["Land disturbance and pit expansion", "Reclamation and rehabilitation tracking", "Tailings, water and vegetation around sites"] },
-  { id: "water", name: "Water and hydrology", text: "Rivers, reservoirs, wetlands and irrigation.",
+  { id: "environment", name: "Environment and biodiversity", text: "Ecosystems, protected areas and environmental reporting.", photo: "environment", tone: "#0F8C7A",
+    uses: ["Ecosystem and habitat change", "Protected areas and their surroundings", "Environmental impact baselines and monitoring"] },
+  { id: "geology", name: "Geology and earth resources", text: "Rocks, soils, minerals and the land around them.", photo: "geology", tone: "#A8642A",
+    uses: ["Geological and lineament mapping from satellite", "Erosion, gullies and land degradation", "Land disturbance and rehabilitation around extraction sites"] },
+  { id: "water", name: "Water and hydrology", text: "Rivers, lakes, wetlands and irrigation.", photo: "water", tone: "#2468B5",
     uses: ["Surface water extent through the seasons", "Flood mapping and exposure", "Irrigation demand and water stress"] },
-  { id: "climate", name: "Climate and environment", text: "Ecosystems, risk and environmental reporting.",
-    uses: ["Climate and rainfall analysis for a site", "Ecosystem and protected-area change", "Environmental impact baselines"] },
-  { id: "planning", name: "Land and infrastructure planning", text: "Governments, developers and planners.",
+  { id: "climate", name: "Climate and resilience", text: "Drought, heat and the climate ahead.", photo: "climate", tone: "#C2832A",
+    uses: ["Rainfall, drought and heat analysis for any area", "Climate projections and scenarios", "Resilience and risk assessments"] },
+  { id: "planning", name: "Land and infrastructure planning", text: "Governments, developers and planners.", photo: "planning", tone: "#5A4FB0",
     uses: ["Base maps and land-use mapping", "Site selection and constraints", "Change detection around projects"] },
 ];
 
 /** Consultancy, grouped the same way: across sectors first, then sector depth, then systems and training. */
 export const EO_SERVICES: Service[] = [
-  { title: "Earth-observation assessments", text: "Land cover, change over time and site condition for any land: mining, forestry and carbon, water, infrastructure and the environment.",
+  { title: "Earth-observation assessments", text: "Land cover, change over time and site condition for any land: geology and earth resources, forestry and carbon, water, infrastructure and the environment.",
     points: ["Sentinel-1 radar and Sentinel-2 optical archives", "Change detection, year by year", "Maps and a report in plain words"] },
   { title: "GIS and spatial analysis", text: "Maps, spatial analysis and data for planning, reporting and decisions, from a single site to a region.",
     points: ["Base maps and land-use maps", "Spatial analysis for planning", "Map books and data for reports"] },

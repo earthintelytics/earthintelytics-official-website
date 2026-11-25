@@ -1,10 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, CloudRain, Droplets, Factory, Layers, Leaf, Mail, Map as MapIcon, Mountain, Satellite, TreePine, Wheat } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, CloudSun, Droplets, Factory, Layers, Leaf, Mail, Map as MapIcon, Mountain, Satellite, Sprout, TreePine, Wheat } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.webp";
 import farmImg from "@/assets/real/palm-plantation.webp";
 import gwonImg from "@/assets/real/gwon-map.webp";
+
+// Real photographs (credited in the footer); the AI-made picture is used only in the hero above.
+import p_agriculture from "@/assets/photos/agriculture.webp";
+import p_forestry from "@/assets/photos/forestry.webp";
+import p_environment from "@/assets/photos/environment.webp";
+import p_geology from "@/assets/photos/geology.webp";
+import p_water from "@/assets/photos/water.webp";
+import p_climate from "@/assets/photos/climate.webp";
+import p_planning from "@/assets/photos/planning.webp";
+import p_research from "@/assets/photos/research.webp";
+import p_farmland from "@/assets/photos/farmland.webp";
+const PHOTOS: Record<string, string> = { agriculture: p_agriculture, forestry: p_forestry, environment: p_environment, geology: p_geology, water: p_water, climate: p_climate, planning: p_planning, research: p_research, farmland: p_farmland };
+const photo = (k: string) => PHOTOS[k];
 import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
 import { HOW_WE_WORK, METHODS, PILLARS, PUBLICATIONS, SECTORS } from "@/lib/services";
 
@@ -22,7 +35,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Earthintelytics turns satellite, drone and field data into answers about land, across agriculture, forestry and carbon, mining, water, climate and planning: assessments, research and studies, and platforms.",
+          "Earthintelytics turns satellite, drone and field data into answers about land, across agriculture, forestry and carbon, the environment, geology, water, climate and planning: assessments, research and studies, and platforms.",
       },
     ],
   }),
@@ -30,9 +43,11 @@ export const Route = createFileRoute("/")({
 });
 
 const SECTOR_ICON: Record<string, typeof Leaf> = {
-  agriculture: Wheat, forestry: TreePine, mining: Mountain, water: Droplets, climate: CloudRain, planning: MapIcon,
+  agriculture: Wheat, forestry: TreePine, environment: Sprout, geology: Mountain, water: Droplets, climate: CloudSun, planning: MapIcon,
 };
 const PILLAR_ICON = [Satellite, BookOpen, Layers];
+const PILLAR_PHOTO = ["gwon", "research", "farmland"];
+const PILLAR_TONE = ["#0F8C7A", "#C2832A", "#2468B5"];
 
 const PLATFORM_POINTS = [
   "Your own platform, with your name, your logo and your colours",
@@ -72,7 +87,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
               We turn satellite, drone and field data into answers about land, for agriculture, forestry and carbon,
-              mining, water, climate and planning.
+              the environment, geology, water, climate and planning.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a href="#what-we-do" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
@@ -88,8 +103,8 @@ function HomePage() {
             {SECTORS.map((s) => {
               const Icon = SECTOR_ICON[s.id] || Leaf;
               return (
-                <a key={s.id} href={`#${s.id}`} className="group flex items-center gap-2.5 rounded-lg border border-border bg-background/95 px-3.5 py-3 text-sm font-medium text-foreground hover:border-primary">
-                  <Icon className="h-4 w-4 shrink-0 text-primary" />{s.name}
+                <a key={s.id} href={`#${s.id}`} className="group flex items-center gap-2.5 rounded-lg border border-border bg-background/95 px-3.5 py-3 text-sm font-medium text-foreground hover:border-primary" style={{ borderLeft: `4px solid ${s.tone}` }}>
+                  <Icon className="h-4 w-4 shrink-0" style={{ color: s.tone }} />{s.name}
                 </a>
               );
             })}
@@ -102,7 +117,7 @@ function HomePage() {
       </section>
 
       {/* What we do: three equal pillars */}
-      <section id="what-we-do" className="scroll-mt-20 border-b border-border">
+      <section id="what-we-do" className="scroll-mt-20 border-b border-border bg-gradient-to-b from-[#F1F8F4] to-background">
         <div className={`${WIDE} py-20 md:py-28`}>
           <Kicker>What we do</Kicker>
           <H2>From a single site to a whole region, the answers land needs</H2>
@@ -110,13 +125,16 @@ function HomePage() {
             {PILLARS.map((p, i) => {
               const Icon = PILLAR_ICON[i];
               return (
-                <article key={p.title} className="rounded-xl border border-border p-8">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary"><Icon className="h-6 w-6" /></span>
+                <article key={p.title} className="overflow-hidden rounded-xl border border-border bg-background" style={{ borderTop: `4px solid ${PILLAR_TONE[i]}` }}>
+                  <img src={i === 0 ? gwonImg : photo(PILLAR_PHOTO[i])} alt="" loading="lazy" className="h-44 w-full object-cover" />
+                  <div className="p-8">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-lg text-white" style={{ background: PILLAR_TONE[i] }}><Icon className="h-6 w-6" /></span>
                   <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{p.title}</h3>
                   <p className="mt-3 leading-relaxed text-muted-foreground">{p.text}</p>
                   <ul className="mt-6 space-y-2.5">
-                    {p.points?.map((x) => <li key={x} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{x}</li>)}
+                    {p.points?.map((x) => <li key={x} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: PILLAR_TONE[i] }} />{x}</li>)}
                   </ul>
+                  </div>
                 </article>
               );
             })}
@@ -125,7 +143,7 @@ function HomePage() {
       </section>
 
       {/* Use cases, sector by sector */}
-      <section id="use-cases" className="scroll-mt-20 border-b border-border bg-surface">
+      <section id="use-cases" className="scroll-mt-20 border-b border-border bg-[#FBF8F1]">
         <div className={`${WIDE} py-20 md:py-28`}>
           <Kicker>Use cases</Kicker>
           <H2>One way of seeing land, many sectors</H2>
@@ -134,17 +152,23 @@ function HomePage() {
             {SECTORS.map((s) => {
               const Icon = SECTOR_ICON[s.id] || Leaf;
               return (
-                <article key={s.id} id={s.id} className="scroll-mt-24 rounded-xl border border-border bg-background p-7">
+                <article key={s.id} id={s.id} className="scroll-mt-24 overflow-hidden rounded-xl border border-border bg-background">
+                  <div className="relative h-44">
+                    <img src={photo(s.photo)} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
+                    <span className="absolute inset-x-0 bottom-0 h-1.5" style={{ background: s.tone }} />
+                  </div>
+                  <div className="p-7">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary"><Icon className="h-5 w-5" /></span>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-lg text-white" style={{ background: s.tone }}><Icon className="h-5 w-5" /></span>
                     <div>
                       <h3 className="font-display text-lg font-semibold text-foreground">{s.name}</h3>
                       <p className="text-sm text-muted-foreground">{s.text}</p>
                     </div>
                   </div>
                   <ul className="mt-6 space-y-2.5 border-t border-border pt-5">
-                    {s.uses.map((u) => <li key={u} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{u}</li>)}
+                    {s.uses.map((u) => <li key={u} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: s.tone }} />{u}</li>)}
                   </ul>
+                  </div>
                 </article>
               );
             })}

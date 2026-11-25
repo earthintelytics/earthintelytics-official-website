@@ -1,15 +1,16 @@
 import { Logo } from "./Logo";
 import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
+import CREDITS from "@/lib/photoCredits.json";
 
 /** The site footer: what we are, the products, how to reach us. */
 export function Footer() {
   const ext = (href: string) => (href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {});
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="border-t-4 border-primary bg-[#F1F8F4]">
       <div className="mx-auto grid w-full max-w-[1400px] gap-8 px-6 py-12 md:grid-cols-3 lg:px-12">
         <div>
           <Logo />
-          <p className="mt-4 max-w-xs text-sm text-muted-foreground">FarmIntelytics, and consultancy, research and Earth-observation assessments for agriculture and other sectors.</p>
+          <p className="mt-4 max-w-xs text-sm text-muted-foreground">Spatial intelligence and Earth observation: assessments, research, FarmIntelytics, and platforms we build and run.</p>
         </div>
         <div>
           <p className="text-sm font-semibold text-foreground">Product</p>
@@ -26,7 +27,17 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <p className="mx-auto w-full max-w-[1400px] px-6 py-5 text-xs lg:px-12 text-muted-foreground">© {new Date().getFullYear()} Earthintelytics. All rights reserved.</p>
+        <div className="mx-auto w-full max-w-[1400px] px-6 py-5 text-xs lg:px-12 text-muted-foreground space-y-2">
+          <p>© {new Date().getFullYear()} Earthintelytics. All rights reserved.</p>
+          <details>
+            <summary className="cursor-pointer">Photo credits</summary>
+            <ul className="mt-2 space-y-1">
+              {Object.values(CREDITS as Record<string, { title: string; author: string; licence: string; source: string }>).map((c) => (
+                <li key={c.title}><a href={c.source} target="_blank" rel="noreferrer" className="underline">{c.title}</a> · {c.author || "Wikimedia Commons"} · {c.licence}</li>
+              ))}
+            </ul>
+          </details>
+        </div>
       </div>
     </footer>
   );

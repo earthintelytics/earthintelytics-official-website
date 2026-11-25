@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import heroImg from "@/assets/real/hero-home.webp";
+import heroImg from "@/assets/photos/farmland.webp";
 import { EO_SERVICES, HOW_WE_WORK, SECTOR_NAMES, SECTOR_SERVICES, type Service } from "@/lib/services";
 import { CONTACT_EMAIL } from "@/lib/site";
 
@@ -32,7 +32,7 @@ function ConsultancyPage() {
               Answers about land, from people who read it every day.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Studies, assessments and systems built with you: across agriculture, forestry and carbon, mining, water,
+              Studies, assessments and systems built with you: across agriculture, forestry and carbon, the environment, geology, water,
               climate and planning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
