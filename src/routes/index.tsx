@@ -117,15 +117,15 @@ function HomePage() {
 
       {/* What we do: three equal pillars */}
       <section id="what-we-do" className="scroll-mt-20 border-b border-border bg-gradient-to-b from-[#F1F8F4] to-background">
-        <div className={`${WIDE} py-20 md:py-28`}>
+        <div className={`${WIDE} py-14 md:py-16`}>
           <Kicker>What we do</Kicker>
           <H2>From a single site to a whole region, the answers land needs</H2>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {PILLARS.map((p, i) => {
               const Icon = PILLAR_ICON[i];
               return (
                 <article key={p.title} className="overflow-hidden rounded-xl border border-border bg-background">
-                  <img src={i === 0 ? gwonImg : photo(PILLAR_PHOTO[i])} alt="" loading="lazy" className="h-44 w-full object-cover" />
+                  <img src={i === 0 ? gwonImg : photo(PILLAR_PHOTO[i])} alt="" loading="lazy" className="h-36 w-full object-cover" />
                   <div className="p-8">
                   <Icon className="h-7 w-7 text-primary" />
                   <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{p.title}</h3>
@@ -143,43 +143,51 @@ function HomePage() {
 
       {/* Use cases, sector by sector */}
       <section id="use-cases" className="scroll-mt-20 border-b border-border bg-[#FBF8F1]">
-        <div className={`${WIDE} py-20 md:py-28`}>
+        <div className={`${WIDE} py-14 md:py-16`}>
           <Kicker>Use cases</Kicker>
           <H2>One way of seeing land, many sectors</H2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">The same satellites, methods and care, applied to the question in front of you.</p>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {SECTORS.map((s) => {
               const Icon = SECTOR_ICON[s.id] || Leaf;
               return (
                 <article key={s.id} id={s.id} className="scroll-mt-24 overflow-hidden rounded-xl border border-border bg-background">
-                  <div className="relative h-44">
+                  <div className="relative h-32">
                     <img src={photo(s.photo)} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
                   </div>
-                  <div className="p-7">
-                  <div className="flex items-center gap-3">
-                    <Icon className="h-6 w-6 shrink-0 text-primary" />
+                  <div className="p-5">
+                  <div className="flex items-start gap-2.5">
+                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <div>
-                      <h3 className="font-display text-lg font-semibold text-foreground">{s.name}</h3>
-                      <p className="text-sm text-muted-foreground">{s.text}</p>
+                      <h3 className="font-display text-base font-semibold text-foreground">{s.name}</h3>
+                      <p className="text-xs text-muted-foreground">{s.text}</p>
                     </div>
                   </div>
-                  <ul className="mt-6 space-y-2.5 border-t border-border pt-5">
-                    {s.uses.map((u) => <li key={u} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{u}</li>)}
+                  <ul className="mt-4 space-y-1.5 border-t border-border pt-3">
+                    {s.uses.map((u) => <li key={u} className="flex gap-2 text-[13px] leading-snug text-foreground"><Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />{u}</li>)}
                   </ul>
                   </div>
                 </article>
               );
             })}
+            <a href="#contact" className="group flex flex-col justify-between rounded-xl border border-border bg-background p-6">
+              <div>
+                <Layers className="h-6 w-6 text-primary" />
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Your sector</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Land questions come from everywhere: energy, health, insurance, disaster response. Tell us yours and we will show you what the data can answer.</p>
+              </div>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">Talk to us <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
+            </a>
           </div>
         </div>
       </section>
 
       {/* How we work */}
       <section className="border-b border-border">
-        <div className={`${WIDE} py-20 md:py-28`}>
+        <div className={`${WIDE} py-14 md:py-16`}>
           <Kicker>How we work</Kicker>
           <H2>From your question to a decision</H2>
-          <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {HOW_WE_WORK.map((s, i) => (
               <li key={s.title} className="border-t-2 border-primary pt-5">
                 <span className="font-display text-sm font-semibold text-primary">Step {i + 1}</span>
@@ -193,7 +201,7 @@ function HomePage() {
 
       {/* Research and studies */}
       <section id="research" className="scroll-mt-20 border-b border-border bg-surface">
-        <div className={`${WIDE} grid gap-14 py-20 md:py-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]`}>
+        <div className={`${WIDE} grid gap-14 py-14 md:py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]`}>
           <div>
             <Kicker>Research and studies</Kicker>
             <H2>Methods we publish, and stand behind</H2>
@@ -227,7 +235,7 @@ function HomePage() {
 
       {/* Our platform: FarmIntelytics */}
       <section id="products" className="scroll-mt-20 border-b border-border">
-        <div className={`${WIDE} grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-28`}>
+        <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
           <img src={farmImg} alt="An oil palm plantation" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
           <div>
             <Kicker>Our platform for agriculture</Kicker>
@@ -250,7 +258,7 @@ function HomePage() {
 
       {/* Platforms we build and run */}
       <section id="platforms" className="scroll-mt-20 border-b border-border">
-        <div className={`${WIDE} grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-28`}>
+        <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
           <div className="md:order-2">
             <img src={gwonImg} alt="The GreenWall Observatory Nigeria map: vegetation across the eleven Great Green Wall frontline states" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
             <p className="mt-3 text-sm text-muted-foreground">GreenWall Observatory Nigeria: a platform prototype we built for the National Agency for the Great Green Wall.</p>
@@ -276,7 +284,7 @@ function HomePage() {
 
       {/* About */}
       <section id="about" className="scroll-mt-20 border-b border-border">
-        <div className={`${WIDE} grid gap-12 py-20 md:grid-cols-[1.2fr_1fr] md:py-28`}>
+        <div className={`${WIDE} grid gap-12 py-14 md:grid-cols-[1.2fr_1fr] md:py-16`}>
           <div>
             <Kicker>About us</Kicker>
             <H2>Better information for decisions about land</H2>
