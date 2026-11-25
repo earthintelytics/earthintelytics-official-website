@@ -6,7 +6,7 @@ import CREDITS from "@/lib/photoCredits.json";
 export function Footer() {
   const ext = (href: string) => (href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {});
   return (
-    <footer className="border-t-4 border-primary bg-[#F1F8F4]">
+    <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid w-full max-w-[1400px] gap-8 px-6 py-12 md:grid-cols-3 lg:px-12">
         <div>
           <Logo />

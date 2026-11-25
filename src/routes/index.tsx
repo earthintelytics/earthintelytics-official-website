@@ -47,7 +47,6 @@ const SECTOR_ICON: Record<string, typeof Leaf> = {
 };
 const PILLAR_ICON = [Satellite, BookOpen, Layers];
 const PILLAR_PHOTO = ["gwon", "research", "farmland"];
-const PILLAR_TONE = ["#0F8C7A", "#C2832A", "#2468B5"];
 
 const PLATFORM_POINTS = [
   "Your own platform, with your name, your logo and your colours",
@@ -103,8 +102,8 @@ function HomePage() {
             {SECTORS.map((s) => {
               const Icon = SECTOR_ICON[s.id] || Leaf;
               return (
-                <a key={s.id} href={`#${s.id}`} className="group flex items-center gap-2.5 rounded-lg border border-border bg-background/95 px-3.5 py-3 text-sm font-medium text-foreground hover:border-primary" style={{ borderLeft: `4px solid ${s.tone}` }}>
-                  <Icon className="h-4 w-4 shrink-0" style={{ color: s.tone }} />{s.name}
+                <a key={s.id} href={`#${s.id}`} className="group flex items-center gap-2.5 rounded-lg border border-border bg-background/95 px-3.5 py-3 text-sm font-medium text-foreground hover:border-primary">
+                  <Icon className="h-4 w-4 shrink-0 text-primary" />{s.name}
                 </a>
               );
             })}
@@ -125,14 +124,14 @@ function HomePage() {
             {PILLARS.map((p, i) => {
               const Icon = PILLAR_ICON[i];
               return (
-                <article key={p.title} className="overflow-hidden rounded-xl border border-border bg-background" style={{ borderTop: `4px solid ${PILLAR_TONE[i]}` }}>
+                <article key={p.title} className="overflow-hidden rounded-xl border border-border bg-background">
                   <img src={i === 0 ? gwonImg : photo(PILLAR_PHOTO[i])} alt="" loading="lazy" className="h-44 w-full object-cover" />
                   <div className="p-8">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-lg text-white" style={{ background: PILLAR_TONE[i] }}><Icon className="h-6 w-6" /></span>
+                  <Icon className="h-7 w-7 text-primary" />
                   <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{p.title}</h3>
                   <p className="mt-3 leading-relaxed text-muted-foreground">{p.text}</p>
                   <ul className="mt-6 space-y-2.5">
-                    {p.points?.map((x) => <li key={x} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: PILLAR_TONE[i] }} />{x}</li>)}
+                    {p.points?.map((x) => <li key={x} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{x}</li>)}
                   </ul>
                   </div>
                 </article>
@@ -155,18 +154,17 @@ function HomePage() {
                 <article key={s.id} id={s.id} className="scroll-mt-24 overflow-hidden rounded-xl border border-border bg-background">
                   <div className="relative h-44">
                     <img src={photo(s.photo)} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
-                    <span className="absolute inset-x-0 bottom-0 h-1.5" style={{ background: s.tone }} />
                   </div>
                   <div className="p-7">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-lg text-white" style={{ background: s.tone }}><Icon className="h-5 w-5" /></span>
+                    <Icon className="h-6 w-6 shrink-0 text-primary" />
                     <div>
                       <h3 className="font-display text-lg font-semibold text-foreground">{s.name}</h3>
                       <p className="text-sm text-muted-foreground">{s.text}</p>
                     </div>
                   </div>
                   <ul className="mt-6 space-y-2.5 border-t border-border pt-5">
-                    {s.uses.map((u) => <li key={u} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: s.tone }} />{u}</li>)}
+                    {s.uses.map((u) => <li key={u} className="flex gap-2.5 text-sm text-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{u}</li>)}
                   </ul>
                   </div>
                 </article>
