@@ -56,10 +56,10 @@ const PLATFORM_POINTS = [
 ];
 
 const FARM_POINTS = [
+  "FFB Counter: offline AI bunch counting and pre-payroll verification",
   "Crop health and growth from satellite, block by block",
-  "Water, weather and irrigation advice",
-  "Land suitability: which crop fits where",
-  "EUDR deforestation checks, and an API for your own systems",
+  "Land suitability: 16-crop FAO evaluation before planting",
+  "EUDR deforestation checks, water advice and APIs",
 ];
 
 function Kicker({ children }: { children: string }) {
@@ -89,8 +89,11 @@ function HomePage() {
               the environment, geology, water, climate and planning.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#what-we-do" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-                What we do <ArrowRight className="h-4 w-4" />
+              <a href="#products" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+                Explore FarmIntelytics <ArrowRight className="h-4 w-4" />
+              </a>
+              <a href="#what-we-do" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface">
+                What we do
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface">
                 Talk to us
@@ -109,14 +112,63 @@ function HomePage() {
             })}
           </div>
         </div>
-        <a href="#what-we-do" aria-label="Scroll to see more"
+        <a href="#products" aria-label="Scroll to see FarmIntelytics and our prototypes"
            className="absolute bottom-0 left-1/2 z-10 hidden -translate-x-1/2 translate-y-1/2 flex-col items-center rounded-lg border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground sm:flex">
           Scroll to see more <ChevronDown className="h-4 w-4 animate-bounce motion-reduce:animate-none" />
         </a>
       </section>
 
+      {/* Our platform: FarmIntelytics (first section after Hero so visitors see our product immediately) */}
+      <section id="products" className="scroll-mt-20 border-b border-border bg-gradient-to-b from-[#F1F8F4] to-background">
+        <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
+          <img src={farmImg} alt="An oil palm plantation" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+          <div>
+            <Kicker>Our platform for agriculture</Kicker>
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">FarmIntelytics</h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              Our spatial intelligence, built into one platform for farms, estates and co-operatives.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {FARM_POINTS.map((x) => (
+                <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
+              ))}
+            </ul>
+            <a href={PRODUCT_LINKS.farmintelytics} {...(PRODUCT_LINKS.farmintelytics.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
+               className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+              Visit FarmIntelytics <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Platforms we build and run (GreenWall Observatory Nigeria prototype right after FarmIntelytics) */}
+      <section id="platforms" className="scroll-mt-20 border-b border-border">
+        <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
+          <div className="md:order-2">
+            <img src={gwonImg} alt="The GreenWall Observatory Nigeria map: vegetation across the eleven Great Green Wall frontline states" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+            <p className="mt-3 text-sm text-muted-foreground">GreenWall Observatory Nigeria: a platform prototype we built for the National Agency for the Great Green Wall.</p>
+          </div>
+          <div className="md:order-1">
+            <Kicker>Platforms we build and run</Kicker>
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">Your own platform, managed by us</h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              For agencies, programmes and companies that need a platform of their own, we design, build, host and
+              manage it for you, on the same engine that powers FarmIntelytics.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {PLATFORM_POINTS.map((x) => (
+                <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
+              ))}
+            </ul>
+            <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+              Talk to us about your platform <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* What we do: three equal pillars */}
-      <section id="what-we-do" className="scroll-mt-20 border-b border-border bg-gradient-to-b from-[#F1F8F4] to-background">
+      <section id="what-we-do" className="scroll-mt-20 border-b border-border">
         <div className={`${WIDE} py-14 md:py-16`}>
           <Kicker>What we do</Kicker>
           <H2>From a single site to a whole region, the answers land needs</H2>
@@ -228,55 +280,6 @@ function HomePage() {
             ))}
             <a href="/consultancy" className="group flex items-center justify-between rounded-xl border border-primary/40 bg-primary/5 p-6 font-semibold text-foreground hover:border-primary sm:col-span-2">
               Consultancy, research and studies with us <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-0.5" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Our platform: FarmIntelytics */}
-      <section id="products" className="scroll-mt-20 border-b border-border">
-        <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
-          <img src={farmImg} alt="An oil palm plantation" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
-          <div>
-            <Kicker>Our platform for agriculture</Kicker>
-            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">FarmIntelytics</h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Our spatial intelligence, built into one platform for farms, estates and co-operatives.
-            </p>
-            <ul className="mt-6 space-y-3">
-              {FARM_POINTS.map((x) => (
-                <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
-              ))}
-            </ul>
-            <a href={PRODUCT_LINKS.farmintelytics} {...(PRODUCT_LINKS.farmintelytics.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
-               className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-              Visit FarmIntelytics <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Platforms we build and run */}
-      <section id="platforms" className="scroll-mt-20 border-b border-border">
-        <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
-          <div className="md:order-2">
-            <img src={gwonImg} alt="The GreenWall Observatory Nigeria map: vegetation across the eleven Great Green Wall frontline states" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
-            <p className="mt-3 text-sm text-muted-foreground">GreenWall Observatory Nigeria: a platform prototype we built for the National Agency for the Great Green Wall.</p>
-          </div>
-          <div className="md:order-1">
-            <Kicker>Platforms we build and run</Kicker>
-            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">Your own platform, managed by us</h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              For agencies, programmes and companies that need a platform of their own, we design, build, host and
-              manage it for you, on the same engine that powers FarmIntelytics.
-            </p>
-            <ul className="mt-6 space-y-3">
-              {PLATFORM_POINTS.map((x) => (
-                <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
-              ))}
-            </ul>
-            <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-              Talk to us about your platform <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
