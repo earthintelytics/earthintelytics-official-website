@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, CloudSun, Droplets, Factory, Layers, Leaf, Mail, Map as MapIcon, Mountain, Satellite, Sprout, TreePine, Wheat } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, CloudSun, Droplets, Factory, Layers, Leaf, Mail, Map as MapIcon, Mountain, Satellite, Sprout, TreePine, Wheat } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.webp";
 import farmImg from "@/assets/photos/oilpalm.webp";
@@ -19,7 +19,7 @@ import p_farmland from "@/assets/photos/farmland.webp";
 const PHOTOS: Record<string, string> = { agriculture: p_agriculture, forestry: p_forestry, environment: p_environment, geology: p_geology, water: p_water, climate: p_climate, planning: p_planning, research: p_research, farmland: p_farmland };
 const photo = (k: string) => PHOTOS[k];
 import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
-import { HOW_WE_WORK, METHODS, PILLARS, PUBLICATIONS, SECTORS } from "@/lib/services";
+import { HOW_WE_WORK, PILLARS, SECTORS } from "@/lib/services";
 
 const WIDE = "mx-auto w-full max-w-[1400px] px-6 lg:px-12";
 
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
 const SECTOR_ICON: Record<string, typeof Leaf> = {
   agriculture: Wheat, forestry: TreePine, environment: Sprout, geology: Mountain, water: Droplets, climate: CloudSun, planning: MapIcon,
 };
-const PILLAR_ICON = [Satellite, BookOpen, Layers];
+const PILLAR_ICON = [Satellite, Layers, Layers];
 const PILLAR_PHOTO = ["gwon", "research", "farmland"];
 
 const PLATFORM_POINTS = [
@@ -105,7 +105,7 @@ function HomePage() {
             {SECTORS.map((s) => {
               const Icon = SECTOR_ICON[s.id] || Leaf;
               return (
-                <a key={s.id} href={`#${s.id}`} className="group flex items-center gap-2.5 rounded-lg border border-border bg-background/95 px-3.5 py-3 text-sm font-medium text-foreground hover:border-primary">
+                <a key={s.id} href={`/use-cases#${s.id}`} className="group flex items-center gap-2.5 rounded-lg border border-border bg-background/95 px-3.5 py-3 text-sm font-medium text-foreground hover:border-primary">
                   <Icon className="h-4 w-4 shrink-0 text-primary" />{s.name}
                 </a>
               );
@@ -193,47 +193,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Use cases, sector by sector */}
-      <section id="use-cases" className="scroll-mt-20 border-b border-border bg-[#FBF8F1]">
-        <div className={`${WIDE} py-14 md:py-16`}>
-          <Kicker>Use cases</Kicker>
-          <H2>One way of seeing land, many sectors</H2>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">The same satellites, methods and care, applied to the question in front of you.</p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {SECTORS.map((s) => {
-              const Icon = SECTOR_ICON[s.id] || Leaf;
-              return (
-                <article key={s.id} id={s.id} className="scroll-mt-24 overflow-hidden rounded-xl border border-border bg-background">
-                  <div className="relative h-32">
-                    <img src={photo(s.photo)} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
-                  </div>
-                  <div className="p-5">
-                  <div className="flex items-start gap-2.5">
-                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <h3 className="font-display text-base font-semibold text-foreground">{s.name}</h3>
-                      <p className="text-xs text-muted-foreground">{s.text}</p>
-                    </div>
-                  </div>
-                  <ul className="mt-4 space-y-1.5 border-t border-border pt-3">
-                    {s.uses.map((u) => <li key={u} className="flex gap-2 text-[13px] leading-snug text-foreground"><Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />{u}</li>)}
-                  </ul>
-                  </div>
-                </article>
-              );
-            })}
-            <a href="#contact" className="group flex flex-col justify-between rounded-xl border border-border bg-background p-6">
-              <div>
-                <Layers className="h-6 w-6 text-primary" />
-                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Your sector</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Land questions come from everywhere: energy, health, insurance, disaster response. Tell us yours and we will show you what the data can answer.</p>
-              </div>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">Talk to us <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* How we work */}
       <section className="border-b border-border">
         <div className={`${WIDE} py-14 md:py-16`}>
@@ -248,40 +207,6 @@ function HomePage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* Research and studies */}
-      <section id="research" className="scroll-mt-20 border-b border-border bg-surface">
-        <div className={`${WIDE} grid gap-14 py-14 md:py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]`}>
-          <div>
-            <Kicker>Research and studies</Kicker>
-            <H2>Methods we publish, and stand behind</H2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Every result we give names its data and its method, so it can be checked. Where we develop a method, we publish it.
-            </p>
-            {PUBLICATIONS.map((p) => (
-              <figure key={p.ref} className="mt-10 rounded-xl border border-border bg-background p-7">
-                <p className="text-xs font-semibold text-primary">Published · {p.year}</p>
-                {p.title && <p className="mt-2 font-display text-lg font-semibold text-foreground">{p.title}</p>}
-                <p className="mt-2 leading-relaxed text-foreground">{p.about}</p>
-                <figcaption className="mt-4 text-sm text-muted-foreground">
-                  {p.authors} ({p.year}). <span className="italic">{p.venue}</span>, {p.ref}.
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:pt-10">
-            {METHODS.map((m) => (
-              <article key={m.title} className="rounded-xl border border-border bg-background p-6">
-                <h3 className="font-display text-lg font-semibold text-foreground">{m.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.text}</p>
-              </article>
-            ))}
-            <a href="/consultancy" className="group flex items-center justify-between rounded-xl border border-primary/40 bg-primary/5 p-6 font-semibold text-foreground hover:border-primary sm:col-span-2">
-              Consultancy, research and studies with us <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-0.5" />
-            </a>
-          </div>
         </div>
       </section>
 
