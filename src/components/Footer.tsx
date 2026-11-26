@@ -22,6 +22,8 @@ export function Footer() {
           <p className="text-sm font-semibold text-foreground">Contact</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={`mailto:${CONTACT_EMAIL}`} className="text-muted-foreground hover:text-foreground">{CONTACT_EMAIL}</a></li>
+            <li><a href="/about" className="text-muted-foreground hover:text-foreground">About us</a></li>
+            <li><a href="/contact" className="text-muted-foreground hover:text-foreground">Contact us</a></li>
             <li><a href="/use-cases" className="text-muted-foreground hover:text-foreground">Use cases</a></li>
             <li><a href="/research" className="text-muted-foreground hover:text-foreground">Research and studies</a></li>
             <li><a href="/consultancy" className="text-muted-foreground hover:text-foreground">Consultancy and research</a></li>

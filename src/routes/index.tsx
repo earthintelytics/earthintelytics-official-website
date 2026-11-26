@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
-import { ArrowRight, ArrowUpRight, Check, ChevronDown, CloudSun, Droplets, Factory, Layers, Leaf, Mail, Map as MapIcon, Mountain, Satellite, Sprout, TreePine, Wheat } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, CloudSun, Droplets, Layers, Leaf, Map as MapIcon, Mountain, Satellite, Sprout, TreePine, Wheat } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import heroImg from "@/assets/real/hero-home.webp";
 import farmImg from "@/assets/photos/oilpalm.webp";
@@ -18,7 +17,7 @@ import p_research from "@/assets/photos/research.webp";
 import p_farmland from "@/assets/photos/farmland.webp";
 const PHOTOS: Record<string, string> = { agriculture: p_agriculture, forestry: p_forestry, environment: p_environment, geology: p_geology, water: p_water, climate: p_climate, planning: p_planning, research: p_research, farmland: p_farmland };
 const photo = (k: string) => PHOTOS[k];
-import { CONTACT_EMAIL, PRODUCT_LINKS } from "@/lib/site";
+import { PRODUCT_LINKS } from "@/lib/site";
 import { HOW_WE_WORK, PILLARS, SECTORS } from "@/lib/services";
 
 const WIDE = "mx-auto w-full max-w-[1400px] px-6 lg:px-12";
@@ -95,7 +94,7 @@ function HomePage() {
               <a href="#what-we-do" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface">
                 What we do
               </a>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface">
+              <a href="/contact" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface">
                 Talk to us
               </a>
             </div>
@@ -160,7 +159,7 @@ function HomePage() {
                 <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
               ))}
             </ul>
-            <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+            <a href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
               Talk to us about your platform <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -209,71 +208,6 @@ function HomePage() {
           </ol>
         </div>
       </section>
-
-      {/* About */}
-      <section id="about" className="scroll-mt-20 border-b border-border">
-        <div className={`${WIDE} grid gap-12 py-14 md:grid-cols-[1.2fr_1fr] md:py-16`}>
-          <div>
-            <Kicker>About us</Kicker>
-            <H2>Better information for decisions about land</H2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Earthintelytics was built on one conviction: the most important decisions about land deserve the best
-              possible information. We combine satellite imagery, drone data, field records and careful analysis into
-              answers people can act on, built for the realities of Africa and other emerging markets.
-            </p>
-          </div>
-          <div className="rounded-xl border border-border p-8 self-start">
-            <Factory className="h-6 w-6 text-primary" />
-            <p className="mt-4 font-display text-lg font-semibold text-foreground">Where we work</p>
-            <ul className="mt-4 space-y-2.5">
-              {SECTORS.map((s) => <li key={s.id} className="flex gap-2.5 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{s.name}</li>)}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <Contact />
     </PageShell>
-  );
-}
-
-/** Contact: our email, and a short form that opens the visitor's email with their message (nothing is stored). */
-function Contact() {
-  const [form, setForm] = useState({ name: "", organisation: "", message: "" });
-  const send = (e: FormEvent) => {
-    e.preventDefault();
-    const subject = `Enquiry from ${form.name}${form.organisation ? `, ${form.organisation}` : ""}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(form.message)}`;
-  };
-  const input = "w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none";
-  return (
-    <section id="contact" className="scroll-mt-20 bg-surface">
-      <div className={`${WIDE} grid gap-10 py-16 md:grid-cols-2 md:py-24`}>
-        <div>
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Talk to us</h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            Tell us about your land, crops, site or supply chain, and what you need to know. We reply by email.
-          </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="mt-6 inline-flex items-center gap-2 font-semibold text-primary hover:underline">
-            <Mail className="h-4 w-4" /> {CONTACT_EMAIL}
-          </a>
-        </div>
-        <form onSubmit={send} className="space-y-4">
-          <label className="block text-sm font-medium text-foreground">Your name
-            <input required className={`mt-1.5 ${input}`} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-          </label>
-          <label className="block text-sm font-medium text-foreground">Organisation
-            <input className={`mt-1.5 ${input}`} value={form.organisation} onChange={(e) => setForm({ ...form, organisation: e.target.value })} />
-          </label>
-          <label className="block text-sm font-medium text-foreground">How can we help?
-            <textarea required rows={5} className={`mt-1.5 ${input}`} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-          </label>
-          <button type="submit" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-            Write to us <ArrowRight className="h-4 w-4" />
-          </button>
-          <p className="text-xs text-muted-foreground">This opens your email app with your message, addressed to {CONTACT_EMAIL}.</p>
-        </form>
-      </div>
-    </section>
   );
 }

@@ -93,7 +93,7 @@ function UseCasesPage() {
               );
             })}
 
-            <a href="/#contact" className="group flex flex-col justify-between rounded-xl border border-border bg-background p-6">
+            <a href="/contact" className="group flex flex-col justify-between rounded-xl border border-border bg-background p-6">
               <div>
                 <Layers className="h-6 w-6 text-primary" />
                 <h2 className="mt-4 font-display text-lg font-semibold text-foreground">Your sector</h2>

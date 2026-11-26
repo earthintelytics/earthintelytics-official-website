@@ -9,7 +9,7 @@ const LINKS = [
   { href: "/use-cases", label: "Use cases" },
   { href: "/research", label: "Research" },
   { href: "/consultancy", label: "Consultancy" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
 ];
 
 export function Header() {
@@ -22,7 +22,7 @@ export function Header() {
           {LINKS.map((l) => (
             <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground">{l.label}</a>
           ))}
-          <a href="/#contact" className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Talk to us</a>
+          <a href="/contact" className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Talk to us</a>
         </nav>
         <button type="button" className="rounded-md p-2 text-foreground md:hidden" onClick={() => setOpen((v) => !v)} aria-label={open ? "Close menu" : "Open menu"}>
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
