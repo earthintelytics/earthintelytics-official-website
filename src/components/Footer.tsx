@@ -16,6 +16,7 @@ export function Footer() {
           <p className="text-sm font-semibold text-foreground">Product</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={PRODUCT_LINKS.farmintelytics} {...ext(PRODUCT_LINKS.farmintelytics)} className="text-muted-foreground hover:text-foreground">FarmIntelytics</a></li>
+            <li><a href={PRODUCT_LINKS.gwon} {...ext(PRODUCT_LINKS.gwon)} className="text-muted-foreground hover:text-foreground">GreenWall Observatory Nigeria</a></li>
           </ul>
         </div>
         <div>

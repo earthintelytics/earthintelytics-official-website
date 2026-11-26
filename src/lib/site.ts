@@ -6,4 +6,6 @@ export const CONTACT_EMAIL: string = import.meta.env.VITE_CONTACT_EMAIL || "hell
 
 export const PRODUCT_LINKS = {
   farmintelytics: (import.meta.env.VITE_FARMINTELYTICS_URL as string) || "https://farmintelytics.earthintelytics.com/",
+  // GreenWall Observatory Nigeria, the platform prototype for the National Agency for the Great Green Wall
+  gwon: (import.meta.env.VITE_GWON_URL as string) || "https://farmintelytics.earthintelytics.com/platforms/gwon",
 };

@@ -144,7 +144,9 @@ function HomePage() {
       <section id="platforms" className="scroll-mt-20 border-b border-border">
         <div className={`${WIDE} grid items-center gap-12 py-14 md:grid-cols-2 md:gap-12 md:py-16`}>
           <div className="md:order-2">
-            <img src={gwonImg} alt="The GreenWall Observatory Nigeria map: vegetation across the eleven Great Green Wall frontline states" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+            <a href={PRODUCT_LINKS.gwon} target="_blank" rel="noreferrer" aria-label="Open GreenWall Observatory Nigeria">
+              <img src={gwonImg} alt="The GreenWall Observatory Nigeria map: vegetation across the eleven Great Green Wall frontline states" loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover" />
+            </a>
             <p className="mt-3 text-sm text-muted-foreground">GreenWall Observatory Nigeria: a platform prototype we built for the National Agency for the Great Green Wall.</p>
           </div>
           <div className="md:order-1">
@@ -159,9 +161,14 @@ function HomePage() {
                 <li key={x} className="flex gap-3 text-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" />{x}</li>
               ))}
             </ul>
-            <a href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-              Talk to us about your platform <ArrowRight className="h-4 w-4" />
-            </a>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={PRODUCT_LINKS.gwon} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+                See the GreenWall Observatory <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a href="/contact" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface">
+                Talk to us about your platform <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
