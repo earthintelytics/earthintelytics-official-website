@@ -76,7 +76,7 @@ function HomePage() {
       <section className="relative overflow-hidden border-b border-border">
         <img src={heroImg} alt="Coast, forest, farmland and a mine seen from space" fetchPriority="high"
              className="absolute inset-0 h-full w-full object-cover object-[70%_50%]" />
-        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_58%,rgba(255,255,255,0.78)_72%,rgba(255,255,255,0)_94%)] md:bg-[linear-gradient(90deg,#fff_0%,#fff_36%,rgba(255,255,255,0.86)_48%,rgba(255,255,255,0)_68%)]" />
+        <div aria-hidden="true" className="ei-hero-fade absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_58%,rgba(255,255,255,0.78)_72%,rgba(255,255,255,0)_94%)] md:bg-[linear-gradient(90deg,#fff_0%,#fff_36%,rgba(255,255,255,0.86)_48%,rgba(255,255,255,0)_68%)]" />
         <div className={`${WIDE} relative flex min-h-[calc(100vh-4rem)] flex-col justify-center py-16`}>
           <div className="max-w-2xl">
             <Kicker>Earthintelytics</Kicker>

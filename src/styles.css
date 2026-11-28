@@ -133,10 +133,42 @@
   --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Dark mode (the switch at the far end of the header): the same layout on deep navy, flat colour, no glow. */
 .dark {
-  /* Keep light identity even in dark mode for now */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.02 160);
+  color-scheme: dark;
+  --background: oklch(0.19 0.025 245);
+  --foreground: oklch(0.95 0.008 220);
+  --surface: oklch(0.22 0.028 245);
+  --surface-elevated: oklch(0.25 0.03 245);
+  --card: oklch(0.23 0.028 245);
+  --card-foreground: oklch(0.95 0.008 220);
+  --popover: oklch(0.23 0.028 245);
+  --popover-foreground: oklch(0.95 0.008 220);
+  --primary: oklch(0.70 0.12 175);
+  --primary-foreground: oklch(0.17 0.03 245);
+  --primary-glow: oklch(0.72 0.13 175);
+  --accent: oklch(0.72 0.13 175);
+  --accent-foreground: oklch(0.17 0.03 245);
+  --secondary: oklch(0.28 0.03 210);
+  --secondary-foreground: oklch(0.95 0.008 220);
+  --muted: oklch(0.26 0.025 245);
+  --muted-foreground: oklch(0.76 0.02 230);
+  --border: oklch(0.33 0.028 245);
+  --input: oklch(0.33 0.028 245);
+  --ring: oklch(0.70 0.12 175);
+  --gradient-hero: linear-gradient(180deg, oklch(0.19 0.025 245), oklch(0.22 0.03 200));
+  --gradient-card: linear-gradient(180deg, oklch(0.23 0.028 245), oklch(0.22 0.03 200));
+}
+/* the soft tinted bands, in their dark versions */
+.dark .from-\[\#F1F8F4\] { --tw-gradient-from: #12262A !important; }
+.dark .bg-\[\#FBF8F1\] { background-color: #1B2230 !important; }
+/* The logo is drawn on white: turned inside out (white to black, navy to light, teal kept) and screened onto the
+   navy header, so the black disappears. */
+.dark .site-logo { filter: invert(1) hue-rotate(180deg); mix-blend-mode: screen; }
+/* the picture heroes fade into the dark page, not into white */
+.dark .ei-hero-fade { background-image: linear-gradient(180deg, var(--background) 0%, var(--background) 58%, color-mix(in oklab, var(--background) 80%, transparent) 72%, transparent 94%) !important; }
+@media (min-width: 768px) {
+  .dark .ei-hero-fade { background-image: linear-gradient(90deg, var(--background) 0%, var(--background) 36%, color-mix(in oklab, var(--background) 86%, transparent) 48%, transparent 68%) !important; }
 }
 
 @layer base {

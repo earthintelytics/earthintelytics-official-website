@@ -7,7 +7,7 @@ export function Logo({ className = "" }: { className?: string }) {
       <img
         src={logoImg}
         alt="Earthintelytics"
-        className="h-12 w-auto object-contain"
+        className="site-logo h-12 w-auto object-contain"
       />
     </Link>
   );

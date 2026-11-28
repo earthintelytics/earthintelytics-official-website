@@ -24,7 +24,7 @@ function ConsultancyPage() {
       {/* Hero, the full width of the screen */}
       <section className="relative overflow-hidden border-b border-border">
         <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover object-[70%_50%]" />
-        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_60%,rgba(255,255,255,0.8)_75%,rgba(255,255,255,0)_95%)] md:bg-[linear-gradient(90deg,#fff_0%,#fff_36%,rgba(255,255,255,0.85)_48%,rgba(255,255,255,0)_68%)]" />
+        <div aria-hidden="true" className="ei-hero-fade absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_60%,rgba(255,255,255,0.8)_75%,rgba(255,255,255,0)_95%)] md:bg-[linear-gradient(90deg,#fff_0%,#fff_36%,rgba(255,255,255,0.85)_48%,rgba(255,255,255,0)_68%)]" />
         <div className={`${WIDE} relative flex min-h-[72vh] items-center py-16`}>
           <div className="max-w-xl">
             <p className="text-sm font-semibold text-primary">Consultancy and research</p>

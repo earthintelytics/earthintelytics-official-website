@@ -70,8 +70,10 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* the saved theme, before the first paint, so a dark page never flashes white */}
+        <script dangerouslySetInnerHTML={{ __html: "try{if(localStorage.getItem('ei_theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}" }} />
         <HeadContent />
       </head>
       <body>
